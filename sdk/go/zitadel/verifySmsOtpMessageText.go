@@ -12,6 +12,8 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
+// Customizes the one-time password (OTP) verification SMS sent to users (org-scoped). Instance-level defaults are managed by `DefaultVerifySmsOtpMessageText`.
+//
 // ## Example Usage
 //
 // ```go
@@ -42,15 +44,21 @@ import (
 type VerifySmsOtpMessageText struct {
 	pulumi.CustomResourceState
 
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 	ButtonText pulumi.StringPtrOutput `pulumi:"buttonText"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 	FooterText pulumi.StringPtrOutput `pulumi:"footerText"`
-	Greeting   pulumi.StringPtrOutput `pulumi:"greeting"`
-	Language   pulumi.StringOutput    `pulumi:"language"`
-	OrgId      pulumi.StringOutput    `pulumi:"orgId"`
-	PreHeader  pulumi.StringPtrOutput `pulumi:"preHeader"`
-	Subject    pulumi.StringPtrOutput `pulumi:"subject"`
-	Text       pulumi.StringPtrOutput `pulumi:"text"`
-	Title      pulumi.StringPtrOutput `pulumi:"title"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Greeting pulumi.StringPtrOutput `pulumi:"greeting"`
+	Language pulumi.StringOutput    `pulumi:"language"`
+	OrgId    pulumi.StringOutput    `pulumi:"orgId"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	PreHeader pulumi.StringPtrOutput `pulumi:"preHeader"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Subject pulumi.StringPtrOutput `pulumi:"subject"`
+	Text    pulumi.StringPtrOutput `pulumi:"text"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Title pulumi.StringPtrOutput `pulumi:"title"`
 }
 
 // NewVerifySmsOtpMessageText registers a new resource with the given unique name, arguments, and options.
@@ -89,27 +97,39 @@ func GetVerifySmsOtpMessageText(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VerifySmsOtpMessageText resources.
 type verifySmsOtpMessageTextState struct {
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 	ButtonText *string `pulumi:"buttonText"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 	FooterText *string `pulumi:"footerText"`
-	Greeting   *string `pulumi:"greeting"`
-	Language   *string `pulumi:"language"`
-	OrgId      *string `pulumi:"orgId"`
-	PreHeader  *string `pulumi:"preHeader"`
-	Subject    *string `pulumi:"subject"`
-	Text       *string `pulumi:"text"`
-	Title      *string `pulumi:"title"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Greeting *string `pulumi:"greeting"`
+	Language *string `pulumi:"language"`
+	OrgId    *string `pulumi:"orgId"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	PreHeader *string `pulumi:"preHeader"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Subject *string `pulumi:"subject"`
+	Text    *string `pulumi:"text"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Title *string `pulumi:"title"`
 }
 
 type VerifySmsOtpMessageTextState struct {
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 	ButtonText pulumi.StringPtrInput
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 	FooterText pulumi.StringPtrInput
-	Greeting   pulumi.StringPtrInput
-	Language   pulumi.StringPtrInput
-	OrgId      pulumi.StringPtrInput
-	PreHeader  pulumi.StringPtrInput
-	Subject    pulumi.StringPtrInput
-	Text       pulumi.StringPtrInput
-	Title      pulumi.StringPtrInput
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Greeting pulumi.StringPtrInput
+	Language pulumi.StringPtrInput
+	OrgId    pulumi.StringPtrInput
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	PreHeader pulumi.StringPtrInput
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Subject pulumi.StringPtrInput
+	Text    pulumi.StringPtrInput
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Title pulumi.StringPtrInput
 }
 
 func (VerifySmsOtpMessageTextState) ElementType() reflect.Type {
@@ -117,28 +137,40 @@ func (VerifySmsOtpMessageTextState) ElementType() reflect.Type {
 }
 
 type verifySmsOtpMessageTextArgs struct {
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 	ButtonText *string `pulumi:"buttonText"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 	FooterText *string `pulumi:"footerText"`
-	Greeting   *string `pulumi:"greeting"`
-	Language   string  `pulumi:"language"`
-	OrgId      string  `pulumi:"orgId"`
-	PreHeader  *string `pulumi:"preHeader"`
-	Subject    *string `pulumi:"subject"`
-	Text       *string `pulumi:"text"`
-	Title      *string `pulumi:"title"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Greeting *string `pulumi:"greeting"`
+	Language string  `pulumi:"language"`
+	OrgId    string  `pulumi:"orgId"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	PreHeader *string `pulumi:"preHeader"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Subject *string `pulumi:"subject"`
+	Text    *string `pulumi:"text"`
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Title *string `pulumi:"title"`
 }
 
 // The set of arguments for constructing a VerifySmsOtpMessageText resource.
 type VerifySmsOtpMessageTextArgs struct {
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 	ButtonText pulumi.StringPtrInput
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 	FooterText pulumi.StringPtrInput
-	Greeting   pulumi.StringPtrInput
-	Language   pulumi.StringInput
-	OrgId      pulumi.StringInput
-	PreHeader  pulumi.StringPtrInput
-	Subject    pulumi.StringPtrInput
-	Text       pulumi.StringPtrInput
-	Title      pulumi.StringPtrInput
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Greeting pulumi.StringPtrInput
+	Language pulumi.StringInput
+	OrgId    pulumi.StringInput
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	PreHeader pulumi.StringPtrInput
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Subject pulumi.StringPtrInput
+	Text    pulumi.StringPtrInput
+	// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
+	Title pulumi.StringPtrInput
 }
 
 func (VerifySmsOtpMessageTextArgs) ElementType() reflect.Type {
@@ -178,14 +210,17 @@ func (o VerifySmsOtpMessageTextOutput) ToVerifySmsOtpMessageTextOutputWithContex
 	return o
 }
 
+// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 func (o VerifySmsOtpMessageTextOutput) ButtonText() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VerifySmsOtpMessageText) pulumi.StringPtrOutput { return v.ButtonText }).(pulumi.StringPtrOutput)
 }
 
+// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 func (o VerifySmsOtpMessageTextOutput) FooterText() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VerifySmsOtpMessageText) pulumi.StringPtrOutput { return v.FooterText }).(pulumi.StringPtrOutput)
 }
 
+// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 func (o VerifySmsOtpMessageTextOutput) Greeting() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VerifySmsOtpMessageText) pulumi.StringPtrOutput { return v.Greeting }).(pulumi.StringPtrOutput)
 }
@@ -198,10 +233,12 @@ func (o VerifySmsOtpMessageTextOutput) OrgId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VerifySmsOtpMessageText) pulumi.StringOutput { return v.OrgId }).(pulumi.StringOutput)
 }
 
+// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 func (o VerifySmsOtpMessageTextOutput) PreHeader() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VerifySmsOtpMessageText) pulumi.StringPtrOutput { return v.PreHeader }).(pulumi.StringPtrOutput)
 }
 
+// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 func (o VerifySmsOtpMessageTextOutput) Subject() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VerifySmsOtpMessageText) pulumi.StringPtrOutput { return v.Subject }).(pulumi.StringPtrOutput)
 }
@@ -210,6 +247,7 @@ func (o VerifySmsOtpMessageTextOutput) Text() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VerifySmsOtpMessageText) pulumi.StringPtrOutput { return v.Text }).(pulumi.StringPtrOutput)
 }
 
+// Deprecated: Not supported by the SMS OTP message: the ZITADEL API only stores `text` for this message type, so this attribute has no effect. It will be removed in a future major version.
 func (o VerifySmsOtpMessageTextOutput) Title() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VerifySmsOtpMessageText) pulumi.StringPtrOutput { return v.Title }).(pulumi.StringPtrOutput)
 }

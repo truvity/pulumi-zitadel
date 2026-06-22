@@ -12,6 +12,8 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
+// Customizes the passkey/passwordless registration invitation email sent to users (org-scoped). Instance-level defaults are managed by `DefaultPasswordlessRegistrationMessageText`.
+//
 // ## Example Usage
 //
 // ```go

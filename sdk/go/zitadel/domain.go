@@ -11,7 +11,7 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
-// Resource representing a domain of the organization.
+// Domain of an organization. **Deprecated:** use `OrganizationDomain` which uses the org/v2 API (requires ZITADEL 4.x).
 //
 // ## Example Usage
 //

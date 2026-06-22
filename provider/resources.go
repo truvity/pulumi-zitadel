@@ -37,7 +37,9 @@ func Provider() tfbridge.ProviderInfo {
 		PluginDownloadURL: "github://api.github.com/truvity/pulumi-zitadel",
 		MetadataInfo:      tfbridge.NewProviderMetadata(bridgeMetadata),
 
-		Config: map[string]*tfbridge.SchemaInfo{},
+		Config: map[string]*tfbridge.SchemaInfo{
+			"jwt_profile_json": {Secret: tfbridge.True()},
+		},
 	}
 
 	prov.MustComputeTokens(tokens.SingleModule("zitadel_", "index",

@@ -12,6 +12,8 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
+// Customizes the one-time password (OTP) verification email sent to users (org-scoped). Instance-level defaults are managed by `DefaultVerifyEmailOtpMessageText`.
+//
 // ## Example Usage
 //
 // ```go

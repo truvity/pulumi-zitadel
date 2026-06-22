@@ -64,8 +64,6 @@ type LookupIdpLdapResult struct {
 	BaseDn string `pulumi:"baseDn"`
 	// Bind DN for LDAP connections
 	BindDn string `pulumi:"bindDn"`
-	// Bind password for LDAP connections
-	BindPassword string `pulumi:"bindPassword"`
 	// User attribute for the display name
 	DisplayNameAttribute string `pulumi:"displayNameAttribute"`
 	// User attribute for the email
@@ -170,11 +168,6 @@ func (o LookupIdpLdapResultOutput) BaseDn() pulumi.StringOutput {
 // Bind DN for LDAP connections
 func (o LookupIdpLdapResultOutput) BindDn() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIdpLdapResult) string { return v.BindDn }).(pulumi.StringOutput)
-}
-
-// Bind password for LDAP connections
-func (o LookupIdpLdapResultOutput) BindPassword() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupIdpLdapResult) string { return v.BindPassword }).(pulumi.StringOutput)
 }
 
 // User attribute for the display name

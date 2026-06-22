@@ -81,8 +81,11 @@ type OrgIdpApple struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// ID of the organization. If not provided, the organization of the authenticated user/service account is used.
 	OrgId pulumi.StringPtrOutput `pulumi:"orgId"`
-	// Apple Private Key from your Apple Developer Account
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Apple Private Key from your Apple Developer Account. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 	PrivateKey pulumi.StringOutput `pulumi:"privateKey"`
+	// A non-reversible hash of the write-only private_key, used to detect when it changes. It does not contain the key itself.
+	PrivateKeyHash pulumi.StringOutput `pulumi:"privateKeyHash"`
 	// the scopes requested by ZITADEL during the request on the identity provider
 	Scopes pulumi.StringArrayOutput `pulumi:"scopes"`
 	// Apple Team ID from your Apple Developer Account
@@ -125,6 +128,7 @@ func NewOrgIdpApple(ctx *pulumi.Context,
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"privateKey",
+		"privateKeyHash",
 	})
 	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
@@ -168,8 +172,11 @@ type orgIdpAppleState struct {
 	Name *string `pulumi:"name"`
 	// ID of the organization. If not provided, the organization of the authenticated user/service account is used.
 	OrgId *string `pulumi:"orgId"`
-	// Apple Private Key from your Apple Developer Account
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Apple Private Key from your Apple Developer Account. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 	PrivateKey *string `pulumi:"privateKey"`
+	// A non-reversible hash of the write-only private_key, used to detect when it changes. It does not contain the key itself.
+	PrivateKeyHash *string `pulumi:"privateKeyHash"`
 	// the scopes requested by ZITADEL during the request on the identity provider
 	Scopes []string `pulumi:"scopes"`
 	// Apple Team ID from your Apple Developer Account
@@ -195,8 +202,11 @@ type OrgIdpAppleState struct {
 	Name pulumi.StringPtrInput
 	// ID of the organization. If not provided, the organization of the authenticated user/service account is used.
 	OrgId pulumi.StringPtrInput
-	// Apple Private Key from your Apple Developer Account
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Apple Private Key from your Apple Developer Account. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 	PrivateKey pulumi.StringPtrInput
+	// A non-reversible hash of the write-only private_key, used to detect when it changes. It does not contain the key itself.
+	PrivateKeyHash pulumi.StringPtrInput
 	// the scopes requested by ZITADEL during the request on the identity provider
 	Scopes pulumi.StringArrayInput
 	// Apple Team ID from your Apple Developer Account
@@ -226,7 +236,8 @@ type orgIdpAppleArgs struct {
 	Name *string `pulumi:"name"`
 	// ID of the organization. If not provided, the organization of the authenticated user/service account is used.
 	OrgId *string `pulumi:"orgId"`
-	// Apple Private Key from your Apple Developer Account
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Apple Private Key from your Apple Developer Account. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 	PrivateKey string `pulumi:"privateKey"`
 	// the scopes requested by ZITADEL during the request on the identity provider
 	Scopes []string `pulumi:"scopes"`
@@ -254,7 +265,8 @@ type OrgIdpAppleArgs struct {
 	Name pulumi.StringPtrInput
 	// ID of the organization. If not provided, the organization of the authenticated user/service account is used.
 	OrgId pulumi.StringPtrInput
-	// Apple Private Key from your Apple Developer Account
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Apple Private Key from your Apple Developer Account. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 	PrivateKey pulumi.StringInput
 	// the scopes requested by ZITADEL during the request on the identity provider
 	Scopes pulumi.StringArrayInput
@@ -344,9 +356,15 @@ func (o OrgIdpAppleOutput) OrgId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OrgIdpApple) pulumi.StringPtrOutput { return v.OrgId }).(pulumi.StringPtrOutput)
 }
 
-// Apple Private Key from your Apple Developer Account
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// Apple Private Key from your Apple Developer Account. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 func (o OrgIdpAppleOutput) PrivateKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *OrgIdpApple) pulumi.StringOutput { return v.PrivateKey }).(pulumi.StringOutput)
+}
+
+// A non-reversible hash of the write-only private_key, used to detect when it changes. It does not contain the key itself.
+func (o OrgIdpAppleOutput) PrivateKeyHash() pulumi.StringOutput {
+	return o.ApplyT(func(v *OrgIdpApple) pulumi.StringOutput { return v.PrivateKeyHash }).(pulumi.StringOutput)
 }
 
 // the scopes requested by ZITADEL during the request on the identity provider

@@ -83,8 +83,11 @@ type IdpLdap struct {
 	BaseDn pulumi.StringOutput `pulumi:"baseDn"`
 	// Bind DN for LDAP connections
 	BindDn pulumi.StringOutput `pulumi:"bindDn"`
-	// Bind password for LDAP connections
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Bind password for LDAP connections. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 	BindPassword pulumi.StringOutput `pulumi:"bindPassword"`
+	// A non-reversible hash of the write-only bind_password, used to detect when the password changes. It does not contain the password itself.
+	BindPasswordHash pulumi.StringOutput `pulumi:"bindPasswordHash"`
 	// User attribute for the display name
 	DisplayNameAttribute pulumi.StringPtrOutput `pulumi:"displayNameAttribute"`
 	// User attribute for the email
@@ -186,6 +189,7 @@ func NewIdpLdap(ctx *pulumi.Context,
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"bindPassword",
+		"bindPasswordHash",
 	})
 	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
@@ -219,8 +223,11 @@ type idpLdapState struct {
 	BaseDn *string `pulumi:"baseDn"`
 	// Bind DN for LDAP connections
 	BindDn *string `pulumi:"bindDn"`
-	// Bind password for LDAP connections
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Bind password for LDAP connections. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 	BindPassword *string `pulumi:"bindPassword"`
+	// A non-reversible hash of the write-only bind_password, used to detect when the password changes. It does not contain the password itself.
+	BindPasswordHash *string `pulumi:"bindPasswordHash"`
 	// User attribute for the display name
 	DisplayNameAttribute *string `pulumi:"displayNameAttribute"`
 	// User attribute for the email
@@ -280,8 +287,11 @@ type IdpLdapState struct {
 	BaseDn pulumi.StringPtrInput
 	// Bind DN for LDAP connections
 	BindDn pulumi.StringPtrInput
-	// Bind password for LDAP connections
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Bind password for LDAP connections. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 	BindPassword pulumi.StringPtrInput
+	// A non-reversible hash of the write-only bind_password, used to detect when the password changes. It does not contain the password itself.
+	BindPasswordHash pulumi.StringPtrInput
 	// User attribute for the display name
 	DisplayNameAttribute pulumi.StringPtrInput
 	// User attribute for the email
@@ -345,7 +355,8 @@ type idpLdapArgs struct {
 	BaseDn string `pulumi:"baseDn"`
 	// Bind DN for LDAP connections
 	BindDn string `pulumi:"bindDn"`
-	// Bind password for LDAP connections
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Bind password for LDAP connections. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 	BindPassword string `pulumi:"bindPassword"`
 	// User attribute for the display name
 	DisplayNameAttribute *string `pulumi:"displayNameAttribute"`
@@ -407,7 +418,8 @@ type IdpLdapArgs struct {
 	BaseDn pulumi.StringInput
 	// Bind DN for LDAP connections
 	BindDn pulumi.StringInput
-	// Bind password for LDAP connections
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Bind password for LDAP connections. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 	BindPassword pulumi.StringInput
 	// User attribute for the display name
 	DisplayNameAttribute pulumi.StringPtrInput
@@ -516,9 +528,15 @@ func (o IdpLdapOutput) BindDn() pulumi.StringOutput {
 	return o.ApplyT(func(v *IdpLdap) pulumi.StringOutput { return v.BindDn }).(pulumi.StringOutput)
 }
 
-// Bind password for LDAP connections
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// Bind password for LDAP connections. This value is write-only and is never stored in Terraform state; it cannot be read back or retrieved from a datasource.
 func (o IdpLdapOutput) BindPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *IdpLdap) pulumi.StringOutput { return v.BindPassword }).(pulumi.StringOutput)
+}
+
+// A non-reversible hash of the write-only bind_password, used to detect when the password changes. It does not contain the password itself.
+func (o IdpLdapOutput) BindPasswordHash() pulumi.StringOutput {
+	return o.ApplyT(func(v *IdpLdap) pulumi.StringOutput { return v.BindPasswordHash }).(pulumi.StringOutput)
 }
 
 // User attribute for the display name

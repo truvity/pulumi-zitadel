@@ -1,0 +1,82 @@
+name: Upstream Upgrade
+
+on:
+  schedule:
+    - cron: "0 2 * * 1" # weekly Monday 2am UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+
+      - uses: actions/create-github-app-token@v3
+        id: token
+        with:
+          app-id: ${{ secrets.RENOVATE_APP_ID }}
+          private-key: ${{ secrets.RENOVATE_APP_PRIVATE_KEY }}
+
+      - uses: DeterminateSystems/determinate-nix-action@v3
+
+      - name: Install devbox
+        run: curl -fsSL https://get.jetify.com/devbox | bash -s -- -f
+
+      - name: Check for upstream update
+        id: check
+        run: |
+          CURRENT=$(grep 'terraform-provider-zitadel/v2' provider/go.mod | awk '{print $2}')
+          LATEST_TAG=$(gh api repos/zitadel/terraform-provider-zitadel/releases/latest --jq '.tag_name')
+          LATEST_COMMIT=$(gh api repos/zitadel/terraform-provider-zitadel/git/ref/tags/${LATEST_TAG} --jq '.object.sha' | head -c 12)
+          echo "current=$CURRENT" >> "$GITHUB_OUTPUT"
+          echo "latest_tag=$LATEST_TAG" >> "$GITHUB_OUTPUT"
+          echo "latest_commit=$LATEST_COMMIT" >> "$GITHUB_OUTPUT"
+
+          # Check if we're already on this version
+          if echo "$CURRENT" | grep -q "$LATEST_COMMIT"; then
+            echo "up_to_date=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "up_to_date=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          GH_TOKEN: ${{ steps.token.outputs.token }}
+
+      - name: Upgrade and regenerate
+        if: steps.check.outputs.up_to_date == 'false'
+        run: |
+          cd provider
+          devbox run -- go get "github.com/zitadel/terraform-provider-zitadel/v2@${{ steps.check.outputs.latest_commit }}"
+          devbox run -- go mod tidy
+          cd ..
+          devbox run -- just generate
+          cd sdk && devbox run -- go mod tidy
+
+      - name: Create PR
+        if: steps.check.outputs.up_to_date == 'false'
+        env:
+          GH_TOKEN: ${{ steps.token.outputs.token }}
+        run: |
+          if git diff --quiet; then
+            echo "No changes after regeneration"
+            exit 0
+          fi
+          TAG="${{ steps.check.outputs.latest_tag }}"
+          BRANCH="chore/upstream-${TAG}"
+          git config user.name "truvity-renovate[bot]"
+          git config user.email "truvity-renovate[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "chore(deps): bump upstream provider to ${TAG}
+
+          Upstream release: https://github.com/zitadel/terraform-provider-zitadel/releases/tag/${TAG}"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "chore(deps): bump upstream provider to ${TAG}" \
+            --body "Automated upstream provider upgrade to [${TAG}](https://github.com/zitadel/terraform-provider-zitadel/releases/tag/${TAG}).
+
+          Schema + Go SDK regenerated." \
+            --base master \
+            --label dependencies

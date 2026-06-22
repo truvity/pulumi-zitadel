@@ -4,7 +4,7 @@ go 1.25.9
 
 require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.133.0
-	github.com/zitadel/terraform-provider-zitadel/v2 v2.12.8
+	github.com/zitadel/terraform-provider-zitadel/v2 v2.12.9-0.20260622012706-8f4c2c857d15
 )
 
 require (

@@ -12,7 +12,7 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
-// Resource representing a human user situated under an organization, which then can be authorized through memberships or direct grants on other resources.
+// Human user under an organization, using the user/v2 API. **Requires ZITADEL 4.x.**
 //
 // ## Example Usage
 //
@@ -73,9 +73,11 @@ type HumanUser struct {
 	Gender pulumi.StringPtrOutput `pulumi:"gender"`
 	// A list of identity provider links to add to the user during creation. Useful for migration scenarios.
 	IdpLinks HumanUserIdpLinkArrayOutput `pulumi:"idpLinks"`
-	// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios. This value is write-only and is never stored in Terraform state.
 	InitialHashedPassword pulumi.StringPtrOutput `pulumi:"initialHashedPassword"`
-	// Initially set password for the user, not changeable after creation
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Initially set password for the user, not changeable after creation. This value is write-only and is never stored in Terraform state.
 	InitialPassword pulumi.StringPtrOutput `pulumi:"initialPassword"`
 	// Whether the user has to change the password on first login.
 	InitialSkipPasswordChange pulumi.BoolPtrOutput `pulumi:"initialSkipPasswordChange"`
@@ -101,7 +103,8 @@ type HumanUser struct {
 	PreferredLoginName pulumi.StringOutput `pulumi:"preferredLoginName"`
 	// State of the user
 	State pulumi.StringOutput `pulumi:"state"`
-	// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios. This value is write-only and is never stored in Terraform state.
 	TotpSecret pulumi.StringPtrOutput `pulumi:"totpSecret"`
 	// The ID of this resource. Optionally set a custom unique ID. If omitted, ZITADEL will generate one.
 	UserId pulumi.StringOutput `pulumi:"userId"`
@@ -176,9 +179,11 @@ type humanUserState struct {
 	Gender *string `pulumi:"gender"`
 	// A list of identity provider links to add to the user during creation. Useful for migration scenarios.
 	IdpLinks []HumanUserIdpLink `pulumi:"idpLinks"`
-	// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios. This value is write-only and is never stored in Terraform state.
 	InitialHashedPassword *string `pulumi:"initialHashedPassword"`
-	// Initially set password for the user, not changeable after creation
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Initially set password for the user, not changeable after creation. This value is write-only and is never stored in Terraform state.
 	InitialPassword *string `pulumi:"initialPassword"`
 	// Whether the user has to change the password on first login.
 	InitialSkipPasswordChange *bool `pulumi:"initialSkipPasswordChange"`
@@ -204,7 +209,8 @@ type humanUserState struct {
 	PreferredLoginName *string `pulumi:"preferredLoginName"`
 	// State of the user
 	State *string `pulumi:"state"`
-	// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios. This value is write-only and is never stored in Terraform state.
 	TotpSecret *string `pulumi:"totpSecret"`
 	// The ID of this resource. Optionally set a custom unique ID. If omitted, ZITADEL will generate one.
 	UserId *string `pulumi:"userId"`
@@ -223,9 +229,11 @@ type HumanUserState struct {
 	Gender pulumi.StringPtrInput
 	// A list of identity provider links to add to the user during creation. Useful for migration scenarios.
 	IdpLinks HumanUserIdpLinkArrayInput
-	// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios. This value is write-only and is never stored in Terraform state.
 	InitialHashedPassword pulumi.StringPtrInput
-	// Initially set password for the user, not changeable after creation
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Initially set password for the user, not changeable after creation. This value is write-only and is never stored in Terraform state.
 	InitialPassword pulumi.StringPtrInput
 	// Whether the user has to change the password on first login.
 	InitialSkipPasswordChange pulumi.BoolPtrInput
@@ -251,7 +259,8 @@ type HumanUserState struct {
 	PreferredLoginName pulumi.StringPtrInput
 	// State of the user
 	State pulumi.StringPtrInput
-	// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios. This value is write-only and is never stored in Terraform state.
 	TotpSecret pulumi.StringPtrInput
 	// The ID of this resource. Optionally set a custom unique ID. If omitted, ZITADEL will generate one.
 	UserId pulumi.StringPtrInput
@@ -274,9 +283,11 @@ type humanUserArgs struct {
 	Gender *string `pulumi:"gender"`
 	// A list of identity provider links to add to the user during creation. Useful for migration scenarios.
 	IdpLinks []HumanUserIdpLink `pulumi:"idpLinks"`
-	// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios. This value is write-only and is never stored in Terraform state.
 	InitialHashedPassword *string `pulumi:"initialHashedPassword"`
-	// Initially set password for the user, not changeable after creation
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Initially set password for the user, not changeable after creation. This value is write-only and is never stored in Terraform state.
 	InitialPassword *string `pulumi:"initialPassword"`
 	// Whether the user has to change the password on first login.
 	InitialSkipPasswordChange *bool `pulumi:"initialSkipPasswordChange"`
@@ -296,7 +307,8 @@ type humanUserArgs struct {
 	Phone *string `pulumi:"phone"`
 	// Preferred language of the user
 	PreferredLanguage *string `pulumi:"preferredLanguage"`
-	// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios. This value is write-only and is never stored in Terraform state.
 	TotpSecret *string `pulumi:"totpSecret"`
 	// The ID of this resource. Optionally set a custom unique ID. If omitted, ZITADEL will generate one.
 	UserId *string `pulumi:"userId"`
@@ -316,9 +328,11 @@ type HumanUserArgs struct {
 	Gender pulumi.StringPtrInput
 	// A list of identity provider links to add to the user during creation. Useful for migration scenarios.
 	IdpLinks HumanUserIdpLinkArrayInput
-	// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios. This value is write-only and is never stored in Terraform state.
 	InitialHashedPassword pulumi.StringPtrInput
-	// Initially set password for the user, not changeable after creation
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Initially set password for the user, not changeable after creation. This value is write-only and is never stored in Terraform state.
 	InitialPassword pulumi.StringPtrInput
 	// Whether the user has to change the password on first login.
 	InitialSkipPasswordChange pulumi.BoolPtrInput
@@ -338,7 +352,8 @@ type HumanUserArgs struct {
 	Phone pulumi.StringPtrInput
 	// Preferred language of the user
 	PreferredLanguage pulumi.StringPtrInput
-	// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios. This value is write-only and is never stored in Terraform state.
 	TotpSecret pulumi.StringPtrInput
 	// The ID of this resource. Optionally set a custom unique ID. If omitted, ZITADEL will generate one.
 	UserId pulumi.StringPtrInput
@@ -408,12 +423,14 @@ func (o HumanUserOutput) IdpLinks() HumanUserIdpLinkArrayOutput {
 	return o.ApplyT(func(v *HumanUser) HumanUserIdpLinkArrayOutput { return v.IdpLinks }).(HumanUserIdpLinkArrayOutput)
 }
 
-// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// Initial hashed password for the user, not changeable after creation. Being able to pass an initial hashed password is useful in migration scenarios. This value is write-only and is never stored in Terraform state.
 func (o HumanUserOutput) InitialHashedPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *HumanUser) pulumi.StringPtrOutput { return v.InitialHashedPassword }).(pulumi.StringPtrOutput)
 }
 
-// Initially set password for the user, not changeable after creation
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// Initially set password for the user, not changeable after creation. This value is write-only and is never stored in Terraform state.
 func (o HumanUserOutput) InitialPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *HumanUser) pulumi.StringPtrOutput { return v.InitialPassword }).(pulumi.StringPtrOutput)
 }
@@ -478,7 +495,8 @@ func (o HumanUserOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *HumanUser) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// TOTP secret for two-factor authentication. Only used during creation. Useful for migration scenarios. This value is write-only and is never stored in Terraform state.
 func (o HumanUserOutput) TotpSecret() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *HumanUser) pulumi.StringPtrOutput { return v.TotpSecret }).(pulumi.StringPtrOutput)
 }

@@ -12,6 +12,8 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
+// Instance-level default text customizations for the **legacy login UI (v1)** at `/ui/login`. These settings have **no effect on the new hosted login v2** (`/ui/v2/login`). Org-level overrides are managed by `LoginTexts`.
+//
 // ## Example Usage
 //
 // ```go

@@ -12,6 +12,8 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
+// Customizes the password reset notification email sent to users (org-scoped). Instance-level defaults are managed by `DefaultPasswordResetMessageText`.
+//
 // ## Example Usage
 //
 // ```go

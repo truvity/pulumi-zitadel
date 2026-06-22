@@ -12,7 +12,7 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
-// Add a custom attribute to the organization like its location or an identifier in another system. You can use this information in your actions. This Terraform resource manages a single key-value pair.
+// Custom key-value metadata on an organization. **Deprecated:** use `OrganizationMetadata` which uses the metadata/v2 API (requires ZITADEL 4.x).
 //
 // ## Example Usage
 //

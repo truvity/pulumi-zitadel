@@ -63,8 +63,11 @@ type SmsProviderTwilio struct {
 	SetActive pulumi.BoolPtrOutput `pulumi:"setActive"`
 	// SID used to communicate with Twilio.
 	Sid pulumi.StringOutput `pulumi:"sid"`
-	// Token used to communicate with Twilio.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Token used to communicate with Twilio. This value is write-only and is never stored in Terraform state; it cannot be read back.
 	Token pulumi.StringOutput `pulumi:"token"`
+	// A non-reversible hash of the write-only token, used to detect when it changes. It does not contain the secret itself.
+	TokenHash pulumi.StringOutput `pulumi:"tokenHash"`
 	// Twilio Verify Service SID used for phone verification.
 	VerifyServiceSid pulumi.StringPtrOutput `pulumi:"verifyServiceSid"`
 }
@@ -90,6 +93,7 @@ func NewSmsProviderTwilio(ctx *pulumi.Context,
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"token",
+		"tokenHash",
 	})
 	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
@@ -123,8 +127,11 @@ type smsProviderTwilioState struct {
 	SetActive *bool `pulumi:"setActive"`
 	// SID used to communicate with Twilio.
 	Sid *string `pulumi:"sid"`
-	// Token used to communicate with Twilio.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Token used to communicate with Twilio. This value is write-only and is never stored in Terraform state; it cannot be read back.
 	Token *string `pulumi:"token"`
+	// A non-reversible hash of the write-only token, used to detect when it changes. It does not contain the secret itself.
+	TokenHash *string `pulumi:"tokenHash"`
 	// Twilio Verify Service SID used for phone verification.
 	VerifyServiceSid *string `pulumi:"verifyServiceSid"`
 }
@@ -138,8 +145,11 @@ type SmsProviderTwilioState struct {
 	SetActive pulumi.BoolPtrInput
 	// SID used to communicate with Twilio.
 	Sid pulumi.StringPtrInput
-	// Token used to communicate with Twilio.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Token used to communicate with Twilio. This value is write-only and is never stored in Terraform state; it cannot be read back.
 	Token pulumi.StringPtrInput
+	// A non-reversible hash of the write-only token, used to detect when it changes. It does not contain the secret itself.
+	TokenHash pulumi.StringPtrInput
 	// Twilio Verify Service SID used for phone verification.
 	VerifyServiceSid pulumi.StringPtrInput
 }
@@ -157,7 +167,8 @@ type smsProviderTwilioArgs struct {
 	SetActive *bool `pulumi:"setActive"`
 	// SID used to communicate with Twilio.
 	Sid string `pulumi:"sid"`
-	// Token used to communicate with Twilio.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Token used to communicate with Twilio. This value is write-only and is never stored in Terraform state; it cannot be read back.
 	Token string `pulumi:"token"`
 	// Twilio Verify Service SID used for phone verification.
 	VerifyServiceSid *string `pulumi:"verifyServiceSid"`
@@ -173,7 +184,8 @@ type SmsProviderTwilioArgs struct {
 	SetActive pulumi.BoolPtrInput
 	// SID used to communicate with Twilio.
 	Sid pulumi.StringInput
-	// Token used to communicate with Twilio.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Token used to communicate with Twilio. This value is write-only and is never stored in Terraform state; it cannot be read back.
 	Token pulumi.StringInput
 	// Twilio Verify Service SID used for phone verification.
 	VerifyServiceSid pulumi.StringPtrInput
@@ -236,9 +248,15 @@ func (o SmsProviderTwilioOutput) Sid() pulumi.StringOutput {
 	return o.ApplyT(func(v *SmsProviderTwilio) pulumi.StringOutput { return v.Sid }).(pulumi.StringOutput)
 }
 
-// Token used to communicate with Twilio.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// Token used to communicate with Twilio. This value is write-only and is never stored in Terraform state; it cannot be read back.
 func (o SmsProviderTwilioOutput) Token() pulumi.StringOutput {
 	return o.ApplyT(func(v *SmsProviderTwilio) pulumi.StringOutput { return v.Token }).(pulumi.StringOutput)
+}
+
+// A non-reversible hash of the write-only token, used to detect when it changes. It does not contain the secret itself.
+func (o SmsProviderTwilioOutput) TokenHash() pulumi.StringOutput {
+	return o.ApplyT(func(v *SmsProviderTwilio) pulumi.StringOutput { return v.TokenHash }).(pulumi.StringOutput)
 }
 
 // Twilio Verify Service SID used for phone verification.

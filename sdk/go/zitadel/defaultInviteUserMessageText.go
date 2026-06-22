@@ -12,6 +12,8 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
+// Instance-level default template for the user invitation email. There is no org-level override for this message type.
+//
 // ## Example Usage
 //
 // ```go

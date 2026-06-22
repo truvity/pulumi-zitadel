@@ -12,6 +12,8 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
+// Instance-level default template for the OTP verification email. Org-level overrides are managed by `VerifyEmailOtpMessageText`.
+//
 // ## Example Usage
 //
 // ```go

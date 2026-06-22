@@ -12,6 +12,8 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
+// Instance-level default template for the password reset notification email. Org-level overrides are managed by `PasswordResetMessageText`.
+//
 // ## Example Usage
 //
 // ```go

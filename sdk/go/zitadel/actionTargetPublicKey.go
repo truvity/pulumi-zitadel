@@ -58,7 +58,7 @@ import (
 type ActionTargetPublicKey struct {
 	pulumi.CustomResourceState
 
-	// Whether the public key is active and used for payload encryption.
+	// Whether the public key is active and used for payload encryption. If unset, the key is created in ZITADEL's default (inactive) state and the provider does not modify its activation state. Set to true to activate the key after creation, or to toggle activation on an existing key.
 	Active pulumi.BoolOutput `pulumi:"active"`
 	// The date the public key was added.
 	CreationDate pulumi.StringOutput `pulumi:"creationDate"`
@@ -110,7 +110,7 @@ func GetActionTargetPublicKey(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ActionTargetPublicKey resources.
 type actionTargetPublicKeyState struct {
-	// Whether the public key is active and used for payload encryption.
+	// Whether the public key is active and used for payload encryption. If unset, the key is created in ZITADEL's default (inactive) state and the provider does not modify its activation state. Set to true to activate the key after creation, or to toggle activation on an existing key.
 	Active *bool `pulumi:"active"`
 	// The date the public key was added.
 	CreationDate *string `pulumi:"creationDate"`
@@ -127,7 +127,7 @@ type actionTargetPublicKeyState struct {
 }
 
 type ActionTargetPublicKeyState struct {
-	// Whether the public key is active and used for payload encryption.
+	// Whether the public key is active and used for payload encryption. If unset, the key is created in ZITADEL's default (inactive) state and the provider does not modify its activation state. Set to true to activate the key after creation, or to toggle activation on an existing key.
 	Active pulumi.BoolPtrInput
 	// The date the public key was added.
 	CreationDate pulumi.StringPtrInput
@@ -148,6 +148,8 @@ func (ActionTargetPublicKeyState) ElementType() reflect.Type {
 }
 
 type actionTargetPublicKeyArgs struct {
+	// Whether the public key is active and used for payload encryption. If unset, the key is created in ZITADEL's default (inactive) state and the provider does not modify its activation state. Set to true to activate the key after creation, or to toggle activation on an existing key.
+	Active *bool `pulumi:"active"`
 	// The expiration date of the public key in RFC3339 format.
 	ExpirationDate *string `pulumi:"expirationDate"`
 	// The public key in PEM format (RSA or EC).
@@ -158,6 +160,8 @@ type actionTargetPublicKeyArgs struct {
 
 // The set of arguments for constructing a ActionTargetPublicKey resource.
 type ActionTargetPublicKeyArgs struct {
+	// Whether the public key is active and used for payload encryption. If unset, the key is created in ZITADEL's default (inactive) state and the provider does not modify its activation state. Set to true to activate the key after creation, or to toggle activation on an existing key.
+	Active pulumi.BoolPtrInput
 	// The expiration date of the public key in RFC3339 format.
 	ExpirationDate pulumi.StringPtrInput
 	// The public key in PEM format (RSA or EC).
@@ -203,7 +207,7 @@ func (o ActionTargetPublicKeyOutput) ToActionTargetPublicKeyOutputWithContext(ct
 	return o
 }
 
-// Whether the public key is active and used for payload encryption.
+// Whether the public key is active and used for payload encryption. If unset, the key is created in ZITADEL's default (inactive) state and the provider does not modify its activation state. Set to true to activate the key after creation, or to toggle activation on an existing key.
 func (o ActionTargetPublicKeyOutput) Active() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ActionTargetPublicKey) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
 }

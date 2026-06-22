@@ -12,6 +12,8 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
+// Customizes the account initialization email sent to newly created users (org-scoped). Instance-level defaults are managed by `DefaultInitMessageText`.
+//
 // ## Example Usage
 //
 // ```go

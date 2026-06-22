@@ -79,8 +79,6 @@ type LookupOrgIdpAppleResult struct {
 	Name string `pulumi:"name"`
 	// ID of the organization
 	OrgId *string `pulumi:"orgId"`
-	// Apple Private Key from your Apple Developer Account
-	PrivateKey string `pulumi:"privateKey"`
 	// the scopes requested by ZITADEL during the request on the identity provider
 	Scopes []string `pulumi:"scopes"`
 	// Apple Team ID from your Apple Developer Account
@@ -171,11 +169,6 @@ func (o LookupOrgIdpAppleResultOutput) Name() pulumi.StringOutput {
 // ID of the organization
 func (o LookupOrgIdpAppleResultOutput) OrgId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupOrgIdpAppleResult) *string { return v.OrgId }).(pulumi.StringPtrOutput)
-}
-
-// Apple Private Key from your Apple Developer Account
-func (o LookupOrgIdpAppleResultOutput) PrivateKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupOrgIdpAppleResult) string { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
 // the scopes requested by ZITADEL during the request on the identity provider

@@ -12,7 +12,7 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
-// Resource representing the SMTP email provider configuration of an instance.
+// SMTP email provider configuration for an instance. This is the current API for configuring SMTP (replaces the deprecated `SmtpConfig`).
 //
 // ## Example Usage
 //
@@ -62,8 +62,11 @@ type EmailProviderSmtp struct {
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// Host and port address to your SMTP server.
 	Host pulumi.StringOutput `pulumi:"host"`
-	// Password used to communicate with your SMTP server.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Password used to communicate with your SMTP server. This value is write-only and is never stored in Terraform state; it cannot be read back.
 	Password pulumi.StringPtrOutput `pulumi:"password"`
+	// A non-reversible hash of the write-only password, used to detect when it changes. It does not contain the secret itself.
+	PasswordHash pulumi.StringOutput `pulumi:"passwordHash"`
 	// Address to reply to.
 	ReplyToAddress pulumi.StringPtrOutput `pulumi:"replyToAddress"`
 	// Address used to send emails.
@@ -99,6 +102,7 @@ func NewEmailProviderSmtp(ctx *pulumi.Context,
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"password",
+		"passwordHash",
 	})
 	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
@@ -128,8 +132,11 @@ type emailProviderSmtpState struct {
 	Description *string `pulumi:"description"`
 	// Host and port address to your SMTP server.
 	Host *string `pulumi:"host"`
-	// Password used to communicate with your SMTP server.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Password used to communicate with your SMTP server. This value is write-only and is never stored in Terraform state; it cannot be read back.
 	Password *string `pulumi:"password"`
+	// A non-reversible hash of the write-only password, used to detect when it changes. It does not contain the secret itself.
+	PasswordHash *string `pulumi:"passwordHash"`
 	// Address to reply to.
 	ReplyToAddress *string `pulumi:"replyToAddress"`
 	// Address used to send emails.
@@ -149,8 +156,11 @@ type EmailProviderSmtpState struct {
 	Description pulumi.StringPtrInput
 	// Host and port address to your SMTP server.
 	Host pulumi.StringPtrInput
-	// Password used to communicate with your SMTP server.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Password used to communicate with your SMTP server. This value is write-only and is never stored in Terraform state; it cannot be read back.
 	Password pulumi.StringPtrInput
+	// A non-reversible hash of the write-only password, used to detect when it changes. It does not contain the secret itself.
+	PasswordHash pulumi.StringPtrInput
 	// Address to reply to.
 	ReplyToAddress pulumi.StringPtrInput
 	// Address used to send emails.
@@ -174,7 +184,8 @@ type emailProviderSmtpArgs struct {
 	Description *string `pulumi:"description"`
 	// Host and port address to your SMTP server.
 	Host string `pulumi:"host"`
-	// Password used to communicate with your SMTP server.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Password used to communicate with your SMTP server. This value is write-only and is never stored in Terraform state; it cannot be read back.
 	Password *string `pulumi:"password"`
 	// Address to reply to.
 	ReplyToAddress *string `pulumi:"replyToAddress"`
@@ -196,7 +207,8 @@ type EmailProviderSmtpArgs struct {
 	Description pulumi.StringPtrInput
 	// Host and port address to your SMTP server.
 	Host pulumi.StringInput
-	// Password used to communicate with your SMTP server.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// Password used to communicate with your SMTP server. This value is write-only and is never stored in Terraform state; it cannot be read back.
 	Password pulumi.StringPtrInput
 	// Address to reply to.
 	ReplyToAddress pulumi.StringPtrInput
@@ -259,9 +271,15 @@ func (o EmailProviderSmtpOutput) Host() pulumi.StringOutput {
 	return o.ApplyT(func(v *EmailProviderSmtp) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
 }
 
-// Password used to communicate with your SMTP server.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// Password used to communicate with your SMTP server. This value is write-only and is never stored in Terraform state; it cannot be read back.
 func (o EmailProviderSmtpOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *EmailProviderSmtp) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// A non-reversible hash of the write-only password, used to detect when it changes. It does not contain the secret itself.
+func (o EmailProviderSmtpOutput) PasswordHash() pulumi.StringOutput {
+	return o.ApplyT(func(v *EmailProviderSmtp) pulumi.StringOutput { return v.PasswordHash }).(pulumi.StringOutput)
 }
 
 // Address to reply to.

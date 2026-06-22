@@ -705,6 +705,1549 @@ func (o ApplicationSamlLoginVersionLoginV2PtrOutput) BaseUri() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
+type ApplicationV2Api struct {
+	// API auth method type, supported values: API*AUTH*METHOD*TYPE*BASIC, API*AUTH*METHOD*TYPE*PRIVATE*KEY*JWT
+	AuthMethodType *string `pulumi:"authMethodType"`
+	// Generated client ID.
+	ClientId *string `pulumi:"clientId"`
+	// Generated client secret (only returned on create).
+	ClientSecret *string `pulumi:"clientSecret"`
+}
+
+// ApplicationV2ApiInput is an input type that accepts ApplicationV2ApiArgs and ApplicationV2ApiOutput values.
+// You can construct a concrete instance of `ApplicationV2ApiInput` via:
+//
+//	ApplicationV2ApiArgs{...}
+type ApplicationV2ApiInput interface {
+	pulumi.Input
+
+	ToApplicationV2ApiOutput() ApplicationV2ApiOutput
+	ToApplicationV2ApiOutputWithContext(context.Context) ApplicationV2ApiOutput
+}
+
+type ApplicationV2ApiArgs struct {
+	// API auth method type, supported values: API*AUTH*METHOD*TYPE*BASIC, API*AUTH*METHOD*TYPE*PRIVATE*KEY*JWT
+	AuthMethodType pulumi.StringPtrInput `pulumi:"authMethodType"`
+	// Generated client ID.
+	ClientId pulumi.StringPtrInput `pulumi:"clientId"`
+	// Generated client secret (only returned on create).
+	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
+}
+
+func (ApplicationV2ApiArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2Api)(nil)).Elem()
+}
+
+func (i ApplicationV2ApiArgs) ToApplicationV2ApiOutput() ApplicationV2ApiOutput {
+	return i.ToApplicationV2ApiOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2ApiArgs) ToApplicationV2ApiOutputWithContext(ctx context.Context) ApplicationV2ApiOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2ApiOutput)
+}
+
+func (i ApplicationV2ApiArgs) ToApplicationV2ApiPtrOutput() ApplicationV2ApiPtrOutput {
+	return i.ToApplicationV2ApiPtrOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2ApiArgs) ToApplicationV2ApiPtrOutputWithContext(ctx context.Context) ApplicationV2ApiPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2ApiOutput).ToApplicationV2ApiPtrOutputWithContext(ctx)
+}
+
+// ApplicationV2ApiPtrInput is an input type that accepts ApplicationV2ApiArgs, ApplicationV2ApiPtr and ApplicationV2ApiPtrOutput values.
+// You can construct a concrete instance of `ApplicationV2ApiPtrInput` via:
+//
+//	        ApplicationV2ApiArgs{...}
+//
+//	or:
+//
+//	        nil
+type ApplicationV2ApiPtrInput interface {
+	pulumi.Input
+
+	ToApplicationV2ApiPtrOutput() ApplicationV2ApiPtrOutput
+	ToApplicationV2ApiPtrOutputWithContext(context.Context) ApplicationV2ApiPtrOutput
+}
+
+type applicationV2ApiPtrType ApplicationV2ApiArgs
+
+func ApplicationV2ApiPtr(v *ApplicationV2ApiArgs) ApplicationV2ApiPtrInput {
+	return (*applicationV2ApiPtrType)(v)
+}
+
+func (*applicationV2ApiPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2Api)(nil)).Elem()
+}
+
+func (i *applicationV2ApiPtrType) ToApplicationV2ApiPtrOutput() ApplicationV2ApiPtrOutput {
+	return i.ToApplicationV2ApiPtrOutputWithContext(context.Background())
+}
+
+func (i *applicationV2ApiPtrType) ToApplicationV2ApiPtrOutputWithContext(ctx context.Context) ApplicationV2ApiPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2ApiPtrOutput)
+}
+
+type ApplicationV2ApiOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2ApiOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2Api)(nil)).Elem()
+}
+
+func (o ApplicationV2ApiOutput) ToApplicationV2ApiOutput() ApplicationV2ApiOutput {
+	return o
+}
+
+func (o ApplicationV2ApiOutput) ToApplicationV2ApiOutputWithContext(ctx context.Context) ApplicationV2ApiOutput {
+	return o
+}
+
+func (o ApplicationV2ApiOutput) ToApplicationV2ApiPtrOutput() ApplicationV2ApiPtrOutput {
+	return o.ToApplicationV2ApiPtrOutputWithContext(context.Background())
+}
+
+func (o ApplicationV2ApiOutput) ToApplicationV2ApiPtrOutputWithContext(ctx context.Context) ApplicationV2ApiPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ApplicationV2Api) *ApplicationV2Api {
+		return &v
+	}).(ApplicationV2ApiPtrOutput)
+}
+
+// API auth method type, supported values: API*AUTH*METHOD*TYPE*BASIC, API*AUTH*METHOD*TYPE*PRIVATE*KEY*JWT
+func (o ApplicationV2ApiOutput) AuthMethodType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Api) *string { return v.AuthMethodType }).(pulumi.StringPtrOutput)
+}
+
+// Generated client ID.
+func (o ApplicationV2ApiOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Api) *string { return v.ClientId }).(pulumi.StringPtrOutput)
+}
+
+// Generated client secret (only returned on create).
+func (o ApplicationV2ApiOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Api) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
+}
+
+type ApplicationV2ApiPtrOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2ApiPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2Api)(nil)).Elem()
+}
+
+func (o ApplicationV2ApiPtrOutput) ToApplicationV2ApiPtrOutput() ApplicationV2ApiPtrOutput {
+	return o
+}
+
+func (o ApplicationV2ApiPtrOutput) ToApplicationV2ApiPtrOutputWithContext(ctx context.Context) ApplicationV2ApiPtrOutput {
+	return o
+}
+
+func (o ApplicationV2ApiPtrOutput) Elem() ApplicationV2ApiOutput {
+	return o.ApplyT(func(v *ApplicationV2Api) ApplicationV2Api {
+		if v != nil {
+			return *v
+		}
+		var ret ApplicationV2Api
+		return ret
+	}).(ApplicationV2ApiOutput)
+}
+
+// API auth method type, supported values: API*AUTH*METHOD*TYPE*BASIC, API*AUTH*METHOD*TYPE*PRIVATE*KEY*JWT
+func (o ApplicationV2ApiPtrOutput) AuthMethodType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Api) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AuthMethodType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Generated client ID.
+func (o ApplicationV2ApiPtrOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Api) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Generated client secret (only returned on create).
+func (o ApplicationV2ApiPtrOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Api) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientSecret
+	}).(pulumi.StringPtrOutput)
+}
+
+type ApplicationV2Oidc struct {
+	AccessTokenRoleAssertion *bool `pulumi:"accessTokenRoleAssertion"`
+	// Access token type, supported values: OIDC*TOKEN*TYPE*BEARER, OIDC*TOKEN*TYPE*JWT
+	AccessTokenType *string `pulumi:"accessTokenType"`
+	// Additional allowed origins.
+	AdditionalOrigins []string `pulumi:"additionalOrigins"`
+	// Application type, supported values: OIDC*APP*TYPE*WEB, OIDC*APP*TYPE*USER*AGENT, OIDC*APP*TYPE*NATIVE
+	AppType *string `pulumi:"appType"`
+	// Auth method type, supported values: OIDC*AUTH*METHOD*TYPE*BASIC, OIDC*AUTH*METHOD*TYPE*POST, OIDC*AUTH*METHOD*TYPE*NONE, OIDC*AUTH*METHOD*TYPE*PRIVATE*KEY*JWT
+	AuthMethodType *string `pulumi:"authMethodType"`
+	// Back-channel logout URI used by ZITADEL to notify the application of terminated sessions (OIDC Back-Channel Logout). Computed if not set, so the server-side default flows back into state.
+	BackChannelLogoutUri *string `pulumi:"backChannelLogoutUri"`
+	// Generated client ID.
+	ClientId *string `pulumi:"clientId"`
+	// Generated client secret (only set on create when the auth method requires one).
+	ClientSecret *string `pulumi:"clientSecret"`
+	// Allowed clock skew (Go duration string, e.g. `5s`).
+	ClockSkew *string `pulumi:"clockSkew"`
+	// List of OIDC specification compliance problems detected by ZITADEL for this configuration. Empty when the configuration is compliant.
+	ComplianceProblems []ApplicationV2OidcComplianceProblem `pulumi:"complianceProblems"`
+	// Development mode (relaxes redirect-URI validation).
+	DevMode *bool `pulumi:"devMode"`
+	// Grant types, supported values: OIDC*GRANT*TYPE*AUTHORIZATION*CODE, OIDC*GRANT*TYPE*IMPLICIT, OIDC*GRANT*TYPE*REFRESH*TOKEN, OIDC*GRANT*TYPE*DEVICE*CODE, OIDC*GRANT*TYPE*TOKEN_EXCHANGE
+	GrantTypes               []string `pulumi:"grantTypes"`
+	IdTokenRoleAssertion     *bool    `pulumi:"idTokenRoleAssertion"`
+	IdTokenUserinfoAssertion *bool    `pulumi:"idTokenUserinfoAssertion"`
+	// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+	LoginVersion *ApplicationV2OidcLoginVersion `pulumi:"loginVersion"`
+	// Whether the OIDC configuration violates the OIDC specification, as determined by ZITADEL. See `complianceProblems` for the individual findings.
+	NoneCompliant *bool `pulumi:"noneCompliant"`
+	// Post-logout redirect URIs.
+	PostLogoutRedirectUris []string `pulumi:"postLogoutRedirectUris"`
+	// Allowed redirect URIs. Required: OIDC clients cannot function without at least one redirect URI, and the Zitadel API rejects creation otherwise. Matches the v1 `ApplicationOidc` requirement.
+	RedirectUris []string `pulumi:"redirectUris"`
+	// Response types, supported values: OIDC*RESPONSE*TYPE*UNSPECIFIED, OIDC*RESPONSE*TYPE*CODE, OIDC*RESPONSE*TYPE*ID*TOKEN, OIDC*RESPONSE*TYPE*ID*TOKEN_TOKEN
+	ResponseTypes            []string `pulumi:"responseTypes"`
+	SkipNativeAppSuccessPage *bool    `pulumi:"skipNativeAppSuccessPage"`
+	// OIDC version, supported values: OIDC*VERSION*1_0
+	Version *string `pulumi:"version"`
+}
+
+// ApplicationV2OidcInput is an input type that accepts ApplicationV2OidcArgs and ApplicationV2OidcOutput values.
+// You can construct a concrete instance of `ApplicationV2OidcInput` via:
+//
+//	ApplicationV2OidcArgs{...}
+type ApplicationV2OidcInput interface {
+	pulumi.Input
+
+	ToApplicationV2OidcOutput() ApplicationV2OidcOutput
+	ToApplicationV2OidcOutputWithContext(context.Context) ApplicationV2OidcOutput
+}
+
+type ApplicationV2OidcArgs struct {
+	AccessTokenRoleAssertion pulumi.BoolPtrInput `pulumi:"accessTokenRoleAssertion"`
+	// Access token type, supported values: OIDC*TOKEN*TYPE*BEARER, OIDC*TOKEN*TYPE*JWT
+	AccessTokenType pulumi.StringPtrInput `pulumi:"accessTokenType"`
+	// Additional allowed origins.
+	AdditionalOrigins pulumi.StringArrayInput `pulumi:"additionalOrigins"`
+	// Application type, supported values: OIDC*APP*TYPE*WEB, OIDC*APP*TYPE*USER*AGENT, OIDC*APP*TYPE*NATIVE
+	AppType pulumi.StringPtrInput `pulumi:"appType"`
+	// Auth method type, supported values: OIDC*AUTH*METHOD*TYPE*BASIC, OIDC*AUTH*METHOD*TYPE*POST, OIDC*AUTH*METHOD*TYPE*NONE, OIDC*AUTH*METHOD*TYPE*PRIVATE*KEY*JWT
+	AuthMethodType pulumi.StringPtrInput `pulumi:"authMethodType"`
+	// Back-channel logout URI used by ZITADEL to notify the application of terminated sessions (OIDC Back-Channel Logout). Computed if not set, so the server-side default flows back into state.
+	BackChannelLogoutUri pulumi.StringPtrInput `pulumi:"backChannelLogoutUri"`
+	// Generated client ID.
+	ClientId pulumi.StringPtrInput `pulumi:"clientId"`
+	// Generated client secret (only set on create when the auth method requires one).
+	ClientSecret pulumi.StringPtrInput `pulumi:"clientSecret"`
+	// Allowed clock skew (Go duration string, e.g. `5s`).
+	ClockSkew pulumi.StringPtrInput `pulumi:"clockSkew"`
+	// List of OIDC specification compliance problems detected by ZITADEL for this configuration. Empty when the configuration is compliant.
+	ComplianceProblems ApplicationV2OidcComplianceProblemArrayInput `pulumi:"complianceProblems"`
+	// Development mode (relaxes redirect-URI validation).
+	DevMode pulumi.BoolPtrInput `pulumi:"devMode"`
+	// Grant types, supported values: OIDC*GRANT*TYPE*AUTHORIZATION*CODE, OIDC*GRANT*TYPE*IMPLICIT, OIDC*GRANT*TYPE*REFRESH*TOKEN, OIDC*GRANT*TYPE*DEVICE*CODE, OIDC*GRANT*TYPE*TOKEN_EXCHANGE
+	GrantTypes               pulumi.StringArrayInput `pulumi:"grantTypes"`
+	IdTokenRoleAssertion     pulumi.BoolPtrInput     `pulumi:"idTokenRoleAssertion"`
+	IdTokenUserinfoAssertion pulumi.BoolPtrInput     `pulumi:"idTokenUserinfoAssertion"`
+	// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+	LoginVersion ApplicationV2OidcLoginVersionPtrInput `pulumi:"loginVersion"`
+	// Whether the OIDC configuration violates the OIDC specification, as determined by ZITADEL. See `complianceProblems` for the individual findings.
+	NoneCompliant pulumi.BoolPtrInput `pulumi:"noneCompliant"`
+	// Post-logout redirect URIs.
+	PostLogoutRedirectUris pulumi.StringArrayInput `pulumi:"postLogoutRedirectUris"`
+	// Allowed redirect URIs. Required: OIDC clients cannot function without at least one redirect URI, and the Zitadel API rejects creation otherwise. Matches the v1 `ApplicationOidc` requirement.
+	RedirectUris pulumi.StringArrayInput `pulumi:"redirectUris"`
+	// Response types, supported values: OIDC*RESPONSE*TYPE*UNSPECIFIED, OIDC*RESPONSE*TYPE*CODE, OIDC*RESPONSE*TYPE*ID*TOKEN, OIDC*RESPONSE*TYPE*ID*TOKEN_TOKEN
+	ResponseTypes            pulumi.StringArrayInput `pulumi:"responseTypes"`
+	SkipNativeAppSuccessPage pulumi.BoolPtrInput     `pulumi:"skipNativeAppSuccessPage"`
+	// OIDC version, supported values: OIDC*VERSION*1_0
+	Version pulumi.StringPtrInput `pulumi:"version"`
+}
+
+func (ApplicationV2OidcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2Oidc)(nil)).Elem()
+}
+
+func (i ApplicationV2OidcArgs) ToApplicationV2OidcOutput() ApplicationV2OidcOutput {
+	return i.ToApplicationV2OidcOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2OidcArgs) ToApplicationV2OidcOutputWithContext(ctx context.Context) ApplicationV2OidcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2OidcOutput)
+}
+
+func (i ApplicationV2OidcArgs) ToApplicationV2OidcPtrOutput() ApplicationV2OidcPtrOutput {
+	return i.ToApplicationV2OidcPtrOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2OidcArgs) ToApplicationV2OidcPtrOutputWithContext(ctx context.Context) ApplicationV2OidcPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2OidcOutput).ToApplicationV2OidcPtrOutputWithContext(ctx)
+}
+
+// ApplicationV2OidcPtrInput is an input type that accepts ApplicationV2OidcArgs, ApplicationV2OidcPtr and ApplicationV2OidcPtrOutput values.
+// You can construct a concrete instance of `ApplicationV2OidcPtrInput` via:
+//
+//	        ApplicationV2OidcArgs{...}
+//
+//	or:
+//
+//	        nil
+type ApplicationV2OidcPtrInput interface {
+	pulumi.Input
+
+	ToApplicationV2OidcPtrOutput() ApplicationV2OidcPtrOutput
+	ToApplicationV2OidcPtrOutputWithContext(context.Context) ApplicationV2OidcPtrOutput
+}
+
+type applicationV2OidcPtrType ApplicationV2OidcArgs
+
+func ApplicationV2OidcPtr(v *ApplicationV2OidcArgs) ApplicationV2OidcPtrInput {
+	return (*applicationV2OidcPtrType)(v)
+}
+
+func (*applicationV2OidcPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2Oidc)(nil)).Elem()
+}
+
+func (i *applicationV2OidcPtrType) ToApplicationV2OidcPtrOutput() ApplicationV2OidcPtrOutput {
+	return i.ToApplicationV2OidcPtrOutputWithContext(context.Background())
+}
+
+func (i *applicationV2OidcPtrType) ToApplicationV2OidcPtrOutputWithContext(ctx context.Context) ApplicationV2OidcPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2OidcPtrOutput)
+}
+
+type ApplicationV2OidcOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2OidcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2Oidc)(nil)).Elem()
+}
+
+func (o ApplicationV2OidcOutput) ToApplicationV2OidcOutput() ApplicationV2OidcOutput {
+	return o
+}
+
+func (o ApplicationV2OidcOutput) ToApplicationV2OidcOutputWithContext(ctx context.Context) ApplicationV2OidcOutput {
+	return o
+}
+
+func (o ApplicationV2OidcOutput) ToApplicationV2OidcPtrOutput() ApplicationV2OidcPtrOutput {
+	return o.ToApplicationV2OidcPtrOutputWithContext(context.Background())
+}
+
+func (o ApplicationV2OidcOutput) ToApplicationV2OidcPtrOutputWithContext(ctx context.Context) ApplicationV2OidcPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ApplicationV2Oidc) *ApplicationV2Oidc {
+		return &v
+	}).(ApplicationV2OidcPtrOutput)
+}
+
+func (o ApplicationV2OidcOutput) AccessTokenRoleAssertion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *bool { return v.AccessTokenRoleAssertion }).(pulumi.BoolPtrOutput)
+}
+
+// Access token type, supported values: OIDC*TOKEN*TYPE*BEARER, OIDC*TOKEN*TYPE*JWT
+func (o ApplicationV2OidcOutput) AccessTokenType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *string { return v.AccessTokenType }).(pulumi.StringPtrOutput)
+}
+
+// Additional allowed origins.
+func (o ApplicationV2OidcOutput) AdditionalOrigins() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) []string { return v.AdditionalOrigins }).(pulumi.StringArrayOutput)
+}
+
+// Application type, supported values: OIDC*APP*TYPE*WEB, OIDC*APP*TYPE*USER*AGENT, OIDC*APP*TYPE*NATIVE
+func (o ApplicationV2OidcOutput) AppType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *string { return v.AppType }).(pulumi.StringPtrOutput)
+}
+
+// Auth method type, supported values: OIDC*AUTH*METHOD*TYPE*BASIC, OIDC*AUTH*METHOD*TYPE*POST, OIDC*AUTH*METHOD*TYPE*NONE, OIDC*AUTH*METHOD*TYPE*PRIVATE*KEY*JWT
+func (o ApplicationV2OidcOutput) AuthMethodType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *string { return v.AuthMethodType }).(pulumi.StringPtrOutput)
+}
+
+// Back-channel logout URI used by ZITADEL to notify the application of terminated sessions (OIDC Back-Channel Logout). Computed if not set, so the server-side default flows back into state.
+func (o ApplicationV2OidcOutput) BackChannelLogoutUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *string { return v.BackChannelLogoutUri }).(pulumi.StringPtrOutput)
+}
+
+// Generated client ID.
+func (o ApplicationV2OidcOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *string { return v.ClientId }).(pulumi.StringPtrOutput)
+}
+
+// Generated client secret (only set on create when the auth method requires one).
+func (o ApplicationV2OidcOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *string { return v.ClientSecret }).(pulumi.StringPtrOutput)
+}
+
+// Allowed clock skew (Go duration string, e.g. `5s`).
+func (o ApplicationV2OidcOutput) ClockSkew() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *string { return v.ClockSkew }).(pulumi.StringPtrOutput)
+}
+
+// List of OIDC specification compliance problems detected by ZITADEL for this configuration. Empty when the configuration is compliant.
+func (o ApplicationV2OidcOutput) ComplianceProblems() ApplicationV2OidcComplianceProblemArrayOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) []ApplicationV2OidcComplianceProblem { return v.ComplianceProblems }).(ApplicationV2OidcComplianceProblemArrayOutput)
+}
+
+// Development mode (relaxes redirect-URI validation).
+func (o ApplicationV2OidcOutput) DevMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *bool { return v.DevMode }).(pulumi.BoolPtrOutput)
+}
+
+// Grant types, supported values: OIDC*GRANT*TYPE*AUTHORIZATION*CODE, OIDC*GRANT*TYPE*IMPLICIT, OIDC*GRANT*TYPE*REFRESH*TOKEN, OIDC*GRANT*TYPE*DEVICE*CODE, OIDC*GRANT*TYPE*TOKEN_EXCHANGE
+func (o ApplicationV2OidcOutput) GrantTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) []string { return v.GrantTypes }).(pulumi.StringArrayOutput)
+}
+
+func (o ApplicationV2OidcOutput) IdTokenRoleAssertion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *bool { return v.IdTokenRoleAssertion }).(pulumi.BoolPtrOutput)
+}
+
+func (o ApplicationV2OidcOutput) IdTokenUserinfoAssertion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *bool { return v.IdTokenUserinfoAssertion }).(pulumi.BoolPtrOutput)
+}
+
+// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+func (o ApplicationV2OidcOutput) LoginVersion() ApplicationV2OidcLoginVersionPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *ApplicationV2OidcLoginVersion { return v.LoginVersion }).(ApplicationV2OidcLoginVersionPtrOutput)
+}
+
+// Whether the OIDC configuration violates the OIDC specification, as determined by ZITADEL. See `complianceProblems` for the individual findings.
+func (o ApplicationV2OidcOutput) NoneCompliant() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *bool { return v.NoneCompliant }).(pulumi.BoolPtrOutput)
+}
+
+// Post-logout redirect URIs.
+func (o ApplicationV2OidcOutput) PostLogoutRedirectUris() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) []string { return v.PostLogoutRedirectUris }).(pulumi.StringArrayOutput)
+}
+
+// Allowed redirect URIs. Required: OIDC clients cannot function without at least one redirect URI, and the Zitadel API rejects creation otherwise. Matches the v1 `ApplicationOidc` requirement.
+func (o ApplicationV2OidcOutput) RedirectUris() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) []string { return v.RedirectUris }).(pulumi.StringArrayOutput)
+}
+
+// Response types, supported values: OIDC*RESPONSE*TYPE*UNSPECIFIED, OIDC*RESPONSE*TYPE*CODE, OIDC*RESPONSE*TYPE*ID*TOKEN, OIDC*RESPONSE*TYPE*ID*TOKEN_TOKEN
+func (o ApplicationV2OidcOutput) ResponseTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) []string { return v.ResponseTypes }).(pulumi.StringArrayOutput)
+}
+
+func (o ApplicationV2OidcOutput) SkipNativeAppSuccessPage() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *bool { return v.SkipNativeAppSuccessPage }).(pulumi.BoolPtrOutput)
+}
+
+// OIDC version, supported values: OIDC*VERSION*1_0
+func (o ApplicationV2OidcOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Oidc) *string { return v.Version }).(pulumi.StringPtrOutput)
+}
+
+type ApplicationV2OidcPtrOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2OidcPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2Oidc)(nil)).Elem()
+}
+
+func (o ApplicationV2OidcPtrOutput) ToApplicationV2OidcPtrOutput() ApplicationV2OidcPtrOutput {
+	return o
+}
+
+func (o ApplicationV2OidcPtrOutput) ToApplicationV2OidcPtrOutputWithContext(ctx context.Context) ApplicationV2OidcPtrOutput {
+	return o
+}
+
+func (o ApplicationV2OidcPtrOutput) Elem() ApplicationV2OidcOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) ApplicationV2Oidc {
+		if v != nil {
+			return *v
+		}
+		var ret ApplicationV2Oidc
+		return ret
+	}).(ApplicationV2OidcOutput)
+}
+
+func (o ApplicationV2OidcPtrOutput) AccessTokenRoleAssertion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AccessTokenRoleAssertion
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Access token type, supported values: OIDC*TOKEN*TYPE*BEARER, OIDC*TOKEN*TYPE*JWT
+func (o ApplicationV2OidcPtrOutput) AccessTokenType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccessTokenType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Additional allowed origins.
+func (o ApplicationV2OidcPtrOutput) AdditionalOrigins() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AdditionalOrigins
+	}).(pulumi.StringArrayOutput)
+}
+
+// Application type, supported values: OIDC*APP*TYPE*WEB, OIDC*APP*TYPE*USER*AGENT, OIDC*APP*TYPE*NATIVE
+func (o ApplicationV2OidcPtrOutput) AppType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AppType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Auth method type, supported values: OIDC*AUTH*METHOD*TYPE*BASIC, OIDC*AUTH*METHOD*TYPE*POST, OIDC*AUTH*METHOD*TYPE*NONE, OIDC*AUTH*METHOD*TYPE*PRIVATE*KEY*JWT
+func (o ApplicationV2OidcPtrOutput) AuthMethodType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AuthMethodType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Back-channel logout URI used by ZITADEL to notify the application of terminated sessions (OIDC Back-Channel Logout). Computed if not set, so the server-side default flows back into state.
+func (o ApplicationV2OidcPtrOutput) BackChannelLogoutUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BackChannelLogoutUri
+	}).(pulumi.StringPtrOutput)
+}
+
+// Generated client ID.
+func (o ApplicationV2OidcPtrOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Generated client secret (only set on create when the auth method requires one).
+func (o ApplicationV2OidcPtrOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientSecret
+	}).(pulumi.StringPtrOutput)
+}
+
+// Allowed clock skew (Go duration string, e.g. `5s`).
+func (o ApplicationV2OidcPtrOutput) ClockSkew() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClockSkew
+	}).(pulumi.StringPtrOutput)
+}
+
+// List of OIDC specification compliance problems detected by ZITADEL for this configuration. Empty when the configuration is compliant.
+func (o ApplicationV2OidcPtrOutput) ComplianceProblems() ApplicationV2OidcComplianceProblemArrayOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) []ApplicationV2OidcComplianceProblem {
+		if v == nil {
+			return nil
+		}
+		return v.ComplianceProblems
+	}).(ApplicationV2OidcComplianceProblemArrayOutput)
+}
+
+// Development mode (relaxes redirect-URI validation).
+func (o ApplicationV2OidcPtrOutput) DevMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.DevMode
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Grant types, supported values: OIDC*GRANT*TYPE*AUTHORIZATION*CODE, OIDC*GRANT*TYPE*IMPLICIT, OIDC*GRANT*TYPE*REFRESH*TOKEN, OIDC*GRANT*TYPE*DEVICE*CODE, OIDC*GRANT*TYPE*TOKEN_EXCHANGE
+func (o ApplicationV2OidcPtrOutput) GrantTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) []string {
+		if v == nil {
+			return nil
+		}
+		return v.GrantTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o ApplicationV2OidcPtrOutput) IdTokenRoleAssertion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IdTokenRoleAssertion
+	}).(pulumi.BoolPtrOutput)
+}
+
+func (o ApplicationV2OidcPtrOutput) IdTokenUserinfoAssertion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IdTokenUserinfoAssertion
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+func (o ApplicationV2OidcPtrOutput) LoginVersion() ApplicationV2OidcLoginVersionPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *ApplicationV2OidcLoginVersion {
+		if v == nil {
+			return nil
+		}
+		return v.LoginVersion
+	}).(ApplicationV2OidcLoginVersionPtrOutput)
+}
+
+// Whether the OIDC configuration violates the OIDC specification, as determined by ZITADEL. See `complianceProblems` for the individual findings.
+func (o ApplicationV2OidcPtrOutput) NoneCompliant() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.NoneCompliant
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Post-logout redirect URIs.
+func (o ApplicationV2OidcPtrOutput) PostLogoutRedirectUris() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) []string {
+		if v == nil {
+			return nil
+		}
+		return v.PostLogoutRedirectUris
+	}).(pulumi.StringArrayOutput)
+}
+
+// Allowed redirect URIs. Required: OIDC clients cannot function without at least one redirect URI, and the Zitadel API rejects creation otherwise. Matches the v1 `ApplicationOidc` requirement.
+func (o ApplicationV2OidcPtrOutput) RedirectUris() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) []string {
+		if v == nil {
+			return nil
+		}
+		return v.RedirectUris
+	}).(pulumi.StringArrayOutput)
+}
+
+// Response types, supported values: OIDC*RESPONSE*TYPE*UNSPECIFIED, OIDC*RESPONSE*TYPE*CODE, OIDC*RESPONSE*TYPE*ID*TOKEN, OIDC*RESPONSE*TYPE*ID*TOKEN_TOKEN
+func (o ApplicationV2OidcPtrOutput) ResponseTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ResponseTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o ApplicationV2OidcPtrOutput) SkipNativeAppSuccessPage() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.SkipNativeAppSuccessPage
+	}).(pulumi.BoolPtrOutput)
+}
+
+// OIDC version, supported values: OIDC*VERSION*1_0
+func (o ApplicationV2OidcPtrOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Oidc) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Version
+	}).(pulumi.StringPtrOutput)
+}
+
+type ApplicationV2OidcComplianceProblem struct {
+	// Stable i18n key identifying the compliance problem.
+	Key *string `pulumi:"key"`
+	// Human-readable description of the compliance problem.
+	Message *string `pulumi:"message"`
+}
+
+// ApplicationV2OidcComplianceProblemInput is an input type that accepts ApplicationV2OidcComplianceProblemArgs and ApplicationV2OidcComplianceProblemOutput values.
+// You can construct a concrete instance of `ApplicationV2OidcComplianceProblemInput` via:
+//
+//	ApplicationV2OidcComplianceProblemArgs{...}
+type ApplicationV2OidcComplianceProblemInput interface {
+	pulumi.Input
+
+	ToApplicationV2OidcComplianceProblemOutput() ApplicationV2OidcComplianceProblemOutput
+	ToApplicationV2OidcComplianceProblemOutputWithContext(context.Context) ApplicationV2OidcComplianceProblemOutput
+}
+
+type ApplicationV2OidcComplianceProblemArgs struct {
+	// Stable i18n key identifying the compliance problem.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Human-readable description of the compliance problem.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+}
+
+func (ApplicationV2OidcComplianceProblemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2OidcComplianceProblem)(nil)).Elem()
+}
+
+func (i ApplicationV2OidcComplianceProblemArgs) ToApplicationV2OidcComplianceProblemOutput() ApplicationV2OidcComplianceProblemOutput {
+	return i.ToApplicationV2OidcComplianceProblemOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2OidcComplianceProblemArgs) ToApplicationV2OidcComplianceProblemOutputWithContext(ctx context.Context) ApplicationV2OidcComplianceProblemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2OidcComplianceProblemOutput)
+}
+
+// ApplicationV2OidcComplianceProblemArrayInput is an input type that accepts ApplicationV2OidcComplianceProblemArray and ApplicationV2OidcComplianceProblemArrayOutput values.
+// You can construct a concrete instance of `ApplicationV2OidcComplianceProblemArrayInput` via:
+//
+//	ApplicationV2OidcComplianceProblemArray{ ApplicationV2OidcComplianceProblemArgs{...} }
+type ApplicationV2OidcComplianceProblemArrayInput interface {
+	pulumi.Input
+
+	ToApplicationV2OidcComplianceProblemArrayOutput() ApplicationV2OidcComplianceProblemArrayOutput
+	ToApplicationV2OidcComplianceProblemArrayOutputWithContext(context.Context) ApplicationV2OidcComplianceProblemArrayOutput
+}
+
+type ApplicationV2OidcComplianceProblemArray []ApplicationV2OidcComplianceProblemInput
+
+func (ApplicationV2OidcComplianceProblemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ApplicationV2OidcComplianceProblem)(nil)).Elem()
+}
+
+func (i ApplicationV2OidcComplianceProblemArray) ToApplicationV2OidcComplianceProblemArrayOutput() ApplicationV2OidcComplianceProblemArrayOutput {
+	return i.ToApplicationV2OidcComplianceProblemArrayOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2OidcComplianceProblemArray) ToApplicationV2OidcComplianceProblemArrayOutputWithContext(ctx context.Context) ApplicationV2OidcComplianceProblemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2OidcComplianceProblemArrayOutput)
+}
+
+type ApplicationV2OidcComplianceProblemOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2OidcComplianceProblemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2OidcComplianceProblem)(nil)).Elem()
+}
+
+func (o ApplicationV2OidcComplianceProblemOutput) ToApplicationV2OidcComplianceProblemOutput() ApplicationV2OidcComplianceProblemOutput {
+	return o
+}
+
+func (o ApplicationV2OidcComplianceProblemOutput) ToApplicationV2OidcComplianceProblemOutputWithContext(ctx context.Context) ApplicationV2OidcComplianceProblemOutput {
+	return o
+}
+
+// Stable i18n key identifying the compliance problem.
+func (o ApplicationV2OidcComplianceProblemOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2OidcComplianceProblem) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Human-readable description of the compliance problem.
+func (o ApplicationV2OidcComplianceProblemOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2OidcComplianceProblem) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+type ApplicationV2OidcComplianceProblemArrayOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2OidcComplianceProblemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ApplicationV2OidcComplianceProblem)(nil)).Elem()
+}
+
+func (o ApplicationV2OidcComplianceProblemArrayOutput) ToApplicationV2OidcComplianceProblemArrayOutput() ApplicationV2OidcComplianceProblemArrayOutput {
+	return o
+}
+
+func (o ApplicationV2OidcComplianceProblemArrayOutput) ToApplicationV2OidcComplianceProblemArrayOutputWithContext(ctx context.Context) ApplicationV2OidcComplianceProblemArrayOutput {
+	return o
+}
+
+func (o ApplicationV2OidcComplianceProblemArrayOutput) Index(i pulumi.IntInput) ApplicationV2OidcComplianceProblemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ApplicationV2OidcComplianceProblem {
+		return vs[0].([]ApplicationV2OidcComplianceProblem)[vs[1].(int)]
+	}).(ApplicationV2OidcComplianceProblemOutput)
+}
+
+type ApplicationV2OidcLoginVersion struct {
+	// Use the legacy Login UI (V1).
+	LoginV1 *bool `pulumi:"loginV1"`
+	// Use the Login UI V2.
+	LoginV2 *ApplicationV2OidcLoginVersionLoginV2 `pulumi:"loginV2"`
+}
+
+// ApplicationV2OidcLoginVersionInput is an input type that accepts ApplicationV2OidcLoginVersionArgs and ApplicationV2OidcLoginVersionOutput values.
+// You can construct a concrete instance of `ApplicationV2OidcLoginVersionInput` via:
+//
+//	ApplicationV2OidcLoginVersionArgs{...}
+type ApplicationV2OidcLoginVersionInput interface {
+	pulumi.Input
+
+	ToApplicationV2OidcLoginVersionOutput() ApplicationV2OidcLoginVersionOutput
+	ToApplicationV2OidcLoginVersionOutputWithContext(context.Context) ApplicationV2OidcLoginVersionOutput
+}
+
+type ApplicationV2OidcLoginVersionArgs struct {
+	// Use the legacy Login UI (V1).
+	LoginV1 pulumi.BoolPtrInput `pulumi:"loginV1"`
+	// Use the Login UI V2.
+	LoginV2 ApplicationV2OidcLoginVersionLoginV2PtrInput `pulumi:"loginV2"`
+}
+
+func (ApplicationV2OidcLoginVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2OidcLoginVersion)(nil)).Elem()
+}
+
+func (i ApplicationV2OidcLoginVersionArgs) ToApplicationV2OidcLoginVersionOutput() ApplicationV2OidcLoginVersionOutput {
+	return i.ToApplicationV2OidcLoginVersionOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2OidcLoginVersionArgs) ToApplicationV2OidcLoginVersionOutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2OidcLoginVersionOutput)
+}
+
+func (i ApplicationV2OidcLoginVersionArgs) ToApplicationV2OidcLoginVersionPtrOutput() ApplicationV2OidcLoginVersionPtrOutput {
+	return i.ToApplicationV2OidcLoginVersionPtrOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2OidcLoginVersionArgs) ToApplicationV2OidcLoginVersionPtrOutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2OidcLoginVersionOutput).ToApplicationV2OidcLoginVersionPtrOutputWithContext(ctx)
+}
+
+// ApplicationV2OidcLoginVersionPtrInput is an input type that accepts ApplicationV2OidcLoginVersionArgs, ApplicationV2OidcLoginVersionPtr and ApplicationV2OidcLoginVersionPtrOutput values.
+// You can construct a concrete instance of `ApplicationV2OidcLoginVersionPtrInput` via:
+//
+//	        ApplicationV2OidcLoginVersionArgs{...}
+//
+//	or:
+//
+//	        nil
+type ApplicationV2OidcLoginVersionPtrInput interface {
+	pulumi.Input
+
+	ToApplicationV2OidcLoginVersionPtrOutput() ApplicationV2OidcLoginVersionPtrOutput
+	ToApplicationV2OidcLoginVersionPtrOutputWithContext(context.Context) ApplicationV2OidcLoginVersionPtrOutput
+}
+
+type applicationV2OidcLoginVersionPtrType ApplicationV2OidcLoginVersionArgs
+
+func ApplicationV2OidcLoginVersionPtr(v *ApplicationV2OidcLoginVersionArgs) ApplicationV2OidcLoginVersionPtrInput {
+	return (*applicationV2OidcLoginVersionPtrType)(v)
+}
+
+func (*applicationV2OidcLoginVersionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2OidcLoginVersion)(nil)).Elem()
+}
+
+func (i *applicationV2OidcLoginVersionPtrType) ToApplicationV2OidcLoginVersionPtrOutput() ApplicationV2OidcLoginVersionPtrOutput {
+	return i.ToApplicationV2OidcLoginVersionPtrOutputWithContext(context.Background())
+}
+
+func (i *applicationV2OidcLoginVersionPtrType) ToApplicationV2OidcLoginVersionPtrOutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2OidcLoginVersionPtrOutput)
+}
+
+type ApplicationV2OidcLoginVersionOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2OidcLoginVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2OidcLoginVersion)(nil)).Elem()
+}
+
+func (o ApplicationV2OidcLoginVersionOutput) ToApplicationV2OidcLoginVersionOutput() ApplicationV2OidcLoginVersionOutput {
+	return o
+}
+
+func (o ApplicationV2OidcLoginVersionOutput) ToApplicationV2OidcLoginVersionOutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionOutput {
+	return o
+}
+
+func (o ApplicationV2OidcLoginVersionOutput) ToApplicationV2OidcLoginVersionPtrOutput() ApplicationV2OidcLoginVersionPtrOutput {
+	return o.ToApplicationV2OidcLoginVersionPtrOutputWithContext(context.Background())
+}
+
+func (o ApplicationV2OidcLoginVersionOutput) ToApplicationV2OidcLoginVersionPtrOutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ApplicationV2OidcLoginVersion) *ApplicationV2OidcLoginVersion {
+		return &v
+	}).(ApplicationV2OidcLoginVersionPtrOutput)
+}
+
+// Use the legacy Login UI (V1).
+func (o ApplicationV2OidcLoginVersionOutput) LoginV1() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ApplicationV2OidcLoginVersion) *bool { return v.LoginV1 }).(pulumi.BoolPtrOutput)
+}
+
+// Use the Login UI V2.
+func (o ApplicationV2OidcLoginVersionOutput) LoginV2() ApplicationV2OidcLoginVersionLoginV2PtrOutput {
+	return o.ApplyT(func(v ApplicationV2OidcLoginVersion) *ApplicationV2OidcLoginVersionLoginV2 { return v.LoginV2 }).(ApplicationV2OidcLoginVersionLoginV2PtrOutput)
+}
+
+type ApplicationV2OidcLoginVersionPtrOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2OidcLoginVersionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2OidcLoginVersion)(nil)).Elem()
+}
+
+func (o ApplicationV2OidcLoginVersionPtrOutput) ToApplicationV2OidcLoginVersionPtrOutput() ApplicationV2OidcLoginVersionPtrOutput {
+	return o
+}
+
+func (o ApplicationV2OidcLoginVersionPtrOutput) ToApplicationV2OidcLoginVersionPtrOutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionPtrOutput {
+	return o
+}
+
+func (o ApplicationV2OidcLoginVersionPtrOutput) Elem() ApplicationV2OidcLoginVersionOutput {
+	return o.ApplyT(func(v *ApplicationV2OidcLoginVersion) ApplicationV2OidcLoginVersion {
+		if v != nil {
+			return *v
+		}
+		var ret ApplicationV2OidcLoginVersion
+		return ret
+	}).(ApplicationV2OidcLoginVersionOutput)
+}
+
+// Use the legacy Login UI (V1).
+func (o ApplicationV2OidcLoginVersionPtrOutput) LoginV1() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2OidcLoginVersion) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.LoginV1
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Use the Login UI V2.
+func (o ApplicationV2OidcLoginVersionPtrOutput) LoginV2() ApplicationV2OidcLoginVersionLoginV2PtrOutput {
+	return o.ApplyT(func(v *ApplicationV2OidcLoginVersion) *ApplicationV2OidcLoginVersionLoginV2 {
+		if v == nil {
+			return nil
+		}
+		return v.LoginV2
+	}).(ApplicationV2OidcLoginVersionLoginV2PtrOutput)
+}
+
+type ApplicationV2OidcLoginVersionLoginV2 struct {
+	// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+	BaseUri *string `pulumi:"baseUri"`
+}
+
+// ApplicationV2OidcLoginVersionLoginV2Input is an input type that accepts ApplicationV2OidcLoginVersionLoginV2Args and ApplicationV2OidcLoginVersionLoginV2Output values.
+// You can construct a concrete instance of `ApplicationV2OidcLoginVersionLoginV2Input` via:
+//
+//	ApplicationV2OidcLoginVersionLoginV2Args{...}
+type ApplicationV2OidcLoginVersionLoginV2Input interface {
+	pulumi.Input
+
+	ToApplicationV2OidcLoginVersionLoginV2Output() ApplicationV2OidcLoginVersionLoginV2Output
+	ToApplicationV2OidcLoginVersionLoginV2OutputWithContext(context.Context) ApplicationV2OidcLoginVersionLoginV2Output
+}
+
+type ApplicationV2OidcLoginVersionLoginV2Args struct {
+	// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+	BaseUri pulumi.StringPtrInput `pulumi:"baseUri"`
+}
+
+func (ApplicationV2OidcLoginVersionLoginV2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2OidcLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i ApplicationV2OidcLoginVersionLoginV2Args) ToApplicationV2OidcLoginVersionLoginV2Output() ApplicationV2OidcLoginVersionLoginV2Output {
+	return i.ToApplicationV2OidcLoginVersionLoginV2OutputWithContext(context.Background())
+}
+
+func (i ApplicationV2OidcLoginVersionLoginV2Args) ToApplicationV2OidcLoginVersionLoginV2OutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionLoginV2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2OidcLoginVersionLoginV2Output)
+}
+
+func (i ApplicationV2OidcLoginVersionLoginV2Args) ToApplicationV2OidcLoginVersionLoginV2PtrOutput() ApplicationV2OidcLoginVersionLoginV2PtrOutput {
+	return i.ToApplicationV2OidcLoginVersionLoginV2PtrOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2OidcLoginVersionLoginV2Args) ToApplicationV2OidcLoginVersionLoginV2PtrOutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionLoginV2PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2OidcLoginVersionLoginV2Output).ToApplicationV2OidcLoginVersionLoginV2PtrOutputWithContext(ctx)
+}
+
+// ApplicationV2OidcLoginVersionLoginV2PtrInput is an input type that accepts ApplicationV2OidcLoginVersionLoginV2Args, ApplicationV2OidcLoginVersionLoginV2Ptr and ApplicationV2OidcLoginVersionLoginV2PtrOutput values.
+// You can construct a concrete instance of `ApplicationV2OidcLoginVersionLoginV2PtrInput` via:
+//
+//	        ApplicationV2OidcLoginVersionLoginV2Args{...}
+//
+//	or:
+//
+//	        nil
+type ApplicationV2OidcLoginVersionLoginV2PtrInput interface {
+	pulumi.Input
+
+	ToApplicationV2OidcLoginVersionLoginV2PtrOutput() ApplicationV2OidcLoginVersionLoginV2PtrOutput
+	ToApplicationV2OidcLoginVersionLoginV2PtrOutputWithContext(context.Context) ApplicationV2OidcLoginVersionLoginV2PtrOutput
+}
+
+type applicationV2OidcLoginVersionLoginV2PtrType ApplicationV2OidcLoginVersionLoginV2Args
+
+func ApplicationV2OidcLoginVersionLoginV2Ptr(v *ApplicationV2OidcLoginVersionLoginV2Args) ApplicationV2OidcLoginVersionLoginV2PtrInput {
+	return (*applicationV2OidcLoginVersionLoginV2PtrType)(v)
+}
+
+func (*applicationV2OidcLoginVersionLoginV2PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2OidcLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i *applicationV2OidcLoginVersionLoginV2PtrType) ToApplicationV2OidcLoginVersionLoginV2PtrOutput() ApplicationV2OidcLoginVersionLoginV2PtrOutput {
+	return i.ToApplicationV2OidcLoginVersionLoginV2PtrOutputWithContext(context.Background())
+}
+
+func (i *applicationV2OidcLoginVersionLoginV2PtrType) ToApplicationV2OidcLoginVersionLoginV2PtrOutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionLoginV2PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2OidcLoginVersionLoginV2PtrOutput)
+}
+
+type ApplicationV2OidcLoginVersionLoginV2Output struct{ *pulumi.OutputState }
+
+func (ApplicationV2OidcLoginVersionLoginV2Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2OidcLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (o ApplicationV2OidcLoginVersionLoginV2Output) ToApplicationV2OidcLoginVersionLoginV2Output() ApplicationV2OidcLoginVersionLoginV2Output {
+	return o
+}
+
+func (o ApplicationV2OidcLoginVersionLoginV2Output) ToApplicationV2OidcLoginVersionLoginV2OutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionLoginV2Output {
+	return o
+}
+
+func (o ApplicationV2OidcLoginVersionLoginV2Output) ToApplicationV2OidcLoginVersionLoginV2PtrOutput() ApplicationV2OidcLoginVersionLoginV2PtrOutput {
+	return o.ToApplicationV2OidcLoginVersionLoginV2PtrOutputWithContext(context.Background())
+}
+
+func (o ApplicationV2OidcLoginVersionLoginV2Output) ToApplicationV2OidcLoginVersionLoginV2PtrOutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionLoginV2PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ApplicationV2OidcLoginVersionLoginV2) *ApplicationV2OidcLoginVersionLoginV2 {
+		return &v
+	}).(ApplicationV2OidcLoginVersionLoginV2PtrOutput)
+}
+
+// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+func (o ApplicationV2OidcLoginVersionLoginV2Output) BaseUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2OidcLoginVersionLoginV2) *string { return v.BaseUri }).(pulumi.StringPtrOutput)
+}
+
+type ApplicationV2OidcLoginVersionLoginV2PtrOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2OidcLoginVersionLoginV2PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2OidcLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (o ApplicationV2OidcLoginVersionLoginV2PtrOutput) ToApplicationV2OidcLoginVersionLoginV2PtrOutput() ApplicationV2OidcLoginVersionLoginV2PtrOutput {
+	return o
+}
+
+func (o ApplicationV2OidcLoginVersionLoginV2PtrOutput) ToApplicationV2OidcLoginVersionLoginV2PtrOutputWithContext(ctx context.Context) ApplicationV2OidcLoginVersionLoginV2PtrOutput {
+	return o
+}
+
+func (o ApplicationV2OidcLoginVersionLoginV2PtrOutput) Elem() ApplicationV2OidcLoginVersionLoginV2Output {
+	return o.ApplyT(func(v *ApplicationV2OidcLoginVersionLoginV2) ApplicationV2OidcLoginVersionLoginV2 {
+		if v != nil {
+			return *v
+		}
+		var ret ApplicationV2OidcLoginVersionLoginV2
+		return ret
+	}).(ApplicationV2OidcLoginVersionLoginV2Output)
+}
+
+// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+func (o ApplicationV2OidcLoginVersionLoginV2PtrOutput) BaseUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2OidcLoginVersionLoginV2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BaseUri
+	}).(pulumi.StringPtrOutput)
+}
+
+type ApplicationV2Saml struct {
+	// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+	LoginVersion *ApplicationV2SamlLoginVersion `pulumi:"loginVersion"`
+	// URL from which SAML metadata can be fetched. Mutually exclusive with `metadataXml`.
+	MetadataUrl *string `pulumi:"metadataUrl"`
+	// SAML metadata as raw XML. Mutually exclusive with `metadataUrl`. Marked sensitive because SAML metadata documents commonly embed signing/encryption certificates.
+	MetadataXml *string `pulumi:"metadataXml"`
+}
+
+// ApplicationV2SamlInput is an input type that accepts ApplicationV2SamlArgs and ApplicationV2SamlOutput values.
+// You can construct a concrete instance of `ApplicationV2SamlInput` via:
+//
+//	ApplicationV2SamlArgs{...}
+type ApplicationV2SamlInput interface {
+	pulumi.Input
+
+	ToApplicationV2SamlOutput() ApplicationV2SamlOutput
+	ToApplicationV2SamlOutputWithContext(context.Context) ApplicationV2SamlOutput
+}
+
+type ApplicationV2SamlArgs struct {
+	// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+	LoginVersion ApplicationV2SamlLoginVersionPtrInput `pulumi:"loginVersion"`
+	// URL from which SAML metadata can be fetched. Mutually exclusive with `metadataXml`.
+	MetadataUrl pulumi.StringPtrInput `pulumi:"metadataUrl"`
+	// SAML metadata as raw XML. Mutually exclusive with `metadataUrl`. Marked sensitive because SAML metadata documents commonly embed signing/encryption certificates.
+	MetadataXml pulumi.StringPtrInput `pulumi:"metadataXml"`
+}
+
+func (ApplicationV2SamlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2Saml)(nil)).Elem()
+}
+
+func (i ApplicationV2SamlArgs) ToApplicationV2SamlOutput() ApplicationV2SamlOutput {
+	return i.ToApplicationV2SamlOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2SamlArgs) ToApplicationV2SamlOutputWithContext(ctx context.Context) ApplicationV2SamlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2SamlOutput)
+}
+
+func (i ApplicationV2SamlArgs) ToApplicationV2SamlPtrOutput() ApplicationV2SamlPtrOutput {
+	return i.ToApplicationV2SamlPtrOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2SamlArgs) ToApplicationV2SamlPtrOutputWithContext(ctx context.Context) ApplicationV2SamlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2SamlOutput).ToApplicationV2SamlPtrOutputWithContext(ctx)
+}
+
+// ApplicationV2SamlPtrInput is an input type that accepts ApplicationV2SamlArgs, ApplicationV2SamlPtr and ApplicationV2SamlPtrOutput values.
+// You can construct a concrete instance of `ApplicationV2SamlPtrInput` via:
+//
+//	        ApplicationV2SamlArgs{...}
+//
+//	or:
+//
+//	        nil
+type ApplicationV2SamlPtrInput interface {
+	pulumi.Input
+
+	ToApplicationV2SamlPtrOutput() ApplicationV2SamlPtrOutput
+	ToApplicationV2SamlPtrOutputWithContext(context.Context) ApplicationV2SamlPtrOutput
+}
+
+type applicationV2SamlPtrType ApplicationV2SamlArgs
+
+func ApplicationV2SamlPtr(v *ApplicationV2SamlArgs) ApplicationV2SamlPtrInput {
+	return (*applicationV2SamlPtrType)(v)
+}
+
+func (*applicationV2SamlPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2Saml)(nil)).Elem()
+}
+
+func (i *applicationV2SamlPtrType) ToApplicationV2SamlPtrOutput() ApplicationV2SamlPtrOutput {
+	return i.ToApplicationV2SamlPtrOutputWithContext(context.Background())
+}
+
+func (i *applicationV2SamlPtrType) ToApplicationV2SamlPtrOutputWithContext(ctx context.Context) ApplicationV2SamlPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2SamlPtrOutput)
+}
+
+type ApplicationV2SamlOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2SamlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2Saml)(nil)).Elem()
+}
+
+func (o ApplicationV2SamlOutput) ToApplicationV2SamlOutput() ApplicationV2SamlOutput {
+	return o
+}
+
+func (o ApplicationV2SamlOutput) ToApplicationV2SamlOutputWithContext(ctx context.Context) ApplicationV2SamlOutput {
+	return o
+}
+
+func (o ApplicationV2SamlOutput) ToApplicationV2SamlPtrOutput() ApplicationV2SamlPtrOutput {
+	return o.ToApplicationV2SamlPtrOutputWithContext(context.Background())
+}
+
+func (o ApplicationV2SamlOutput) ToApplicationV2SamlPtrOutputWithContext(ctx context.Context) ApplicationV2SamlPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ApplicationV2Saml) *ApplicationV2Saml {
+		return &v
+	}).(ApplicationV2SamlPtrOutput)
+}
+
+// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+func (o ApplicationV2SamlOutput) LoginVersion() ApplicationV2SamlLoginVersionPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Saml) *ApplicationV2SamlLoginVersion { return v.LoginVersion }).(ApplicationV2SamlLoginVersionPtrOutput)
+}
+
+// URL from which SAML metadata can be fetched. Mutually exclusive with `metadataXml`.
+func (o ApplicationV2SamlOutput) MetadataUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Saml) *string { return v.MetadataUrl }).(pulumi.StringPtrOutput)
+}
+
+// SAML metadata as raw XML. Mutually exclusive with `metadataUrl`. Marked sensitive because SAML metadata documents commonly embed signing/encryption certificates.
+func (o ApplicationV2SamlOutput) MetadataXml() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2Saml) *string { return v.MetadataXml }).(pulumi.StringPtrOutput)
+}
+
+type ApplicationV2SamlPtrOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2SamlPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2Saml)(nil)).Elem()
+}
+
+func (o ApplicationV2SamlPtrOutput) ToApplicationV2SamlPtrOutput() ApplicationV2SamlPtrOutput {
+	return o
+}
+
+func (o ApplicationV2SamlPtrOutput) ToApplicationV2SamlPtrOutputWithContext(ctx context.Context) ApplicationV2SamlPtrOutput {
+	return o
+}
+
+func (o ApplicationV2SamlPtrOutput) Elem() ApplicationV2SamlOutput {
+	return o.ApplyT(func(v *ApplicationV2Saml) ApplicationV2Saml {
+		if v != nil {
+			return *v
+		}
+		var ret ApplicationV2Saml
+		return ret
+	}).(ApplicationV2SamlOutput)
+}
+
+// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+func (o ApplicationV2SamlPtrOutput) LoginVersion() ApplicationV2SamlLoginVersionPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Saml) *ApplicationV2SamlLoginVersion {
+		if v == nil {
+			return nil
+		}
+		return v.LoginVersion
+	}).(ApplicationV2SamlLoginVersionPtrOutput)
+}
+
+// URL from which SAML metadata can be fetched. Mutually exclusive with `metadataXml`.
+func (o ApplicationV2SamlPtrOutput) MetadataUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Saml) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MetadataUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// SAML metadata as raw XML. Mutually exclusive with `metadataUrl`. Marked sensitive because SAML metadata documents commonly embed signing/encryption certificates.
+func (o ApplicationV2SamlPtrOutput) MetadataXml() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2Saml) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MetadataXml
+	}).(pulumi.StringPtrOutput)
+}
+
+type ApplicationV2SamlLoginVersion struct {
+	// Use the legacy Login UI (V1).
+	LoginV1 *bool `pulumi:"loginV1"`
+	// Use the Login UI V2.
+	LoginV2 *ApplicationV2SamlLoginVersionLoginV2 `pulumi:"loginV2"`
+}
+
+// ApplicationV2SamlLoginVersionInput is an input type that accepts ApplicationV2SamlLoginVersionArgs and ApplicationV2SamlLoginVersionOutput values.
+// You can construct a concrete instance of `ApplicationV2SamlLoginVersionInput` via:
+//
+//	ApplicationV2SamlLoginVersionArgs{...}
+type ApplicationV2SamlLoginVersionInput interface {
+	pulumi.Input
+
+	ToApplicationV2SamlLoginVersionOutput() ApplicationV2SamlLoginVersionOutput
+	ToApplicationV2SamlLoginVersionOutputWithContext(context.Context) ApplicationV2SamlLoginVersionOutput
+}
+
+type ApplicationV2SamlLoginVersionArgs struct {
+	// Use the legacy Login UI (V1).
+	LoginV1 pulumi.BoolPtrInput `pulumi:"loginV1"`
+	// Use the Login UI V2.
+	LoginV2 ApplicationV2SamlLoginVersionLoginV2PtrInput `pulumi:"loginV2"`
+}
+
+func (ApplicationV2SamlLoginVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2SamlLoginVersion)(nil)).Elem()
+}
+
+func (i ApplicationV2SamlLoginVersionArgs) ToApplicationV2SamlLoginVersionOutput() ApplicationV2SamlLoginVersionOutput {
+	return i.ToApplicationV2SamlLoginVersionOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2SamlLoginVersionArgs) ToApplicationV2SamlLoginVersionOutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2SamlLoginVersionOutput)
+}
+
+func (i ApplicationV2SamlLoginVersionArgs) ToApplicationV2SamlLoginVersionPtrOutput() ApplicationV2SamlLoginVersionPtrOutput {
+	return i.ToApplicationV2SamlLoginVersionPtrOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2SamlLoginVersionArgs) ToApplicationV2SamlLoginVersionPtrOutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2SamlLoginVersionOutput).ToApplicationV2SamlLoginVersionPtrOutputWithContext(ctx)
+}
+
+// ApplicationV2SamlLoginVersionPtrInput is an input type that accepts ApplicationV2SamlLoginVersionArgs, ApplicationV2SamlLoginVersionPtr and ApplicationV2SamlLoginVersionPtrOutput values.
+// You can construct a concrete instance of `ApplicationV2SamlLoginVersionPtrInput` via:
+//
+//	        ApplicationV2SamlLoginVersionArgs{...}
+//
+//	or:
+//
+//	        nil
+type ApplicationV2SamlLoginVersionPtrInput interface {
+	pulumi.Input
+
+	ToApplicationV2SamlLoginVersionPtrOutput() ApplicationV2SamlLoginVersionPtrOutput
+	ToApplicationV2SamlLoginVersionPtrOutputWithContext(context.Context) ApplicationV2SamlLoginVersionPtrOutput
+}
+
+type applicationV2SamlLoginVersionPtrType ApplicationV2SamlLoginVersionArgs
+
+func ApplicationV2SamlLoginVersionPtr(v *ApplicationV2SamlLoginVersionArgs) ApplicationV2SamlLoginVersionPtrInput {
+	return (*applicationV2SamlLoginVersionPtrType)(v)
+}
+
+func (*applicationV2SamlLoginVersionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2SamlLoginVersion)(nil)).Elem()
+}
+
+func (i *applicationV2SamlLoginVersionPtrType) ToApplicationV2SamlLoginVersionPtrOutput() ApplicationV2SamlLoginVersionPtrOutput {
+	return i.ToApplicationV2SamlLoginVersionPtrOutputWithContext(context.Background())
+}
+
+func (i *applicationV2SamlLoginVersionPtrType) ToApplicationV2SamlLoginVersionPtrOutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2SamlLoginVersionPtrOutput)
+}
+
+type ApplicationV2SamlLoginVersionOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2SamlLoginVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2SamlLoginVersion)(nil)).Elem()
+}
+
+func (o ApplicationV2SamlLoginVersionOutput) ToApplicationV2SamlLoginVersionOutput() ApplicationV2SamlLoginVersionOutput {
+	return o
+}
+
+func (o ApplicationV2SamlLoginVersionOutput) ToApplicationV2SamlLoginVersionOutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionOutput {
+	return o
+}
+
+func (o ApplicationV2SamlLoginVersionOutput) ToApplicationV2SamlLoginVersionPtrOutput() ApplicationV2SamlLoginVersionPtrOutput {
+	return o.ToApplicationV2SamlLoginVersionPtrOutputWithContext(context.Background())
+}
+
+func (o ApplicationV2SamlLoginVersionOutput) ToApplicationV2SamlLoginVersionPtrOutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ApplicationV2SamlLoginVersion) *ApplicationV2SamlLoginVersion {
+		return &v
+	}).(ApplicationV2SamlLoginVersionPtrOutput)
+}
+
+// Use the legacy Login UI (V1).
+func (o ApplicationV2SamlLoginVersionOutput) LoginV1() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ApplicationV2SamlLoginVersion) *bool { return v.LoginV1 }).(pulumi.BoolPtrOutput)
+}
+
+// Use the Login UI V2.
+func (o ApplicationV2SamlLoginVersionOutput) LoginV2() ApplicationV2SamlLoginVersionLoginV2PtrOutput {
+	return o.ApplyT(func(v ApplicationV2SamlLoginVersion) *ApplicationV2SamlLoginVersionLoginV2 { return v.LoginV2 }).(ApplicationV2SamlLoginVersionLoginV2PtrOutput)
+}
+
+type ApplicationV2SamlLoginVersionPtrOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2SamlLoginVersionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2SamlLoginVersion)(nil)).Elem()
+}
+
+func (o ApplicationV2SamlLoginVersionPtrOutput) ToApplicationV2SamlLoginVersionPtrOutput() ApplicationV2SamlLoginVersionPtrOutput {
+	return o
+}
+
+func (o ApplicationV2SamlLoginVersionPtrOutput) ToApplicationV2SamlLoginVersionPtrOutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionPtrOutput {
+	return o
+}
+
+func (o ApplicationV2SamlLoginVersionPtrOutput) Elem() ApplicationV2SamlLoginVersionOutput {
+	return o.ApplyT(func(v *ApplicationV2SamlLoginVersion) ApplicationV2SamlLoginVersion {
+		if v != nil {
+			return *v
+		}
+		var ret ApplicationV2SamlLoginVersion
+		return ret
+	}).(ApplicationV2SamlLoginVersionOutput)
+}
+
+// Use the legacy Login UI (V1).
+func (o ApplicationV2SamlLoginVersionPtrOutput) LoginV1() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2SamlLoginVersion) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.LoginV1
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Use the Login UI V2.
+func (o ApplicationV2SamlLoginVersionPtrOutput) LoginV2() ApplicationV2SamlLoginVersionLoginV2PtrOutput {
+	return o.ApplyT(func(v *ApplicationV2SamlLoginVersion) *ApplicationV2SamlLoginVersionLoginV2 {
+		if v == nil {
+			return nil
+		}
+		return v.LoginV2
+	}).(ApplicationV2SamlLoginVersionLoginV2PtrOutput)
+}
+
+type ApplicationV2SamlLoginVersionLoginV2 struct {
+	// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+	BaseUri *string `pulumi:"baseUri"`
+}
+
+// ApplicationV2SamlLoginVersionLoginV2Input is an input type that accepts ApplicationV2SamlLoginVersionLoginV2Args and ApplicationV2SamlLoginVersionLoginV2Output values.
+// You can construct a concrete instance of `ApplicationV2SamlLoginVersionLoginV2Input` via:
+//
+//	ApplicationV2SamlLoginVersionLoginV2Args{...}
+type ApplicationV2SamlLoginVersionLoginV2Input interface {
+	pulumi.Input
+
+	ToApplicationV2SamlLoginVersionLoginV2Output() ApplicationV2SamlLoginVersionLoginV2Output
+	ToApplicationV2SamlLoginVersionLoginV2OutputWithContext(context.Context) ApplicationV2SamlLoginVersionLoginV2Output
+}
+
+type ApplicationV2SamlLoginVersionLoginV2Args struct {
+	// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+	BaseUri pulumi.StringPtrInput `pulumi:"baseUri"`
+}
+
+func (ApplicationV2SamlLoginVersionLoginV2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2SamlLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i ApplicationV2SamlLoginVersionLoginV2Args) ToApplicationV2SamlLoginVersionLoginV2Output() ApplicationV2SamlLoginVersionLoginV2Output {
+	return i.ToApplicationV2SamlLoginVersionLoginV2OutputWithContext(context.Background())
+}
+
+func (i ApplicationV2SamlLoginVersionLoginV2Args) ToApplicationV2SamlLoginVersionLoginV2OutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionLoginV2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2SamlLoginVersionLoginV2Output)
+}
+
+func (i ApplicationV2SamlLoginVersionLoginV2Args) ToApplicationV2SamlLoginVersionLoginV2PtrOutput() ApplicationV2SamlLoginVersionLoginV2PtrOutput {
+	return i.ToApplicationV2SamlLoginVersionLoginV2PtrOutputWithContext(context.Background())
+}
+
+func (i ApplicationV2SamlLoginVersionLoginV2Args) ToApplicationV2SamlLoginVersionLoginV2PtrOutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionLoginV2PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2SamlLoginVersionLoginV2Output).ToApplicationV2SamlLoginVersionLoginV2PtrOutputWithContext(ctx)
+}
+
+// ApplicationV2SamlLoginVersionLoginV2PtrInput is an input type that accepts ApplicationV2SamlLoginVersionLoginV2Args, ApplicationV2SamlLoginVersionLoginV2Ptr and ApplicationV2SamlLoginVersionLoginV2PtrOutput values.
+// You can construct a concrete instance of `ApplicationV2SamlLoginVersionLoginV2PtrInput` via:
+//
+//	        ApplicationV2SamlLoginVersionLoginV2Args{...}
+//
+//	or:
+//
+//	        nil
+type ApplicationV2SamlLoginVersionLoginV2PtrInput interface {
+	pulumi.Input
+
+	ToApplicationV2SamlLoginVersionLoginV2PtrOutput() ApplicationV2SamlLoginVersionLoginV2PtrOutput
+	ToApplicationV2SamlLoginVersionLoginV2PtrOutputWithContext(context.Context) ApplicationV2SamlLoginVersionLoginV2PtrOutput
+}
+
+type applicationV2SamlLoginVersionLoginV2PtrType ApplicationV2SamlLoginVersionLoginV2Args
+
+func ApplicationV2SamlLoginVersionLoginV2Ptr(v *ApplicationV2SamlLoginVersionLoginV2Args) ApplicationV2SamlLoginVersionLoginV2PtrInput {
+	return (*applicationV2SamlLoginVersionLoginV2PtrType)(v)
+}
+
+func (*applicationV2SamlLoginVersionLoginV2PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2SamlLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i *applicationV2SamlLoginVersionLoginV2PtrType) ToApplicationV2SamlLoginVersionLoginV2PtrOutput() ApplicationV2SamlLoginVersionLoginV2PtrOutput {
+	return i.ToApplicationV2SamlLoginVersionLoginV2PtrOutputWithContext(context.Background())
+}
+
+func (i *applicationV2SamlLoginVersionLoginV2PtrType) ToApplicationV2SamlLoginVersionLoginV2PtrOutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionLoginV2PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApplicationV2SamlLoginVersionLoginV2PtrOutput)
+}
+
+type ApplicationV2SamlLoginVersionLoginV2Output struct{ *pulumi.OutputState }
+
+func (ApplicationV2SamlLoginVersionLoginV2Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApplicationV2SamlLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (o ApplicationV2SamlLoginVersionLoginV2Output) ToApplicationV2SamlLoginVersionLoginV2Output() ApplicationV2SamlLoginVersionLoginV2Output {
+	return o
+}
+
+func (o ApplicationV2SamlLoginVersionLoginV2Output) ToApplicationV2SamlLoginVersionLoginV2OutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionLoginV2Output {
+	return o
+}
+
+func (o ApplicationV2SamlLoginVersionLoginV2Output) ToApplicationV2SamlLoginVersionLoginV2PtrOutput() ApplicationV2SamlLoginVersionLoginV2PtrOutput {
+	return o.ToApplicationV2SamlLoginVersionLoginV2PtrOutputWithContext(context.Background())
+}
+
+func (o ApplicationV2SamlLoginVersionLoginV2Output) ToApplicationV2SamlLoginVersionLoginV2PtrOutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionLoginV2PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ApplicationV2SamlLoginVersionLoginV2) *ApplicationV2SamlLoginVersionLoginV2 {
+		return &v
+	}).(ApplicationV2SamlLoginVersionLoginV2PtrOutput)
+}
+
+// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+func (o ApplicationV2SamlLoginVersionLoginV2Output) BaseUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApplicationV2SamlLoginVersionLoginV2) *string { return v.BaseUri }).(pulumi.StringPtrOutput)
+}
+
+type ApplicationV2SamlLoginVersionLoginV2PtrOutput struct{ *pulumi.OutputState }
+
+func (ApplicationV2SamlLoginVersionLoginV2PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ApplicationV2SamlLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (o ApplicationV2SamlLoginVersionLoginV2PtrOutput) ToApplicationV2SamlLoginVersionLoginV2PtrOutput() ApplicationV2SamlLoginVersionLoginV2PtrOutput {
+	return o
+}
+
+func (o ApplicationV2SamlLoginVersionLoginV2PtrOutput) ToApplicationV2SamlLoginVersionLoginV2PtrOutputWithContext(ctx context.Context) ApplicationV2SamlLoginVersionLoginV2PtrOutput {
+	return o
+}
+
+func (o ApplicationV2SamlLoginVersionLoginV2PtrOutput) Elem() ApplicationV2SamlLoginVersionLoginV2Output {
+	return o.ApplyT(func(v *ApplicationV2SamlLoginVersionLoginV2) ApplicationV2SamlLoginVersionLoginV2 {
+		if v != nil {
+			return *v
+		}
+		var ret ApplicationV2SamlLoginVersionLoginV2
+		return ret
+	}).(ApplicationV2SamlLoginVersionLoginV2Output)
+}
+
+// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+func (o ApplicationV2SamlLoginVersionLoginV2PtrOutput) BaseUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationV2SamlLoginVersionLoginV2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BaseUri
+	}).(pulumi.StringPtrOutput)
+}
+
 type DefaultLoginTextsEmailVerificationDoneText struct {
 	CancelButtonText *string `pulumi:"cancelButtonText"`
 	Description      *string `pulumi:"description"`
@@ -17360,6 +18903,525 @@ func (o GetApplicationSamlLoginVersionLoginV2ArrayOutput) Index(i pulumi.IntInpu
 	}).(GetApplicationSamlLoginVersionLoginV2Output)
 }
 
+type GetApplicationV2Api struct {
+	// API auth method type, supported values: API_AUTH_METHOD_TYPE_BASIC, API_AUTH_METHOD_TYPE_PRIVATE_KEY_JWT
+	AuthMethodType string `pulumi:"authMethodType"`
+	// Generated client ID.
+	ClientId string `pulumi:"clientId"`
+}
+
+type GetApplicationV2ApiOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2ApiOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2Api)(nil)).Elem()
+}
+
+func (o GetApplicationV2ApiOutput) ToGetApplicationV2ApiOutput() GetApplicationV2ApiOutput {
+	return o
+}
+
+func (o GetApplicationV2ApiOutput) ToGetApplicationV2ApiOutputWithContext(ctx context.Context) GetApplicationV2ApiOutput {
+	return o
+}
+
+// API auth method type, supported values: API_AUTH_METHOD_TYPE_BASIC, API_AUTH_METHOD_TYPE_PRIVATE_KEY_JWT
+func (o GetApplicationV2ApiOutput) AuthMethodType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2Api) string { return v.AuthMethodType }).(pulumi.StringOutput)
+}
+
+// Generated client ID.
+func (o GetApplicationV2ApiOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2Api) string { return v.ClientId }).(pulumi.StringOutput)
+}
+
+type GetApplicationV2ApiArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2ApiArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2Api)(nil)).Elem()
+}
+
+func (o GetApplicationV2ApiArrayOutput) ToGetApplicationV2ApiArrayOutput() GetApplicationV2ApiArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2ApiArrayOutput) ToGetApplicationV2ApiArrayOutputWithContext(ctx context.Context) GetApplicationV2ApiArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2ApiArrayOutput) Index(i pulumi.IntInput) GetApplicationV2ApiOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationV2Api {
+		return vs[0].([]GetApplicationV2Api)[vs[1].(int)]
+	}).(GetApplicationV2ApiOutput)
+}
+
+type GetApplicationV2Oidc struct {
+	AccessTokenRoleAssertion bool `pulumi:"accessTokenRoleAssertion"`
+	// Access token type, supported values: OIDC_TOKEN_TYPE_BEARER, OIDC_TOKEN_TYPE_JWT
+	AccessTokenType string `pulumi:"accessTokenType"`
+	// Additional allowed origins.
+	AdditionalOrigins []string `pulumi:"additionalOrigins"`
+	// Application type, supported values: OIDC_APP_TYPE_WEB, OIDC_APP_TYPE_USER_AGENT, OIDC_APP_TYPE_NATIVE
+	AppType string `pulumi:"appType"`
+	// Auth method type, supported values: OIDC_AUTH_METHOD_TYPE_BASIC, OIDC_AUTH_METHOD_TYPE_POST, OIDC_AUTH_METHOD_TYPE_NONE, OIDC_AUTH_METHOD_TYPE_PRIVATE_KEY_JWT
+	AuthMethodType string `pulumi:"authMethodType"`
+	// Back-channel logout URI used by ZITADEL to notify the application of terminated sessions (OIDC Back-Channel Logout). Computed if not set, so the server-side default flows back into state.
+	BackChannelLogoutUri string `pulumi:"backChannelLogoutUri"`
+	// Generated client ID.
+	ClientId string `pulumi:"clientId"`
+	// Allowed clock skew (Go duration string, e.g. `5s`).
+	ClockSkew string `pulumi:"clockSkew"`
+	// List of OIDC specification compliance problems detected by ZITADEL for this configuration. Empty when the configuration is compliant.
+	ComplianceProblems []GetApplicationV2OidcComplianceProblem `pulumi:"complianceProblems"`
+	// Development mode (relaxes redirect-URI validation).
+	DevMode bool `pulumi:"devMode"`
+	// Grant types, supported values: OIDC_GRANT_TYPE_AUTHORIZATION_CODE, OIDC_GRANT_TYPE_IMPLICIT, OIDC_GRANT_TYPE_REFRESH_TOKEN, OIDC_GRANT_TYPE_DEVICE_CODE, OIDC_GRANT_TYPE_TOKEN_EXCHANGE
+	GrantTypes               []string `pulumi:"grantTypes"`
+	IdTokenRoleAssertion     bool     `pulumi:"idTokenRoleAssertion"`
+	IdTokenUserinfoAssertion bool     `pulumi:"idTokenUserinfoAssertion"`
+	// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+	LoginVersions []GetApplicationV2OidcLoginVersion `pulumi:"loginVersions"`
+	// Whether the OIDC configuration violates the OIDC specification, as determined by ZITADEL. See `complianceProblems` for the individual findings.
+	NoneCompliant bool `pulumi:"noneCompliant"`
+	// Post-logout redirect URIs.
+	PostLogoutRedirectUris []string `pulumi:"postLogoutRedirectUris"`
+	// Allowed redirect URIs. Required: OIDC clients cannot function without at least one redirect URI, and the Zitadel API rejects creation otherwise. Matches the v1 `ApplicationOidc` requirement.
+	RedirectUris []string `pulumi:"redirectUris"`
+	// Response types, supported values: OIDC_RESPONSE_TYPE_UNSPECIFIED, OIDC_RESPONSE_TYPE_CODE, OIDC_RESPONSE_TYPE_ID_TOKEN, OIDC_RESPONSE_TYPE_ID_TOKEN_TOKEN
+	ResponseTypes            []string `pulumi:"responseTypes"`
+	SkipNativeAppSuccessPage bool     `pulumi:"skipNativeAppSuccessPage"`
+	// OIDC version, supported values: OIDC_VERSION_1_0
+	Version string `pulumi:"version"`
+}
+
+type GetApplicationV2OidcOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2OidcOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2Oidc)(nil)).Elem()
+}
+
+func (o GetApplicationV2OidcOutput) ToGetApplicationV2OidcOutput() GetApplicationV2OidcOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcOutput) ToGetApplicationV2OidcOutputWithContext(ctx context.Context) GetApplicationV2OidcOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcOutput) AccessTokenRoleAssertion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) bool { return v.AccessTokenRoleAssertion }).(pulumi.BoolOutput)
+}
+
+// Access token type, supported values: OIDC_TOKEN_TYPE_BEARER, OIDC_TOKEN_TYPE_JWT
+func (o GetApplicationV2OidcOutput) AccessTokenType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) string { return v.AccessTokenType }).(pulumi.StringOutput)
+}
+
+// Additional allowed origins.
+func (o GetApplicationV2OidcOutput) AdditionalOrigins() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) []string { return v.AdditionalOrigins }).(pulumi.StringArrayOutput)
+}
+
+// Application type, supported values: OIDC_APP_TYPE_WEB, OIDC_APP_TYPE_USER_AGENT, OIDC_APP_TYPE_NATIVE
+func (o GetApplicationV2OidcOutput) AppType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) string { return v.AppType }).(pulumi.StringOutput)
+}
+
+// Auth method type, supported values: OIDC_AUTH_METHOD_TYPE_BASIC, OIDC_AUTH_METHOD_TYPE_POST, OIDC_AUTH_METHOD_TYPE_NONE, OIDC_AUTH_METHOD_TYPE_PRIVATE_KEY_JWT
+func (o GetApplicationV2OidcOutput) AuthMethodType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) string { return v.AuthMethodType }).(pulumi.StringOutput)
+}
+
+// Back-channel logout URI used by ZITADEL to notify the application of terminated sessions (OIDC Back-Channel Logout). Computed if not set, so the server-side default flows back into state.
+func (o GetApplicationV2OidcOutput) BackChannelLogoutUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) string { return v.BackChannelLogoutUri }).(pulumi.StringOutput)
+}
+
+// Generated client ID.
+func (o GetApplicationV2OidcOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) string { return v.ClientId }).(pulumi.StringOutput)
+}
+
+// Allowed clock skew (Go duration string, e.g. `5s`).
+func (o GetApplicationV2OidcOutput) ClockSkew() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) string { return v.ClockSkew }).(pulumi.StringOutput)
+}
+
+// List of OIDC specification compliance problems detected by ZITADEL for this configuration. Empty when the configuration is compliant.
+func (o GetApplicationV2OidcOutput) ComplianceProblems() GetApplicationV2OidcComplianceProblemArrayOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) []GetApplicationV2OidcComplianceProblem { return v.ComplianceProblems }).(GetApplicationV2OidcComplianceProblemArrayOutput)
+}
+
+// Development mode (relaxes redirect-URI validation).
+func (o GetApplicationV2OidcOutput) DevMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) bool { return v.DevMode }).(pulumi.BoolOutput)
+}
+
+// Grant types, supported values: OIDC_GRANT_TYPE_AUTHORIZATION_CODE, OIDC_GRANT_TYPE_IMPLICIT, OIDC_GRANT_TYPE_REFRESH_TOKEN, OIDC_GRANT_TYPE_DEVICE_CODE, OIDC_GRANT_TYPE_TOKEN_EXCHANGE
+func (o GetApplicationV2OidcOutput) GrantTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) []string { return v.GrantTypes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetApplicationV2OidcOutput) IdTokenRoleAssertion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) bool { return v.IdTokenRoleAssertion }).(pulumi.BoolOutput)
+}
+
+func (o GetApplicationV2OidcOutput) IdTokenUserinfoAssertion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) bool { return v.IdTokenUserinfoAssertion }).(pulumi.BoolOutput)
+}
+
+// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+func (o GetApplicationV2OidcOutput) LoginVersions() GetApplicationV2OidcLoginVersionArrayOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) []GetApplicationV2OidcLoginVersion { return v.LoginVersions }).(GetApplicationV2OidcLoginVersionArrayOutput)
+}
+
+// Whether the OIDC configuration violates the OIDC specification, as determined by ZITADEL. See `complianceProblems` for the individual findings.
+func (o GetApplicationV2OidcOutput) NoneCompliant() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) bool { return v.NoneCompliant }).(pulumi.BoolOutput)
+}
+
+// Post-logout redirect URIs.
+func (o GetApplicationV2OidcOutput) PostLogoutRedirectUris() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) []string { return v.PostLogoutRedirectUris }).(pulumi.StringArrayOutput)
+}
+
+// Allowed redirect URIs. Required: OIDC clients cannot function without at least one redirect URI, and the Zitadel API rejects creation otherwise. Matches the v1 `ApplicationOidc` requirement.
+func (o GetApplicationV2OidcOutput) RedirectUris() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) []string { return v.RedirectUris }).(pulumi.StringArrayOutput)
+}
+
+// Response types, supported values: OIDC_RESPONSE_TYPE_UNSPECIFIED, OIDC_RESPONSE_TYPE_CODE, OIDC_RESPONSE_TYPE_ID_TOKEN, OIDC_RESPONSE_TYPE_ID_TOKEN_TOKEN
+func (o GetApplicationV2OidcOutput) ResponseTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) []string { return v.ResponseTypes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetApplicationV2OidcOutput) SkipNativeAppSuccessPage() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) bool { return v.SkipNativeAppSuccessPage }).(pulumi.BoolOutput)
+}
+
+// OIDC version, supported values: OIDC_VERSION_1_0
+func (o GetApplicationV2OidcOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2Oidc) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetApplicationV2OidcArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2OidcArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2Oidc)(nil)).Elem()
+}
+
+func (o GetApplicationV2OidcArrayOutput) ToGetApplicationV2OidcArrayOutput() GetApplicationV2OidcArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcArrayOutput) ToGetApplicationV2OidcArrayOutputWithContext(ctx context.Context) GetApplicationV2OidcArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcArrayOutput) Index(i pulumi.IntInput) GetApplicationV2OidcOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationV2Oidc {
+		return vs[0].([]GetApplicationV2Oidc)[vs[1].(int)]
+	}).(GetApplicationV2OidcOutput)
+}
+
+type GetApplicationV2OidcComplianceProblem struct {
+	// Stable i18n key identifying the compliance problem.
+	Key string `pulumi:"key"`
+	// Human-readable description of the compliance problem.
+	Message string `pulumi:"message"`
+}
+
+type GetApplicationV2OidcComplianceProblemOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2OidcComplianceProblemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2OidcComplianceProblem)(nil)).Elem()
+}
+
+func (o GetApplicationV2OidcComplianceProblemOutput) ToGetApplicationV2OidcComplianceProblemOutput() GetApplicationV2OidcComplianceProblemOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcComplianceProblemOutput) ToGetApplicationV2OidcComplianceProblemOutputWithContext(ctx context.Context) GetApplicationV2OidcComplianceProblemOutput {
+	return o
+}
+
+// Stable i18n key identifying the compliance problem.
+func (o GetApplicationV2OidcComplianceProblemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2OidcComplianceProblem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Human-readable description of the compliance problem.
+func (o GetApplicationV2OidcComplianceProblemOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2OidcComplianceProblem) string { return v.Message }).(pulumi.StringOutput)
+}
+
+type GetApplicationV2OidcComplianceProblemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2OidcComplianceProblemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2OidcComplianceProblem)(nil)).Elem()
+}
+
+func (o GetApplicationV2OidcComplianceProblemArrayOutput) ToGetApplicationV2OidcComplianceProblemArrayOutput() GetApplicationV2OidcComplianceProblemArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcComplianceProblemArrayOutput) ToGetApplicationV2OidcComplianceProblemArrayOutputWithContext(ctx context.Context) GetApplicationV2OidcComplianceProblemArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcComplianceProblemArrayOutput) Index(i pulumi.IntInput) GetApplicationV2OidcComplianceProblemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationV2OidcComplianceProblem {
+		return vs[0].([]GetApplicationV2OidcComplianceProblem)[vs[1].(int)]
+	}).(GetApplicationV2OidcComplianceProblemOutput)
+}
+
+type GetApplicationV2OidcLoginVersion struct {
+	// Use the legacy Login UI (V1).
+	LoginV1 bool `pulumi:"loginV1"`
+	// Use the Login UI V2.
+	LoginV2s []GetApplicationV2OidcLoginVersionLoginV2 `pulumi:"loginV2s"`
+}
+
+type GetApplicationV2OidcLoginVersionOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2OidcLoginVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2OidcLoginVersion)(nil)).Elem()
+}
+
+func (o GetApplicationV2OidcLoginVersionOutput) ToGetApplicationV2OidcLoginVersionOutput() GetApplicationV2OidcLoginVersionOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcLoginVersionOutput) ToGetApplicationV2OidcLoginVersionOutputWithContext(ctx context.Context) GetApplicationV2OidcLoginVersionOutput {
+	return o
+}
+
+// Use the legacy Login UI (V1).
+func (o GetApplicationV2OidcLoginVersionOutput) LoginV1() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetApplicationV2OidcLoginVersion) bool { return v.LoginV1 }).(pulumi.BoolOutput)
+}
+
+// Use the Login UI V2.
+func (o GetApplicationV2OidcLoginVersionOutput) LoginV2s() GetApplicationV2OidcLoginVersionLoginV2ArrayOutput {
+	return o.ApplyT(func(v GetApplicationV2OidcLoginVersion) []GetApplicationV2OidcLoginVersionLoginV2 { return v.LoginV2s }).(GetApplicationV2OidcLoginVersionLoginV2ArrayOutput)
+}
+
+type GetApplicationV2OidcLoginVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2OidcLoginVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2OidcLoginVersion)(nil)).Elem()
+}
+
+func (o GetApplicationV2OidcLoginVersionArrayOutput) ToGetApplicationV2OidcLoginVersionArrayOutput() GetApplicationV2OidcLoginVersionArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcLoginVersionArrayOutput) ToGetApplicationV2OidcLoginVersionArrayOutputWithContext(ctx context.Context) GetApplicationV2OidcLoginVersionArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcLoginVersionArrayOutput) Index(i pulumi.IntInput) GetApplicationV2OidcLoginVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationV2OidcLoginVersion {
+		return vs[0].([]GetApplicationV2OidcLoginVersion)[vs[1].(int)]
+	}).(GetApplicationV2OidcLoginVersionOutput)
+}
+
+type GetApplicationV2OidcLoginVersionLoginV2 struct {
+	// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+	BaseUri string `pulumi:"baseUri"`
+}
+
+type GetApplicationV2OidcLoginVersionLoginV2Output struct{ *pulumi.OutputState }
+
+func (GetApplicationV2OidcLoginVersionLoginV2Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2OidcLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (o GetApplicationV2OidcLoginVersionLoginV2Output) ToGetApplicationV2OidcLoginVersionLoginV2Output() GetApplicationV2OidcLoginVersionLoginV2Output {
+	return o
+}
+
+func (o GetApplicationV2OidcLoginVersionLoginV2Output) ToGetApplicationV2OidcLoginVersionLoginV2OutputWithContext(ctx context.Context) GetApplicationV2OidcLoginVersionLoginV2Output {
+	return o
+}
+
+// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+func (o GetApplicationV2OidcLoginVersionLoginV2Output) BaseUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2OidcLoginVersionLoginV2) string { return v.BaseUri }).(pulumi.StringOutput)
+}
+
+type GetApplicationV2OidcLoginVersionLoginV2ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2OidcLoginVersionLoginV2ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2OidcLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (o GetApplicationV2OidcLoginVersionLoginV2ArrayOutput) ToGetApplicationV2OidcLoginVersionLoginV2ArrayOutput() GetApplicationV2OidcLoginVersionLoginV2ArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcLoginVersionLoginV2ArrayOutput) ToGetApplicationV2OidcLoginVersionLoginV2ArrayOutputWithContext(ctx context.Context) GetApplicationV2OidcLoginVersionLoginV2ArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2OidcLoginVersionLoginV2ArrayOutput) Index(i pulumi.IntInput) GetApplicationV2OidcLoginVersionLoginV2Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationV2OidcLoginVersionLoginV2 {
+		return vs[0].([]GetApplicationV2OidcLoginVersionLoginV2)[vs[1].(int)]
+	}).(GetApplicationV2OidcLoginVersionLoginV2Output)
+}
+
+type GetApplicationV2Saml struct {
+	// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+	LoginVersions []GetApplicationV2SamlLoginVersion `pulumi:"loginVersions"`
+	// URL from which SAML metadata can be fetched. Mutually exclusive with `metadataXml`.
+	MetadataUrl string `pulumi:"metadataUrl"`
+	// SAML metadata as raw XML. Mutually exclusive with `metadataUrl`. Marked sensitive because SAML metadata documents commonly embed signing/encryption certificates.
+	MetadataXml string `pulumi:"metadataXml"`
+}
+
+type GetApplicationV2SamlOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2SamlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2Saml)(nil)).Elem()
+}
+
+func (o GetApplicationV2SamlOutput) ToGetApplicationV2SamlOutput() GetApplicationV2SamlOutput {
+	return o
+}
+
+func (o GetApplicationV2SamlOutput) ToGetApplicationV2SamlOutputWithContext(ctx context.Context) GetApplicationV2SamlOutput {
+	return o
+}
+
+// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+func (o GetApplicationV2SamlOutput) LoginVersions() GetApplicationV2SamlLoginVersionArrayOutput {
+	return o.ApplyT(func(v GetApplicationV2Saml) []GetApplicationV2SamlLoginVersion { return v.LoginVersions }).(GetApplicationV2SamlLoginVersionArrayOutput)
+}
+
+// URL from which SAML metadata can be fetched. Mutually exclusive with `metadataXml`.
+func (o GetApplicationV2SamlOutput) MetadataUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2Saml) string { return v.MetadataUrl }).(pulumi.StringOutput)
+}
+
+// SAML metadata as raw XML. Mutually exclusive with `metadataUrl`. Marked sensitive because SAML metadata documents commonly embed signing/encryption certificates.
+func (o GetApplicationV2SamlOutput) MetadataXml() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2Saml) string { return v.MetadataXml }).(pulumi.StringOutput)
+}
+
+type GetApplicationV2SamlArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2SamlArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2Saml)(nil)).Elem()
+}
+
+func (o GetApplicationV2SamlArrayOutput) ToGetApplicationV2SamlArrayOutput() GetApplicationV2SamlArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2SamlArrayOutput) ToGetApplicationV2SamlArrayOutputWithContext(ctx context.Context) GetApplicationV2SamlArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2SamlArrayOutput) Index(i pulumi.IntInput) GetApplicationV2SamlOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationV2Saml {
+		return vs[0].([]GetApplicationV2Saml)[vs[1].(int)]
+	}).(GetApplicationV2SamlOutput)
+}
+
+type GetApplicationV2SamlLoginVersion struct {
+	// Use the legacy Login UI (V1).
+	LoginV1 bool `pulumi:"loginV1"`
+	// Use the Login UI V2.
+	LoginV2s []GetApplicationV2SamlLoginVersionLoginV2 `pulumi:"loginV2s"`
+}
+
+type GetApplicationV2SamlLoginVersionOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2SamlLoginVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2SamlLoginVersion)(nil)).Elem()
+}
+
+func (o GetApplicationV2SamlLoginVersionOutput) ToGetApplicationV2SamlLoginVersionOutput() GetApplicationV2SamlLoginVersionOutput {
+	return o
+}
+
+func (o GetApplicationV2SamlLoginVersionOutput) ToGetApplicationV2SamlLoginVersionOutputWithContext(ctx context.Context) GetApplicationV2SamlLoginVersionOutput {
+	return o
+}
+
+// Use the legacy Login UI (V1).
+func (o GetApplicationV2SamlLoginVersionOutput) LoginV1() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetApplicationV2SamlLoginVersion) bool { return v.LoginV1 }).(pulumi.BoolOutput)
+}
+
+// Use the Login UI V2.
+func (o GetApplicationV2SamlLoginVersionOutput) LoginV2s() GetApplicationV2SamlLoginVersionLoginV2ArrayOutput {
+	return o.ApplyT(func(v GetApplicationV2SamlLoginVersion) []GetApplicationV2SamlLoginVersionLoginV2 { return v.LoginV2s }).(GetApplicationV2SamlLoginVersionLoginV2ArrayOutput)
+}
+
+type GetApplicationV2SamlLoginVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2SamlLoginVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2SamlLoginVersion)(nil)).Elem()
+}
+
+func (o GetApplicationV2SamlLoginVersionArrayOutput) ToGetApplicationV2SamlLoginVersionArrayOutput() GetApplicationV2SamlLoginVersionArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2SamlLoginVersionArrayOutput) ToGetApplicationV2SamlLoginVersionArrayOutputWithContext(ctx context.Context) GetApplicationV2SamlLoginVersionArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2SamlLoginVersionArrayOutput) Index(i pulumi.IntInput) GetApplicationV2SamlLoginVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationV2SamlLoginVersion {
+		return vs[0].([]GetApplicationV2SamlLoginVersion)[vs[1].(int)]
+	}).(GetApplicationV2SamlLoginVersionOutput)
+}
+
+type GetApplicationV2SamlLoginVersionLoginV2 struct {
+	// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+	BaseUri string `pulumi:"baseUri"`
+}
+
+type GetApplicationV2SamlLoginVersionLoginV2Output struct{ *pulumi.OutputState }
+
+func (GetApplicationV2SamlLoginVersionLoginV2Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2SamlLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (o GetApplicationV2SamlLoginVersionLoginV2Output) ToGetApplicationV2SamlLoginVersionLoginV2Output() GetApplicationV2SamlLoginVersionLoginV2Output {
+	return o
+}
+
+func (o GetApplicationV2SamlLoginVersionLoginV2Output) ToGetApplicationV2SamlLoginVersionLoginV2OutputWithContext(ctx context.Context) GetApplicationV2SamlLoginVersionLoginV2Output {
+	return o
+}
+
+// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+func (o GetApplicationV2SamlLoginVersionLoginV2Output) BaseUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationV2SamlLoginVersionLoginV2) string { return v.BaseUri }).(pulumi.StringOutput)
+}
+
+type GetApplicationV2SamlLoginVersionLoginV2ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApplicationV2SamlLoginVersionLoginV2ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2SamlLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (o GetApplicationV2SamlLoginVersionLoginV2ArrayOutput) ToGetApplicationV2SamlLoginVersionLoginV2ArrayOutput() GetApplicationV2SamlLoginVersionLoginV2ArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2SamlLoginVersionLoginV2ArrayOutput) ToGetApplicationV2SamlLoginVersionLoginV2ArrayOutputWithContext(ctx context.Context) GetApplicationV2SamlLoginVersionLoginV2ArrayOutput {
+	return o
+}
+
+func (o GetApplicationV2SamlLoginVersionLoginV2ArrayOutput) Index(i pulumi.IntInput) GetApplicationV2SamlLoginVersionLoginV2Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApplicationV2SamlLoginVersionLoginV2 {
+		return vs[0].([]GetApplicationV2SamlLoginVersionLoginV2)[vs[1].(int)]
+	}).(GetApplicationV2SamlLoginVersionLoginV2Output)
+}
+
 type GetInstanceCustomDomainType struct {
 	// The domain name.
 	Domain string `pulumi:"domain"`
@@ -17705,6 +19767,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationSamlLoginVersionPtrInput)(nil)).Elem(), ApplicationSamlLoginVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationSamlLoginVersionLoginV2Input)(nil)).Elem(), ApplicationSamlLoginVersionLoginV2Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationSamlLoginVersionLoginV2PtrInput)(nil)).Elem(), ApplicationSamlLoginVersionLoginV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2ApiInput)(nil)).Elem(), ApplicationV2ApiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2ApiPtrInput)(nil)).Elem(), ApplicationV2ApiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2OidcInput)(nil)).Elem(), ApplicationV2OidcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2OidcPtrInput)(nil)).Elem(), ApplicationV2OidcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2OidcComplianceProblemInput)(nil)).Elem(), ApplicationV2OidcComplianceProblemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2OidcComplianceProblemArrayInput)(nil)).Elem(), ApplicationV2OidcComplianceProblemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2OidcLoginVersionInput)(nil)).Elem(), ApplicationV2OidcLoginVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2OidcLoginVersionPtrInput)(nil)).Elem(), ApplicationV2OidcLoginVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2OidcLoginVersionLoginV2Input)(nil)).Elem(), ApplicationV2OidcLoginVersionLoginV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2OidcLoginVersionLoginV2PtrInput)(nil)).Elem(), ApplicationV2OidcLoginVersionLoginV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2SamlInput)(nil)).Elem(), ApplicationV2SamlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2SamlPtrInput)(nil)).Elem(), ApplicationV2SamlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2SamlLoginVersionInput)(nil)).Elem(), ApplicationV2SamlLoginVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2SamlLoginVersionPtrInput)(nil)).Elem(), ApplicationV2SamlLoginVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2SamlLoginVersionLoginV2Input)(nil)).Elem(), ApplicationV2SamlLoginVersionLoginV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationV2SamlLoginVersionLoginV2PtrInput)(nil)).Elem(), ApplicationV2SamlLoginVersionLoginV2Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DefaultLoginTextsEmailVerificationDoneTextInput)(nil)).Elem(), DefaultLoginTextsEmailVerificationDoneTextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DefaultLoginTextsEmailVerificationDoneTextPtrInput)(nil)).Elem(), DefaultLoginTextsEmailVerificationDoneTextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DefaultLoginTextsEmailVerificationTextInput)(nil)).Elem(), DefaultLoginTextsEmailVerificationTextArgs{})
@@ -17875,6 +19953,22 @@ func init() {
 	pulumi.RegisterOutputType(ApplicationSamlLoginVersionPtrOutput{})
 	pulumi.RegisterOutputType(ApplicationSamlLoginVersionLoginV2Output{})
 	pulumi.RegisterOutputType(ApplicationSamlLoginVersionLoginV2PtrOutput{})
+	pulumi.RegisterOutputType(ApplicationV2ApiOutput{})
+	pulumi.RegisterOutputType(ApplicationV2ApiPtrOutput{})
+	pulumi.RegisterOutputType(ApplicationV2OidcOutput{})
+	pulumi.RegisterOutputType(ApplicationV2OidcPtrOutput{})
+	pulumi.RegisterOutputType(ApplicationV2OidcComplianceProblemOutput{})
+	pulumi.RegisterOutputType(ApplicationV2OidcComplianceProblemArrayOutput{})
+	pulumi.RegisterOutputType(ApplicationV2OidcLoginVersionOutput{})
+	pulumi.RegisterOutputType(ApplicationV2OidcLoginVersionPtrOutput{})
+	pulumi.RegisterOutputType(ApplicationV2OidcLoginVersionLoginV2Output{})
+	pulumi.RegisterOutputType(ApplicationV2OidcLoginVersionLoginV2PtrOutput{})
+	pulumi.RegisterOutputType(ApplicationV2SamlOutput{})
+	pulumi.RegisterOutputType(ApplicationV2SamlPtrOutput{})
+	pulumi.RegisterOutputType(ApplicationV2SamlLoginVersionOutput{})
+	pulumi.RegisterOutputType(ApplicationV2SamlLoginVersionPtrOutput{})
+	pulumi.RegisterOutputType(ApplicationV2SamlLoginVersionLoginV2Output{})
+	pulumi.RegisterOutputType(ApplicationV2SamlLoginVersionLoginV2PtrOutput{})
 	pulumi.RegisterOutputType(DefaultLoginTextsEmailVerificationDoneTextOutput{})
 	pulumi.RegisterOutputType(DefaultLoginTextsEmailVerificationDoneTextPtrOutput{})
 	pulumi.RegisterOutputType(DefaultLoginTextsEmailVerificationTextOutput{})
@@ -18045,6 +20139,22 @@ func init() {
 	pulumi.RegisterOutputType(GetApplicationSamlLoginVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationSamlLoginVersionLoginV2Output{})
 	pulumi.RegisterOutputType(GetApplicationSamlLoginVersionLoginV2ArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2ApiOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2ApiArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2OidcOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2OidcArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2OidcComplianceProblemOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2OidcComplianceProblemArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2OidcLoginVersionOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2OidcLoginVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2OidcLoginVersionLoginV2Output{})
+	pulumi.RegisterOutputType(GetApplicationV2OidcLoginVersionLoginV2ArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2SamlOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2SamlArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2SamlLoginVersionOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2SamlLoginVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetApplicationV2SamlLoginVersionLoginV2Output{})
+	pulumi.RegisterOutputType(GetApplicationV2SamlLoginVersionLoginV2ArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceCustomDomainTypeOutput{})
 	pulumi.RegisterOutputType(GetInstanceCustomDomainTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceFeaturesLoginV2Output{})

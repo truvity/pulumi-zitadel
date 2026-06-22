@@ -12,6 +12,8 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
+// Customizes the phone number verification SMS sent to users (org-scoped). Instance-level defaults are managed by `DefaultVerifyPhoneMessageText`.
+//
 // ## Example Usage
 //
 // ```go

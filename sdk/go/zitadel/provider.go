@@ -50,8 +50,12 @@ func NewProvider(ctx *pulumi.Context,
 	if args.AccessToken != nil {
 		args.AccessToken = pulumi.ToSecret(args.AccessToken).(pulumi.StringPtrInput)
 	}
+	if args.JwtProfileJson != nil {
+		args.JwtProfileJson = pulumi.ToSecret(args.JwtProfileJson).(pulumi.StringPtrInput)
+	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"accessToken",
+		"jwtProfileJson",
 	})
 	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)

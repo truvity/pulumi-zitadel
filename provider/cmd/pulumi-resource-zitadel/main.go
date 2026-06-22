@@ -1,17 +1,17 @@
 package main
 
 import (
+	"context"
 	_ "embed"
 
-	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
+	pftfbridge "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/pf/tfbridge"
 
 	zitadel "github.com/truvity/pulumi-zitadel/provider"
-	"github.com/truvity/pulumi-zitadel/provider/pkg/version"
 )
 
-//go:embed bridge-metadata.json
-var bridgeMetadata []byte
+//go:embed schema.json
+var schema []byte
 
 func main() {
-	tfbridge.Main("zitadel", version.Version, zitadel.Provider(), bridgeMetadata)
+	pftfbridge.MainWithMuxer(context.Background(), "zitadel", zitadel.Provider(), schema)
 }

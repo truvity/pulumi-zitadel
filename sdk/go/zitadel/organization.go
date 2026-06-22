@@ -11,7 +11,7 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
-// Resource representing an organization in ZITADEL, which is the highest level after the instance and contains several other resource including policies if the configuration differs to the default policies on the instance.
+// Resource representing an organization in ZITADEL. Uses the org/v2 API and **requires ZITADEL 4.x**. For deployments that must support ZITADEL 3.x, use `Org` instead (it automatically falls back to the management API).
 //
 // ## Example Usage
 //

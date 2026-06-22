@@ -99,6 +99,66 @@
                     }
                 }
             },
+            "zitadel_application_v2": {
+                "current": "zitadel:index/applicationV2:ApplicationV2",
+                "fields": {
+                    "api": {
+                        "maxItemsOne": true
+                    },
+                    "oidc": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "additional_origins": {
+                                    "maxItemsOne": false
+                                },
+                                "compliance_problems": {
+                                    "maxItemsOne": false
+                                },
+                                "grant_types": {
+                                    "maxItemsOne": false
+                                },
+                                "login_version": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "login_v2": {
+                                                "maxItemsOne": true
+                                            }
+                                        }
+                                    }
+                                },
+                                "post_logout_redirect_uris": {
+                                    "maxItemsOne": false
+                                },
+                                "redirect_uris": {
+                                    "maxItemsOne": false
+                                },
+                                "response_types": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "saml": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "login_version": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "login_v2": {
+                                                "maxItemsOne": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "zitadel_default_domain_claimed_message_text": {
                 "current": "zitadel:index/defaultDomainClaimedMessageText:DefaultDomainClaimedMessageText"
             },
@@ -562,6 +622,9 @@
             "zitadel_project_role": {
                 "current": "zitadel:index/projectRole:ProjectRole"
             },
+            "zitadel_project_v2": {
+                "current": "zitadel:index/projectV2:ProjectV2"
+            },
             "zitadel_sms_provider_http": {
                 "current": "zitadel:index/smsProviderHttp:SmsProviderHttp"
             },
@@ -739,6 +802,74 @@
             },
             "zitadel_application_samls": {
                 "current": "zitadel:index/getApplicationSamls:getApplicationSamls",
+                "fields": {
+                    "app_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_application_v2": {
+                "current": "zitadel:index/getApplicationV2:getApplicationV2",
+                "fields": {
+                    "api": {
+                        "maxItemsOne": false
+                    },
+                    "oidc": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "additional_origins": {
+                                    "maxItemsOne": false
+                                },
+                                "compliance_problems": {
+                                    "maxItemsOne": false
+                                },
+                                "grant_types": {
+                                    "maxItemsOne": false
+                                },
+                                "login_version": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "login_v2": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "post_logout_redirect_uris": {
+                                    "maxItemsOne": false
+                                },
+                                "redirect_uris": {
+                                    "maxItemsOne": false
+                                },
+                                "response_types": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "saml": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "login_version": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "login_v2": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "zitadel_applications_v2": {
+                "current": "zitadel:index/getApplicationsV2:getApplicationsV2",
                 "fields": {
                     "app_ids": {
                         "maxItemsOne": false
@@ -1079,8 +1210,19 @@
                     }
                 }
             },
+            "zitadel_project_v2": {
+                "current": "zitadel:index/getProjectV2:getProjectV2"
+            },
             "zitadel_projects": {
                 "current": "zitadel:index/getProjects:getProjects",
+                "fields": {
+                    "project_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_projects_v2": {
+                "current": "zitadel:index/getProjectsV2:getProjectsV2",
                 "fields": {
                     "project_ids": {
                         "maxItemsOne": false
@@ -1149,6 +1291,191 @@
             "zitadel_verify_email_otp_message_text": {},
             "zitadel_verify_phone_message_text": {},
             "zitadel_verify_sms_otp_message_text": {}
+        }
+    },
+    "mux": {
+        "resources": {
+            "zitadel:index/action:Action": 0,
+            "zitadel:index/actionExecutionEvent:ActionExecutionEvent": 0,
+            "zitadel:index/actionExecutionFunction:ActionExecutionFunction": 0,
+            "zitadel:index/actionExecutionRequest:ActionExecutionRequest": 0,
+            "zitadel:index/actionExecutionResponse:ActionExecutionResponse": 0,
+            "zitadel:index/actionTarget:ActionTarget": 0,
+            "zitadel:index/actionTargetPublicKey:ActionTargetPublicKey": 0,
+            "zitadel:index/activeWebkey:ActiveWebkey": 0,
+            "zitadel:index/applicationApi:ApplicationApi": 0,
+            "zitadel:index/applicationKey:ApplicationKey": 0,
+            "zitadel:index/applicationOidc:ApplicationOidc": 0,
+            "zitadel:index/applicationSaml:ApplicationSaml": 0,
+            "zitadel:index/applicationV2:ApplicationV2": 0,
+            "zitadel:index/defaultDomainClaimedMessageText:DefaultDomainClaimedMessageText": 1,
+            "zitadel:index/defaultDomainPolicy:DefaultDomainPolicy": 0,
+            "zitadel:index/defaultInitMessageText:DefaultInitMessageText": 1,
+            "zitadel:index/defaultInviteUserMessageText:DefaultInviteUserMessageText": 1,
+            "zitadel:index/defaultLabelPolicy:DefaultLabelPolicy": 0,
+            "zitadel:index/defaultLockoutPolicy:DefaultLockoutPolicy": 0,
+            "zitadel:index/defaultLoginPolicy:DefaultLoginPolicy": 0,
+            "zitadel:index/defaultLoginTexts:DefaultLoginTexts": 1,
+            "zitadel:index/defaultNotificationPolicy:DefaultNotificationPolicy": 0,
+            "zitadel:index/defaultOidcSettings:DefaultOidcSettings": 0,
+            "zitadel:index/defaultPasswordAgePolicy:DefaultPasswordAgePolicy": 0,
+            "zitadel:index/defaultPasswordChangeMessageText:DefaultPasswordChangeMessageText": 1,
+            "zitadel:index/defaultPasswordComplexityPolicy:DefaultPasswordComplexityPolicy": 0,
+            "zitadel:index/defaultPasswordResetMessageText:DefaultPasswordResetMessageText": 1,
+            "zitadel:index/defaultPasswordlessRegistrationMessageText:DefaultPasswordlessRegistrationMessageText": 1,
+            "zitadel:index/defaultPrivacyPolicy:DefaultPrivacyPolicy": 0,
+            "zitadel:index/defaultSecuritySettings:DefaultSecuritySettings": 0,
+            "zitadel:index/defaultVerifyEmailMessageText:DefaultVerifyEmailMessageText": 1,
+            "zitadel:index/defaultVerifyEmailOtpMessageText:DefaultVerifyEmailOtpMessageText": 1,
+            "zitadel:index/defaultVerifyPhoneMessageText:DefaultVerifyPhoneMessageText": 1,
+            "zitadel:index/defaultVerifySmsOtpMessageText:DefaultVerifySmsOtpMessageText": 1,
+            "zitadel:index/domain:Domain": 0,
+            "zitadel:index/domainClaimedMessageText:DomainClaimedMessageText": 1,
+            "zitadel:index/domainPolicy:DomainPolicy": 0,
+            "zitadel:index/emailProviderHttp:EmailProviderHttp": 0,
+            "zitadel:index/emailProviderSmtp:EmailProviderSmtp": 0,
+            "zitadel:index/humanUser:HumanUser": 0,
+            "zitadel:index/idpApple:IdpApple": 0,
+            "zitadel:index/idpAzureAd:IdpAzureAd": 0,
+            "zitadel:index/idpGithub:IdpGithub": 0,
+            "zitadel:index/idpGithubEs:IdpGithubEs": 0,
+            "zitadel:index/idpGitlab:IdpGitlab": 0,
+            "zitadel:index/idpGitlabSelfHosted:IdpGitlabSelfHosted": 0,
+            "zitadel:index/idpGoogle:IdpGoogle": 0,
+            "zitadel:index/idpLdap:IdpLdap": 0,
+            "zitadel:index/idpOauth:IdpOauth": 0,
+            "zitadel:index/idpOidc:IdpOidc": 0,
+            "zitadel:index/idpSaml:IdpSaml": 0,
+            "zitadel:index/initMessageText:InitMessageText": 1,
+            "zitadel:index/instanceCustomDomain:InstanceCustomDomain": 0,
+            "zitadel:index/instanceFeatures:InstanceFeatures": 0,
+            "zitadel:index/instanceMember:InstanceMember": 0,
+            "zitadel:index/instanceRestrictions:InstanceRestrictions": 0,
+            "zitadel:index/instanceSecretGenerator:InstanceSecretGenerator": 0,
+            "zitadel:index/instanceTrustedDomain:InstanceTrustedDomain": 0,
+            "zitadel:index/labelPolicy:LabelPolicy": 0,
+            "zitadel:index/lockoutPolicy:LockoutPolicy": 0,
+            "zitadel:index/loginPolicy:LoginPolicy": 0,
+            "zitadel:index/loginTexts:LoginTexts": 1,
+            "zitadel:index/machineKey:MachineKey": 0,
+            "zitadel:index/machineUser:MachineUser": 0,
+            "zitadel:index/notificationPolicy:NotificationPolicy": 0,
+            "zitadel:index/org:Org": 0,
+            "zitadel:index/orgIdpApple:OrgIdpApple": 0,
+            "zitadel:index/orgIdpAzureAd:OrgIdpAzureAd": 0,
+            "zitadel:index/orgIdpGithub:OrgIdpGithub": 0,
+            "zitadel:index/orgIdpGithubEs:OrgIdpGithubEs": 0,
+            "zitadel:index/orgIdpGitlab:OrgIdpGitlab": 0,
+            "zitadel:index/orgIdpGitlabSelfHosted:OrgIdpGitlabSelfHosted": 0,
+            "zitadel:index/orgIdpGoogle:OrgIdpGoogle": 0,
+            "zitadel:index/orgIdpJwt:OrgIdpJwt": 0,
+            "zitadel:index/orgIdpLdap:OrgIdpLdap": 0,
+            "zitadel:index/orgIdpOauth:OrgIdpOauth": 0,
+            "zitadel:index/orgIdpOidc:OrgIdpOidc": 0,
+            "zitadel:index/orgIdpSaml:OrgIdpSaml": 0,
+            "zitadel:index/orgMember:OrgMember": 0,
+            "zitadel:index/orgMetadata:OrgMetadata": 0,
+            "zitadel:index/organization:Organization": 0,
+            "zitadel:index/organizationDomain:OrganizationDomain": 0,
+            "zitadel:index/organizationMetadata:OrganizationMetadata": 0,
+            "zitadel:index/passwordAgePolicy:PasswordAgePolicy": 0,
+            "zitadel:index/passwordChangeMessageText:PasswordChangeMessageText": 1,
+            "zitadel:index/passwordComplexityPolicy:PasswordComplexityPolicy": 0,
+            "zitadel:index/passwordResetMessageText:PasswordResetMessageText": 1,
+            "zitadel:index/passwordlessRegistrationMessageText:PasswordlessRegistrationMessageText": 1,
+            "zitadel:index/personalAccessToken:PersonalAccessToken": 0,
+            "zitadel:index/privacyPolicy:PrivacyPolicy": 0,
+            "zitadel:index/project:Project": 0,
+            "zitadel:index/projectGrant:ProjectGrant": 0,
+            "zitadel:index/projectGrantMember:ProjectGrantMember": 0,
+            "zitadel:index/projectMember:ProjectMember": 0,
+            "zitadel:index/projectRole:ProjectRole": 0,
+            "zitadel:index/projectV2:ProjectV2": 0,
+            "zitadel:index/smsProviderHttp:SmsProviderHttp": 0,
+            "zitadel:index/smsProviderTwilio:SmsProviderTwilio": 0,
+            "zitadel:index/smtpConfig:SmtpConfig": 0,
+            "zitadel:index/systemFeatures:SystemFeatures": 0,
+            "zitadel:index/triggerActions:TriggerActions": 0,
+            "zitadel:index/userGrant:UserGrant": 0,
+            "zitadel:index/userMetadata:UserMetadata": 0,
+            "zitadel:index/verifyEmailMessageText:VerifyEmailMessageText": 1,
+            "zitadel:index/verifyEmailOtpMessageText:VerifyEmailOtpMessageText": 1,
+            "zitadel:index/verifyPhoneMessageText:VerifyPhoneMessageText": 1,
+            "zitadel:index/verifySmsOtpMessageText:VerifySmsOtpMessageText": 1,
+            "zitadel:index/webkey:Webkey": 0
+        },
+        "functions": {
+            "zitadel:index/getAction:getAction": 0,
+            "zitadel:index/getActionExecutionEvent:getActionExecutionEvent": 0,
+            "zitadel:index/getActionExecutionFunction:getActionExecutionFunction": 0,
+            "zitadel:index/getActionExecutionRequest:getActionExecutionRequest": 0,
+            "zitadel:index/getActionExecutionResponse:getActionExecutionResponse": 0,
+            "zitadel:index/getActionTarget:getActionTarget": 0,
+            "zitadel:index/getActionTargetPublicKey:getActionTargetPublicKey": 0,
+            "zitadel:index/getApplicationApi:getApplicationApi": 0,
+            "zitadel:index/getApplicationApis:getApplicationApis": 0,
+            "zitadel:index/getApplicationOidc:getApplicationOidc": 0,
+            "zitadel:index/getApplicationOidcs:getApplicationOidcs": 0,
+            "zitadel:index/getApplicationSaml:getApplicationSaml": 0,
+            "zitadel:index/getApplicationSamls:getApplicationSamls": 0,
+            "zitadel:index/getApplicationV2:getApplicationV2": 0,
+            "zitadel:index/getApplicationsV2:getApplicationsV2": 0,
+            "zitadel:index/getDefaultOidcSettings:getDefaultOidcSettings": 0,
+            "zitadel:index/getHumanUser:getHumanUser": 0,
+            "zitadel:index/getHumanUsers:getHumanUsers": 0,
+            "zitadel:index/getIdpApple:getIdpApple": 0,
+            "zitadel:index/getIdpAzureAd:getIdpAzureAd": 0,
+            "zitadel:index/getIdpGithub:getIdpGithub": 0,
+            "zitadel:index/getIdpGithubEs:getIdpGithubEs": 0,
+            "zitadel:index/getIdpGitlab:getIdpGitlab": 0,
+            "zitadel:index/getIdpGitlabSelfHosted:getIdpGitlabSelfHosted": 0,
+            "zitadel:index/getIdpGoogle:getIdpGoogle": 0,
+            "zitadel:index/getIdpLdap:getIdpLdap": 0,
+            "zitadel:index/getIdpOauth:getIdpOauth": 0,
+            "zitadel:index/getIdpOidc:getIdpOidc": 0,
+            "zitadel:index/getIdpSaml:getIdpSaml": 0,
+            "zitadel:index/getInstance:getInstance": 0,
+            "zitadel:index/getInstanceCustomDomains:getInstanceCustomDomains": 0,
+            "zitadel:index/getInstanceFeatures:getInstanceFeatures": 0,
+            "zitadel:index/getInstanceRestrictions:getInstanceRestrictions": 0,
+            "zitadel:index/getInstanceSecretGenerator:getInstanceSecretGenerator": 0,
+            "zitadel:index/getInstanceTrustedDomains:getInstanceTrustedDomains": 0,
+            "zitadel:index/getMachineUser:getMachineUser": 0,
+            "zitadel:index/getMachineUsers:getMachineUsers": 0,
+            "zitadel:index/getOrg:getOrg": 0,
+            "zitadel:index/getOrgIdpApple:getOrgIdpApple": 0,
+            "zitadel:index/getOrgIdpAzureAd:getOrgIdpAzureAd": 0,
+            "zitadel:index/getOrgIdpGithub:getOrgIdpGithub": 0,
+            "zitadel:index/getOrgIdpGithubEs:getOrgIdpGithubEs": 0,
+            "zitadel:index/getOrgIdpGitlab:getOrgIdpGitlab": 0,
+            "zitadel:index/getOrgIdpGitlabSelfHosted:getOrgIdpGitlabSelfHosted": 0,
+            "zitadel:index/getOrgIdpGoogle:getOrgIdpGoogle": 0,
+            "zitadel:index/getOrgIdpJwt:getOrgIdpJwt": 0,
+            "zitadel:index/getOrgIdpLdap:getOrgIdpLdap": 0,
+            "zitadel:index/getOrgIdpOauth:getOrgIdpOauth": 0,
+            "zitadel:index/getOrgIdpOidc:getOrgIdpOidc": 0,
+            "zitadel:index/getOrgIdpSaml:getOrgIdpSaml": 0,
+            "zitadel:index/getOrgJwtIdp:getOrgJwtIdp": 0,
+            "zitadel:index/getOrgOidcIdp:getOrgOidcIdp": 0,
+            "zitadel:index/getOrganization:getOrganization": 0,
+            "zitadel:index/getOrganizationDomain:getOrganizationDomain": 0,
+            "zitadel:index/getOrganizationDomains:getOrganizationDomains": 0,
+            "zitadel:index/getOrganizationMetadata:getOrganizationMetadata": 0,
+            "zitadel:index/getOrganizationMetadatas:getOrganizationMetadatas": 0,
+            "zitadel:index/getOrganizations:getOrganizations": 0,
+            "zitadel:index/getOrgs:getOrgs": 0,
+            "zitadel:index/getProject:getProject": 0,
+            "zitadel:index/getProjectRole:getProjectRole": 0,
+            "zitadel:index/getProjectRoles:getProjectRoles": 0,
+            "zitadel:index/getProjectV2:getProjectV2": 0,
+            "zitadel:index/getProjects:getProjects": 0,
+            "zitadel:index/getProjectsV2:getProjectsV2": 0,
+            "zitadel:index/getSystemFeatures:getSystemFeatures": 0,
+            "zitadel:index/getTriggerActions:getTriggerActions": 0,
+            "zitadel:index/getUserMetadata:getUserMetadata": 0,
+            "zitadel:index/getUserMetadatas:getUserMetadatas": 0,
+            "zitadel:index/getWebkey:getWebkey": 0,
+            "zitadel:index/getZitadel:getZitadel": 0
         }
     }
 }

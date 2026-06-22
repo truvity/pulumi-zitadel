@@ -12,6 +12,8 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
+// Customizes the notification email sent to users when their password is changed (org-scoped). Instance-level defaults are managed by `DefaultPasswordChangeMessageText`.
+//
 // ## Example Usage
 //
 // ```go

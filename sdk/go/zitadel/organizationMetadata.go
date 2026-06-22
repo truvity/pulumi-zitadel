@@ -12,7 +12,7 @@ import (
 	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
 )
 
-// Resource representing metadata of an organization in ZITADEL. This resource manages a single key-value pair.
+// Custom key-value metadata on an organization, using the metadata/v2 API. **Requires ZITADEL 4.x.** For 3.x compatibility use `OrgMetadata`.
 //
 // ## Example Usage
 //

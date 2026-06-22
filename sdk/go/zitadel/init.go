@@ -45,6 +45,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ApplicationOidc{}
 	case "zitadel:index/applicationSaml:ApplicationSaml":
 		r = &ApplicationSaml{}
+	case "zitadel:index/applicationV2:ApplicationV2":
+		r = &ApplicationV2{}
 	case "zitadel:index/defaultDomainClaimedMessageText:DefaultDomainClaimedMessageText":
 		r = &DefaultDomainClaimedMessageText{}
 	case "zitadel:index/defaultDomainPolicy:DefaultDomainPolicy":
@@ -209,6 +211,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ProjectMember{}
 	case "zitadel:index/projectRole:ProjectRole":
 		r = &ProjectRole{}
+	case "zitadel:index/projectV2:ProjectV2":
+		r = &ProjectV2{}
 	case "zitadel:index/smsProviderHttp:SmsProviderHttp":
 		r = &SmsProviderHttp{}
 	case "zitadel:index/smsProviderTwilio:SmsProviderTwilio":
@@ -322,6 +326,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"zitadel",
 		"index/applicationSaml",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"zitadel",
+		"index/applicationV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -732,6 +741,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"zitadel",
 		"index/projectRole",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"zitadel",
+		"index/projectV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
