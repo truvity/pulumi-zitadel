@@ -1,0 +1,21 @@
+{
+  "packages": [
+    "gh@latest",
+    "go@latest",
+    "golangci-lint@latest",
+    "gopls@latest",
+    "goreleaser@latest",
+    "govulncheck@latest",
+    "just-lsp@latest",
+    "just@latest",
+    "pulumi-bin@latest",
+    "pulumictl@latest"
+  ],
+  "env": {
+    "GOWORK": "off"
+  },
+  "shell": {
+    "init_hook": [],
+    "scripts": {}
+  }
+}

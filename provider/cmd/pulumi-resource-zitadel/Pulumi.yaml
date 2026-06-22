@@ -1,0 +1,3 @@
+name: zitadel
+description: A Pulumi resource provider for zitadel.
+language: schema

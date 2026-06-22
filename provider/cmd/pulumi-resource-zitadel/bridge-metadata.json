@@ -1,0 +1,1154 @@
+{
+    "auto-aliasing": {
+        "resources": {
+            "zitadel_action": {
+                "current": "zitadel:index/action:Action"
+            },
+            "zitadel_action_execution_event": {
+                "current": "zitadel:index/actionExecutionEvent:ActionExecutionEvent",
+                "fields": {
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_action_execution_function": {
+                "current": "zitadel:index/actionExecutionFunction:ActionExecutionFunction",
+                "fields": {
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_action_execution_request": {
+                "current": "zitadel:index/actionExecutionRequest:ActionExecutionRequest",
+                "fields": {
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_action_execution_response": {
+                "current": "zitadel:index/actionExecutionResponse:ActionExecutionResponse",
+                "fields": {
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_action_target": {
+                "current": "zitadel:index/actionTarget:ActionTarget"
+            },
+            "zitadel_action_target_public_key": {
+                "current": "zitadel:index/actionTargetPublicKey:ActionTargetPublicKey"
+            },
+            "zitadel_active_webkey": {
+                "current": "zitadel:index/activeWebkey:ActiveWebkey"
+            },
+            "zitadel_application_api": {
+                "current": "zitadel:index/applicationApi:ApplicationApi"
+            },
+            "zitadel_application_key": {
+                "current": "zitadel:index/applicationKey:ApplicationKey"
+            },
+            "zitadel_application_oidc": {
+                "current": "zitadel:index/applicationOidc:ApplicationOidc",
+                "fields": {
+                    "additional_origins": {
+                        "maxItemsOne": false
+                    },
+                    "compliance_problems": {
+                        "maxItemsOne": false
+                    },
+                    "grant_types": {
+                        "maxItemsOne": false
+                    },
+                    "login_version": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "login_v2": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
+                    "post_logout_redirect_uris": {
+                        "maxItemsOne": false
+                    },
+                    "redirect_uris": {
+                        "maxItemsOne": false
+                    },
+                    "response_types": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_application_saml": {
+                "current": "zitadel:index/applicationSaml:ApplicationSaml",
+                "fields": {
+                    "login_version": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "login_v2": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "zitadel_default_domain_claimed_message_text": {
+                "current": "zitadel:index/defaultDomainClaimedMessageText:DefaultDomainClaimedMessageText"
+            },
+            "zitadel_default_domain_policy": {
+                "current": "zitadel:index/defaultDomainPolicy:DefaultDomainPolicy"
+            },
+            "zitadel_default_init_message_text": {
+                "current": "zitadel:index/defaultInitMessageText:DefaultInitMessageText"
+            },
+            "zitadel_default_invite_user_message_text": {
+                "current": "zitadel:index/defaultInviteUserMessageText:DefaultInviteUserMessageText"
+            },
+            "zitadel_default_label_policy": {
+                "current": "zitadel:index/defaultLabelPolicy:DefaultLabelPolicy"
+            },
+            "zitadel_default_lockout_policy": {
+                "current": "zitadel:index/defaultLockoutPolicy:DefaultLockoutPolicy"
+            },
+            "zitadel_default_login_policy": {
+                "current": "zitadel:index/defaultLoginPolicy:DefaultLoginPolicy",
+                "fields": {
+                    "idps": {
+                        "maxItemsOne": false
+                    },
+                    "multi_factors": {
+                        "maxItemsOne": false
+                    },
+                    "second_factors": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_default_login_texts": {
+                "current": "zitadel:index/defaultLoginTexts:DefaultLoginTexts"
+            },
+            "zitadel_default_notification_policy": {
+                "current": "zitadel:index/defaultNotificationPolicy:DefaultNotificationPolicy"
+            },
+            "zitadel_default_oidc_settings": {
+                "current": "zitadel:index/defaultOidcSettings:DefaultOidcSettings"
+            },
+            "zitadel_default_password_age_policy": {
+                "current": "zitadel:index/defaultPasswordAgePolicy:DefaultPasswordAgePolicy"
+            },
+            "zitadel_default_password_change_message_text": {
+                "current": "zitadel:index/defaultPasswordChangeMessageText:DefaultPasswordChangeMessageText"
+            },
+            "zitadel_default_password_complexity_policy": {
+                "current": "zitadel:index/defaultPasswordComplexityPolicy:DefaultPasswordComplexityPolicy"
+            },
+            "zitadel_default_password_reset_message_text": {
+                "current": "zitadel:index/defaultPasswordResetMessageText:DefaultPasswordResetMessageText"
+            },
+            "zitadel_default_passwordless_registration_message_text": {
+                "current": "zitadel:index/defaultPasswordlessRegistrationMessageText:DefaultPasswordlessRegistrationMessageText"
+            },
+            "zitadel_default_privacy_policy": {
+                "current": "zitadel:index/defaultPrivacyPolicy:DefaultPrivacyPolicy"
+            },
+            "zitadel_default_security_settings": {
+                "current": "zitadel:index/defaultSecuritySettings:DefaultSecuritySettings",
+                "fields": {
+                    "embedded_iframe_allowed_origins": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_default_verify_email_message_text": {
+                "current": "zitadel:index/defaultVerifyEmailMessageText:DefaultVerifyEmailMessageText"
+            },
+            "zitadel_default_verify_email_otp_message_text": {
+                "current": "zitadel:index/defaultVerifyEmailOtpMessageText:DefaultVerifyEmailOtpMessageText"
+            },
+            "zitadel_default_verify_phone_message_text": {
+                "current": "zitadel:index/defaultVerifyPhoneMessageText:DefaultVerifyPhoneMessageText"
+            },
+            "zitadel_default_verify_sms_otp_message_text": {
+                "current": "zitadel:index/defaultVerifySmsOtpMessageText:DefaultVerifySmsOtpMessageText"
+            },
+            "zitadel_domain": {
+                "current": "zitadel:index/domain:Domain"
+            },
+            "zitadel_domain_claimed_message_text": {
+                "current": "zitadel:index/domainClaimedMessageText:DomainClaimedMessageText"
+            },
+            "zitadel_domain_policy": {
+                "current": "zitadel:index/domainPolicy:DomainPolicy"
+            },
+            "zitadel_email_provider_http": {
+                "current": "zitadel:index/emailProviderHttp:EmailProviderHttp"
+            },
+            "zitadel_email_provider_smtp": {
+                "current": "zitadel:index/emailProviderSmtp:EmailProviderSmtp"
+            },
+            "zitadel_human_user": {
+                "current": "zitadel:index/humanUser:HumanUser",
+                "fields": {
+                    "idp_links": {
+                        "maxItemsOne": false
+                    },
+                    "login_names": {
+                        "maxItemsOne": false
+                    },
+                    "metadata": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_apple": {
+                "current": "zitadel:index/idpApple:IdpApple",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_azure_ad": {
+                "current": "zitadel:index/idpAzureAd:IdpAzureAd",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_github": {
+                "current": "zitadel:index/idpGithub:IdpGithub",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_github_es": {
+                "current": "zitadel:index/idpGithubEs:IdpGithubEs",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_gitlab": {
+                "current": "zitadel:index/idpGitlab:IdpGitlab",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_gitlab_self_hosted": {
+                "current": "zitadel:index/idpGitlabSelfHosted:IdpGitlabSelfHosted",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_google": {
+                "current": "zitadel:index/idpGoogle:IdpGoogle",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_ldap": {
+                "current": "zitadel:index/idpLdap:IdpLdap",
+                "fields": {
+                    "servers": {
+                        "maxItemsOne": false
+                    },
+                    "user_filters": {
+                        "maxItemsOne": false
+                    },
+                    "user_object_classes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_oauth": {
+                "current": "zitadel:index/idpOauth:IdpOauth",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_oidc": {
+                "current": "zitadel:index/idpOidc:IdpOidc",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_saml": {
+                "current": "zitadel:index/idpSaml:IdpSaml"
+            },
+            "zitadel_init_message_text": {
+                "current": "zitadel:index/initMessageText:InitMessageText"
+            },
+            "zitadel_instance_custom_domain": {
+                "current": "zitadel:index/instanceCustomDomain:InstanceCustomDomain"
+            },
+            "zitadel_instance_features": {
+                "current": "zitadel:index/instanceFeatures:InstanceFeatures",
+                "fields": {
+                    "improved_performance": {
+                        "maxItemsOne": false
+                    },
+                    "login_v2": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
+            "zitadel_instance_member": {
+                "current": "zitadel:index/instanceMember:InstanceMember",
+                "fields": {
+                    "roles": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_instance_restrictions": {
+                "current": "zitadel:index/instanceRestrictions:InstanceRestrictions",
+                "fields": {
+                    "allowed_languages": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_instance_secret_generator": {
+                "current": "zitadel:index/instanceSecretGenerator:InstanceSecretGenerator"
+            },
+            "zitadel_instance_trusted_domain": {
+                "current": "zitadel:index/instanceTrustedDomain:InstanceTrustedDomain"
+            },
+            "zitadel_label_policy": {
+                "current": "zitadel:index/labelPolicy:LabelPolicy"
+            },
+            "zitadel_lockout_policy": {
+                "current": "zitadel:index/lockoutPolicy:LockoutPolicy"
+            },
+            "zitadel_login_policy": {
+                "current": "zitadel:index/loginPolicy:LoginPolicy",
+                "fields": {
+                    "idps": {
+                        "maxItemsOne": false
+                    },
+                    "multi_factors": {
+                        "maxItemsOne": false
+                    },
+                    "second_factors": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_login_texts": {
+                "current": "zitadel:index/loginTexts:LoginTexts"
+            },
+            "zitadel_machine_key": {
+                "current": "zitadel:index/machineKey:MachineKey"
+            },
+            "zitadel_machine_user": {
+                "current": "zitadel:index/machineUser:MachineUser",
+                "fields": {
+                    "login_names": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_notification_policy": {
+                "current": "zitadel:index/notificationPolicy:NotificationPolicy"
+            },
+            "zitadel_org": {
+                "current": "zitadel:index/org:Org",
+                "fields": {
+                    "admins": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "roles": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "zitadel_org_idp_apple": {
+                "current": "zitadel:index/orgIdpApple:OrgIdpApple",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_azure_ad": {
+                "current": "zitadel:index/orgIdpAzureAd:OrgIdpAzureAd",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_github": {
+                "current": "zitadel:index/orgIdpGithub:OrgIdpGithub",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_github_es": {
+                "current": "zitadel:index/orgIdpGithubEs:OrgIdpGithubEs",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_gitlab": {
+                "current": "zitadel:index/orgIdpGitlab:OrgIdpGitlab",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_gitlab_self_hosted": {
+                "current": "zitadel:index/orgIdpGitlabSelfHosted:OrgIdpGitlabSelfHosted",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_google": {
+                "current": "zitadel:index/orgIdpGoogle:OrgIdpGoogle",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_jwt": {
+                "current": "zitadel:index/orgIdpJwt:OrgIdpJwt"
+            },
+            "zitadel_org_idp_ldap": {
+                "current": "zitadel:index/orgIdpLdap:OrgIdpLdap",
+                "fields": {
+                    "servers": {
+                        "maxItemsOne": false
+                    },
+                    "user_filters": {
+                        "maxItemsOne": false
+                    },
+                    "user_object_classes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_oauth": {
+                "current": "zitadel:index/orgIdpOauth:OrgIdpOauth",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_oidc": {
+                "current": "zitadel:index/orgIdpOidc:OrgIdpOidc",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_saml": {
+                "current": "zitadel:index/orgIdpSaml:OrgIdpSaml"
+            },
+            "zitadel_org_member": {
+                "current": "zitadel:index/orgMember:OrgMember",
+                "fields": {
+                    "roles": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_metadata": {
+                "current": "zitadel:index/orgMetadata:OrgMetadata"
+            },
+            "zitadel_organization": {
+                "current": "zitadel:index/organization:Organization",
+                "fields": {
+                    "admins": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "roles": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "zitadel_organization_domain": {
+                "current": "zitadel:index/organizationDomain:OrganizationDomain"
+            },
+            "zitadel_organization_metadata": {
+                "current": "zitadel:index/organizationMetadata:OrganizationMetadata"
+            },
+            "zitadel_password_age_policy": {
+                "current": "zitadel:index/passwordAgePolicy:PasswordAgePolicy"
+            },
+            "zitadel_password_change_message_text": {
+                "current": "zitadel:index/passwordChangeMessageText:PasswordChangeMessageText"
+            },
+            "zitadel_password_complexity_policy": {
+                "current": "zitadel:index/passwordComplexityPolicy:PasswordComplexityPolicy"
+            },
+            "zitadel_password_reset_message_text": {
+                "current": "zitadel:index/passwordResetMessageText:PasswordResetMessageText"
+            },
+            "zitadel_passwordless_registration_message_text": {
+                "current": "zitadel:index/passwordlessRegistrationMessageText:PasswordlessRegistrationMessageText"
+            },
+            "zitadel_personal_access_token": {
+                "current": "zitadel:index/personalAccessToken:PersonalAccessToken"
+            },
+            "zitadel_privacy_policy": {
+                "current": "zitadel:index/privacyPolicy:PrivacyPolicy"
+            },
+            "zitadel_project": {
+                "current": "zitadel:index/project:Project"
+            },
+            "zitadel_project_grant": {
+                "current": "zitadel:index/projectGrant:ProjectGrant",
+                "fields": {
+                    "role_keys": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_project_grant_member": {
+                "current": "zitadel:index/projectGrantMember:ProjectGrantMember",
+                "fields": {
+                    "roles": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_project_member": {
+                "current": "zitadel:index/projectMember:ProjectMember",
+                "fields": {
+                    "roles": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_project_role": {
+                "current": "zitadel:index/projectRole:ProjectRole"
+            },
+            "zitadel_sms_provider_http": {
+                "current": "zitadel:index/smsProviderHttp:SmsProviderHttp"
+            },
+            "zitadel_sms_provider_twilio": {
+                "current": "zitadel:index/smsProviderTwilio:SmsProviderTwilio"
+            },
+            "zitadel_smtp_config": {
+                "current": "zitadel:index/smtpConfig:SmtpConfig"
+            },
+            "zitadel_system_features": {
+                "current": "zitadel:index/systemFeatures:SystemFeatures",
+                "fields": {
+                    "improved_performance": {
+                        "maxItemsOne": false
+                    },
+                    "login_v2": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
+            "zitadel_trigger_actions": {
+                "current": "zitadel:index/triggerActions:TriggerActions",
+                "fields": {
+                    "action_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_user_grant": {
+                "current": "zitadel:index/userGrant:UserGrant",
+                "fields": {
+                    "role_keys": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_user_metadata": {
+                "current": "zitadel:index/userMetadata:UserMetadata"
+            },
+            "zitadel_verify_email_message_text": {
+                "current": "zitadel:index/verifyEmailMessageText:VerifyEmailMessageText"
+            },
+            "zitadel_verify_email_otp_message_text": {
+                "current": "zitadel:index/verifyEmailOtpMessageText:VerifyEmailOtpMessageText"
+            },
+            "zitadel_verify_phone_message_text": {
+                "current": "zitadel:index/verifyPhoneMessageText:VerifyPhoneMessageText"
+            },
+            "zitadel_verify_sms_otp_message_text": {
+                "current": "zitadel:index/verifySmsOtpMessageText:VerifySmsOtpMessageText"
+            },
+            "zitadel_webkey": {
+                "current": "zitadel:index/webkey:Webkey",
+                "fields": {
+                    "ecdsa": {
+                        "maxItemsOne": true
+                    },
+                    "ed25519": {
+                        "maxItemsOne": true
+                    },
+                    "rsa": {
+                        "maxItemsOne": true
+                    }
+                }
+            }
+        },
+        "datasources": {
+            "zitadel_action": {
+                "current": "zitadel:index/getAction:getAction"
+            },
+            "zitadel_action_execution_event": {
+                "current": "zitadel:index/getActionExecutionEvent:getActionExecutionEvent",
+                "fields": {
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_action_execution_function": {
+                "current": "zitadel:index/getActionExecutionFunction:getActionExecutionFunction",
+                "fields": {
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_action_execution_request": {
+                "current": "zitadel:index/getActionExecutionRequest:getActionExecutionRequest",
+                "fields": {
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_action_execution_response": {
+                "current": "zitadel:index/getActionExecutionResponse:getActionExecutionResponse",
+                "fields": {
+                    "target_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_action_target": {
+                "current": "zitadel:index/getActionTarget:getActionTarget"
+            },
+            "zitadel_action_target_public_key": {
+                "current": "zitadel:index/getActionTargetPublicKey:getActionTargetPublicKey"
+            },
+            "zitadel_application_api": {
+                "current": "zitadel:index/getApplicationApi:getApplicationApi"
+            },
+            "zitadel_application_apis": {
+                "current": "zitadel:index/getApplicationApis:getApplicationApis",
+                "fields": {
+                    "app_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_application_oidc": {
+                "current": "zitadel:index/getApplicationOidc:getApplicationOidc",
+                "fields": {
+                    "additional_origins": {
+                        "maxItemsOne": false
+                    },
+                    "compliance_problems": {
+                        "maxItemsOne": false
+                    },
+                    "grant_types": {
+                        "maxItemsOne": false
+                    },
+                    "login_version": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "login_v2": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "post_logout_redirect_uris": {
+                        "maxItemsOne": false
+                    },
+                    "redirect_uris": {
+                        "maxItemsOne": false
+                    },
+                    "response_types": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_application_oidcs": {
+                "current": "zitadel:index/getApplicationOidcs:getApplicationOidcs",
+                "fields": {
+                    "app_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_application_saml": {
+                "current": "zitadel:index/getApplicationSaml:getApplicationSaml",
+                "fields": {
+                    "login_version": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "login_v2": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "zitadel_application_samls": {
+                "current": "zitadel:index/getApplicationSamls:getApplicationSamls",
+                "fields": {
+                    "app_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_default_oidc_settings": {
+                "current": "zitadel:index/getDefaultOidcSettings:getDefaultOidcSettings"
+            },
+            "zitadel_human_user": {
+                "current": "zitadel:index/getHumanUser:getHumanUser",
+                "fields": {
+                    "login_names": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_human_users": {
+                "current": "zitadel:index/getHumanUsers:getHumanUsers",
+                "fields": {
+                    "user_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_apple": {
+                "current": "zitadel:index/getIdpApple:getIdpApple",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_azure_ad": {
+                "current": "zitadel:index/getIdpAzureAd:getIdpAzureAd",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_github": {
+                "current": "zitadel:index/getIdpGithub:getIdpGithub",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_github_es": {
+                "current": "zitadel:index/getIdpGithubEs:getIdpGithubEs",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_gitlab": {
+                "current": "zitadel:index/getIdpGitlab:getIdpGitlab",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_gitlab_self_hosted": {
+                "current": "zitadel:index/getIdpGitlabSelfHosted:getIdpGitlabSelfHosted",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_google": {
+                "current": "zitadel:index/getIdpGoogle:getIdpGoogle",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_ldap": {
+                "current": "zitadel:index/getIdpLdap:getIdpLdap",
+                "fields": {
+                    "servers": {
+                        "maxItemsOne": false
+                    },
+                    "user_filters": {
+                        "maxItemsOne": false
+                    },
+                    "user_object_classes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_oauth": {
+                "current": "zitadel:index/getIdpOauth:getIdpOauth",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_oidc": {
+                "current": "zitadel:index/getIdpOidc:getIdpOidc",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_idp_saml": {
+                "current": "zitadel:index/getIdpSaml:getIdpSaml"
+            },
+            "zitadel_instance": {
+                "current": "zitadel:index/getInstance:getInstance",
+                "fields": {
+                    "custom_domains": {
+                        "maxItemsOne": false
+                    },
+                    "trusted_domains": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_instance_custom_domains": {
+                "current": "zitadel:index/getInstanceCustomDomains:getInstanceCustomDomains",
+                "fields": {
+                    "domains": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_instance_features": {
+                "current": "zitadel:index/getInstanceFeatures:getInstanceFeatures",
+                "fields": {
+                    "improved_performance": {
+                        "maxItemsOne": false
+                    },
+                    "login_v2": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_instance_restrictions": {
+                "current": "zitadel:index/getInstanceRestrictions:getInstanceRestrictions",
+                "fields": {
+                    "allowed_languages": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_instance_secret_generator": {
+                "current": "zitadel:index/getInstanceSecretGenerator:getInstanceSecretGenerator"
+            },
+            "zitadel_instance_trusted_domains": {
+                "current": "zitadel:index/getInstanceTrustedDomains:getInstanceTrustedDomains",
+                "fields": {
+                    "domains": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_machine_user": {
+                "current": "zitadel:index/getMachineUser:getMachineUser",
+                "fields": {
+                    "login_names": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_machine_users": {
+                "current": "zitadel:index/getMachineUsers:getMachineUsers",
+                "fields": {
+                    "user_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org": {
+                "current": "zitadel:index/getOrg:getOrg"
+            },
+            "zitadel_org_idp_apple": {
+                "current": "zitadel:index/getOrgIdpApple:getOrgIdpApple",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_azure_ad": {
+                "current": "zitadel:index/getOrgIdpAzureAd:getOrgIdpAzureAd",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_github": {
+                "current": "zitadel:index/getOrgIdpGithub:getOrgIdpGithub",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_github_es": {
+                "current": "zitadel:index/getOrgIdpGithubEs:getOrgIdpGithubEs",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_gitlab": {
+                "current": "zitadel:index/getOrgIdpGitlab:getOrgIdpGitlab",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_gitlab_self_hosted": {
+                "current": "zitadel:index/getOrgIdpGitlabSelfHosted:getOrgIdpGitlabSelfHosted",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_google": {
+                "current": "zitadel:index/getOrgIdpGoogle:getOrgIdpGoogle",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_jwt": {
+                "current": "zitadel:index/getOrgIdpJwt:getOrgIdpJwt"
+            },
+            "zitadel_org_idp_ldap": {
+                "current": "zitadel:index/getOrgIdpLdap:getOrgIdpLdap",
+                "fields": {
+                    "servers": {
+                        "maxItemsOne": false
+                    },
+                    "user_filters": {
+                        "maxItemsOne": false
+                    },
+                    "user_object_classes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_oauth": {
+                "current": "zitadel:index/getOrgIdpOauth:getOrgIdpOauth",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_oidc": {
+                "current": "zitadel:index/getOrgIdpOidc:getOrgIdpOidc",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_org_idp_saml": {
+                "current": "zitadel:index/getOrgIdpSaml:getOrgIdpSaml"
+            },
+            "zitadel_org_jwt_idp": {
+                "current": "zitadel:index/getOrgJwtIdp:getOrgJwtIdp"
+            },
+            "zitadel_org_oidc_idp": {
+                "current": "zitadel:index/getOrgOidcIdp:getOrgOidcIdp",
+                "fields": {
+                    "scopes": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_organization": {
+                "current": "zitadel:index/getOrganization:getOrganization"
+            },
+            "zitadel_organization_domain": {
+                "current": "zitadel:index/getOrganizationDomain:getOrganizationDomain"
+            },
+            "zitadel_organization_domains": {
+                "current": "zitadel:index/getOrganizationDomains:getOrganizationDomains",
+                "fields": {
+                    "domains": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_organization_metadata": {
+                "current": "zitadel:index/getOrganizationMetadata:getOrganizationMetadata"
+            },
+            "zitadel_organization_metadatas": {
+                "current": "zitadel:index/getOrganizationMetadatas:getOrganizationMetadatas",
+                "fields": {
+                    "metadata": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_organizations": {
+                "current": "zitadel:index/getOrganizations:getOrganizations",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_orgs": {
+                "current": "zitadel:index/getOrgs:getOrgs",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_project": {
+                "current": "zitadel:index/getProject:getProject"
+            },
+            "zitadel_project_role": {
+                "current": "zitadel:index/getProjectRole:getProjectRole"
+            },
+            "zitadel_project_roles": {
+                "current": "zitadel:index/getProjectRoles:getProjectRoles",
+                "fields": {
+                    "role_keys": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_projects": {
+                "current": "zitadel:index/getProjects:getProjects",
+                "fields": {
+                    "project_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_system_features": {
+                "current": "zitadel:index/getSystemFeatures:getSystemFeatures",
+                "fields": {
+                    "improved_performance": {
+                        "maxItemsOne": false
+                    },
+                    "login_v2": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_trigger_actions": {
+                "current": "zitadel:index/getTriggerActions:getTriggerActions",
+                "fields": {
+                    "action_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_user_metadata": {
+                "current": "zitadel:index/getUserMetadata:getUserMetadata"
+            },
+            "zitadel_user_metadatas": {
+                "current": "zitadel:index/getUserMetadatas:getUserMetadatas",
+                "fields": {
+                    "metadata": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "zitadel_webkey": {
+                "current": "zitadel:index/getWebkey:getWebkey"
+            },
+            "zitadel_zitadel": {
+                "current": "zitadel:index/getZitadel:getZitadel"
+            }
+        }
+    },
+    "auto-settings": {},
+    "default-resource-schema-fixups": {
+        "resources": {
+            "zitadel_default_domain_claimed_message_text": {},
+            "zitadel_default_init_message_text": {},
+            "zitadel_default_invite_user_message_text": {},
+            "zitadel_default_login_texts": {},
+            "zitadel_default_password_change_message_text": {},
+            "zitadel_default_password_reset_message_text": {},
+            "zitadel_default_passwordless_registration_message_text": {},
+            "zitadel_default_verify_email_message_text": {},
+            "zitadel_default_verify_email_otp_message_text": {},
+            "zitadel_default_verify_phone_message_text": {},
+            "zitadel_default_verify_sms_otp_message_text": {},
+            "zitadel_domain_claimed_message_text": {},
+            "zitadel_init_message_text": {},
+            "zitadel_login_texts": {},
+            "zitadel_password_change_message_text": {},
+            "zitadel_password_reset_message_text": {},
+            "zitadel_passwordless_registration_message_text": {},
+            "zitadel_verify_email_message_text": {},
+            "zitadel_verify_email_otp_message_text": {},
+            "zitadel_verify_phone_message_text": {},
+            "zitadel_verify_sms_otp_message_text": {}
+        }
+    }
+}
