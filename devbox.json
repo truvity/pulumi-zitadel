@@ -1,7 +1,7 @@
 {
   "packages": [
     "gh@latest",
-    "go@latest",
+    "go@1.25",
     "golangci-lint@latest",
     "gopls@latest",
     "goreleaser@latest",

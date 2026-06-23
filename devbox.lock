@@ -53,51 +53,51 @@
       "last_modified": "2026-06-16T10:57:20Z",
       "resolved": "github:NixOS/nixpkgs/3e41b24abd260e8f71dbe2f5737d24122f972158?lastModified=1781607440"
     },
-    "go@latest": {
-      "last_modified": "2026-05-21T08:15:18Z",
-      "resolved": "github:NixOS/nixpkgs/4a29d733e8a7d5b824c3d8c958a946a9867b3eb2#go",
+    "go@1.25": {
+      "last_modified": "2026-06-05T19:07:58Z",
+      "resolved": "github:NixOS/nixpkgs/891eaa77f0eed53352194677991bd30978f9b0ad#go_1_25",
       "source": "devbox-search",
-      "version": "1.26.3",
+      "version": "1.25.11",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/7ycp8j45iay38g9mjaxmy4jhwdsrb47y-go-1.26.3",
+              "path": "/nix/store/ddbcn4a5wk9ds6akinh789yqarn3v5ym-go-1.25.11",
               "default": true
             }
           ],
-          "store_path": "/nix/store/7ycp8j45iay38g9mjaxmy4jhwdsrb47y-go-1.26.3"
+          "store_path": "/nix/store/ddbcn4a5wk9ds6akinh789yqarn3v5ym-go-1.25.11"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/jkcwcbwvhgzmxg59798z4clmj4bfv42i-go-1.26.3",
+              "path": "/nix/store/mwpzyb97adnfp5kd7fvhy4kxm7mvnfyv-go-1.25.11",
               "default": true
             }
           ],
-          "store_path": "/nix/store/jkcwcbwvhgzmxg59798z4clmj4bfv42i-go-1.26.3"
+          "store_path": "/nix/store/mwpzyb97adnfp5kd7fvhy4kxm7mvnfyv-go-1.25.11"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/3f2jzvxmhhlarjqxy1p7i9r5l34siz29-go-1.26.3",
+              "path": "/nix/store/mv43xdg6g66w8jw3gp9b7i124iy3pyqs-go-1.25.11",
               "default": true
             }
           ],
-          "store_path": "/nix/store/3f2jzvxmhhlarjqxy1p7i9r5l34siz29-go-1.26.3"
+          "store_path": "/nix/store/mv43xdg6g66w8jw3gp9b7i124iy3pyqs-go-1.25.11"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/33fw5m31lfcnk4ff2f0df7j2bxnh8lgk-go-1.26.3",
+              "path": "/nix/store/zkkhcz8rd5q5y3gv27yq1ikdcrdhgir2-go-1.25.11",
               "default": true
             }
           ],
-          "store_path": "/nix/store/33fw5m31lfcnk4ff2f0df7j2bxnh8lgk-go-1.26.3"
+          "store_path": "/nix/store/zkkhcz8rd5q5y3gv27yq1ikdcrdhgir2-go-1.25.11"
         }
       }
     },
