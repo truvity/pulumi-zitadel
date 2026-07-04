@@ -10,7 +10,10 @@
     "schedule": ["before 6am"]
   },
   "ignorePaths": ["devbox.json", "devbox.lock"],
-  "ignoreDeps": ["github.com/zitadel/terraform-provider-zitadel/v2"],
+  "ignoreDeps": [
+    "github.com/zitadel/terraform-provider-zitadel/v2",
+    "github.com/pulumi/terraform-plugin-sdk/v2"
+  ],
   "packageRules": [
     {
       "description": "Group all non-major updates together",
