@@ -93,8 +93,6 @@ type ApplicationOidc struct {
 	ClientSecret pulumi.StringOutput `pulumi:"clientSecret"`
 	// Clockskew
 	ClockSkew pulumi.StringPtrOutput `pulumi:"clockSkew"`
-	// lists the problems for non-compliancy
-	ComplianceProblems ApplicationOidcComplianceProblemArrayOutput `pulumi:"complianceProblems"`
 	// Dev mode
 	DevMode pulumi.BoolPtrOutput `pulumi:"devMode"`
 	// Grant types, supported values: OIDC*GRANT*TYPE*AUTHORIZATION*CODE, OIDC*GRANT*TYPE*IMPLICIT, OIDC*GRANT*TYPE*REFRESH*TOKEN, OIDC*GRANT*TYPE*DEVICE*CODE, OIDC*GRANT*TYPE*TOKEN_EXCHANGE
@@ -190,8 +188,6 @@ type applicationOidcState struct {
 	ClientSecret *string `pulumi:"clientSecret"`
 	// Clockskew
 	ClockSkew *string `pulumi:"clockSkew"`
-	// lists the problems for non-compliancy
-	ComplianceProblems []ApplicationOidcComplianceProblem `pulumi:"complianceProblems"`
 	// Dev mode
 	DevMode *bool `pulumi:"devMode"`
 	// Grant types, supported values: OIDC*GRANT*TYPE*AUTHORIZATION*CODE, OIDC*GRANT*TYPE*IMPLICIT, OIDC*GRANT*TYPE*REFRESH*TOKEN, OIDC*GRANT*TYPE*DEVICE*CODE, OIDC*GRANT*TYPE*TOKEN_EXCHANGE
@@ -241,8 +237,6 @@ type ApplicationOidcState struct {
 	ClientSecret pulumi.StringPtrInput
 	// Clockskew
 	ClockSkew pulumi.StringPtrInput
-	// lists the problems for non-compliancy
-	ComplianceProblems ApplicationOidcComplianceProblemArrayInput
 	// Dev mode
 	DevMode pulumi.BoolPtrInput
 	// Grant types, supported values: OIDC*GRANT*TYPE*AUTHORIZATION*CODE, OIDC*GRANT*TYPE*IMPLICIT, OIDC*GRANT*TYPE*REFRESH*TOKEN, OIDC*GRANT*TYPE*DEVICE*CODE, OIDC*GRANT*TYPE*TOKEN_EXCHANGE
@@ -444,11 +438,6 @@ func (o ApplicationOidcOutput) ClientSecret() pulumi.StringOutput {
 // Clockskew
 func (o ApplicationOidcOutput) ClockSkew() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ApplicationOidc) pulumi.StringPtrOutput { return v.ClockSkew }).(pulumi.StringPtrOutput)
-}
-
-// lists the problems for non-compliancy
-func (o ApplicationOidcOutput) ComplianceProblems() ApplicationOidcComplianceProblemArrayOutput {
-	return o.ApplyT(func(v *ApplicationOidc) ApplicationOidcComplianceProblemArrayOutput { return v.ComplianceProblems }).(ApplicationOidcComplianceProblemArrayOutput)
 }
 
 // Dev mode

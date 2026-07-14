@@ -117,27 +117,6 @@
                 }
             }
         },
-        "zitadel:index/ApplicationOidcComplianceProblem:ApplicationOidcComplianceProblem": {
-            "properties": {
-                "key": {
-                    "type": "string",
-                    "description": "Machine-readable identifier for the compliance problem\n"
-                },
-                "message": {
-                    "type": "string",
-                    "description": "Human-readable localized message\n"
-                }
-            },
-            "type": "object",
-            "language": {
-                "nodejs": {
-                    "requiredOutputs": [
-                        "key",
-                        "message"
-                    ]
-                }
-            }
-        },
         "zitadel:index/ApplicationOidcLoginVersion:ApplicationOidcLoginVersion": {
             "properties": {
                 "loginV1": {
@@ -3863,13 +3842,6 @@
                     "type": "string",
                     "description": "Clockskew\n"
                 },
-                "complianceProblems": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/types/zitadel:index/ApplicationOidcComplianceProblem:ApplicationOidcComplianceProblem"
-                    },
-                    "description": "lists the problems for non-compliancy\n"
-                },
                 "devMode": {
                     "type": "boolean",
                     "description": "Dev mode\n"
@@ -3943,7 +3915,6 @@
                 "backChannelLogoutUri",
                 "clientId",
                 "clientSecret",
-                "complianceProblems",
                 "grantTypes",
                 "loginVersion",
                 "name",
@@ -4101,13 +4072,6 @@
                     "clockSkew": {
                         "type": "string",
                         "description": "Clockskew\n"
-                    },
-                    "complianceProblems": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/types/zitadel:index/ApplicationOidcComplianceProblem:ApplicationOidcComplianceProblem"
-                        },
-                        "description": "lists the problems for non-compliancy\n"
                     },
                     "devMode": {
                         "type": "boolean",
