@@ -40,6 +40,19 @@ func Provider() tfbridge.ProviderInfo {
 		Config: map[string]*tfbridge.SchemaInfo{
 			"jwt_profile_json": {Secret: tfbridge.True()},
 		},
+
+		Resources: map[string]*tfbridge.ResourceInfo{
+			"zitadel_application_oidc": {
+				Fields: map[string]*tfbridge.SchemaInfo{
+					// Computed-only diagnostic list the muxed provider
+					// re-plans as <null> on every update — a cosmetic
+					// perma-diff ("~N to update") in every pulumi preview
+					// that IgnoreChanges cannot mask. Drop it from the
+					// projection.
+					"compliance_problems": {Omit: true},
+				},
+			},
+		},
 	}
 
 	prov.MustComputeTokens(tokens.SingleModule("zitadel_", "index",

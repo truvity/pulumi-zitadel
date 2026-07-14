@@ -13,112 +13,6 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
-type ApplicationOidcComplianceProblem struct {
-	// Machine-readable identifier for the compliance problem
-	Key *string `pulumi:"key"`
-	// Human-readable localized message
-	Message *string `pulumi:"message"`
-}
-
-// ApplicationOidcComplianceProblemInput is an input type that accepts ApplicationOidcComplianceProblemArgs and ApplicationOidcComplianceProblemOutput values.
-// You can construct a concrete instance of `ApplicationOidcComplianceProblemInput` via:
-//
-//	ApplicationOidcComplianceProblemArgs{...}
-type ApplicationOidcComplianceProblemInput interface {
-	pulumi.Input
-
-	ToApplicationOidcComplianceProblemOutput() ApplicationOidcComplianceProblemOutput
-	ToApplicationOidcComplianceProblemOutputWithContext(context.Context) ApplicationOidcComplianceProblemOutput
-}
-
-type ApplicationOidcComplianceProblemArgs struct {
-	// Machine-readable identifier for the compliance problem
-	Key pulumi.StringPtrInput `pulumi:"key"`
-	// Human-readable localized message
-	Message pulumi.StringPtrInput `pulumi:"message"`
-}
-
-func (ApplicationOidcComplianceProblemArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ApplicationOidcComplianceProblem)(nil)).Elem()
-}
-
-func (i ApplicationOidcComplianceProblemArgs) ToApplicationOidcComplianceProblemOutput() ApplicationOidcComplianceProblemOutput {
-	return i.ToApplicationOidcComplianceProblemOutputWithContext(context.Background())
-}
-
-func (i ApplicationOidcComplianceProblemArgs) ToApplicationOidcComplianceProblemOutputWithContext(ctx context.Context) ApplicationOidcComplianceProblemOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ApplicationOidcComplianceProblemOutput)
-}
-
-// ApplicationOidcComplianceProblemArrayInput is an input type that accepts ApplicationOidcComplianceProblemArray and ApplicationOidcComplianceProblemArrayOutput values.
-// You can construct a concrete instance of `ApplicationOidcComplianceProblemArrayInput` via:
-//
-//	ApplicationOidcComplianceProblemArray{ ApplicationOidcComplianceProblemArgs{...} }
-type ApplicationOidcComplianceProblemArrayInput interface {
-	pulumi.Input
-
-	ToApplicationOidcComplianceProblemArrayOutput() ApplicationOidcComplianceProblemArrayOutput
-	ToApplicationOidcComplianceProblemArrayOutputWithContext(context.Context) ApplicationOidcComplianceProblemArrayOutput
-}
-
-type ApplicationOidcComplianceProblemArray []ApplicationOidcComplianceProblemInput
-
-func (ApplicationOidcComplianceProblemArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ApplicationOidcComplianceProblem)(nil)).Elem()
-}
-
-func (i ApplicationOidcComplianceProblemArray) ToApplicationOidcComplianceProblemArrayOutput() ApplicationOidcComplianceProblemArrayOutput {
-	return i.ToApplicationOidcComplianceProblemArrayOutputWithContext(context.Background())
-}
-
-func (i ApplicationOidcComplianceProblemArray) ToApplicationOidcComplianceProblemArrayOutputWithContext(ctx context.Context) ApplicationOidcComplianceProblemArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ApplicationOidcComplianceProblemArrayOutput)
-}
-
-type ApplicationOidcComplianceProblemOutput struct{ *pulumi.OutputState }
-
-func (ApplicationOidcComplianceProblemOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ApplicationOidcComplianceProblem)(nil)).Elem()
-}
-
-func (o ApplicationOidcComplianceProblemOutput) ToApplicationOidcComplianceProblemOutput() ApplicationOidcComplianceProblemOutput {
-	return o
-}
-
-func (o ApplicationOidcComplianceProblemOutput) ToApplicationOidcComplianceProblemOutputWithContext(ctx context.Context) ApplicationOidcComplianceProblemOutput {
-	return o
-}
-
-// Machine-readable identifier for the compliance problem
-func (o ApplicationOidcComplianceProblemOutput) Key() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ApplicationOidcComplianceProblem) *string { return v.Key }).(pulumi.StringPtrOutput)
-}
-
-// Human-readable localized message
-func (o ApplicationOidcComplianceProblemOutput) Message() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ApplicationOidcComplianceProblem) *string { return v.Message }).(pulumi.StringPtrOutput)
-}
-
-type ApplicationOidcComplianceProblemArrayOutput struct{ *pulumi.OutputState }
-
-func (ApplicationOidcComplianceProblemArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ApplicationOidcComplianceProblem)(nil)).Elem()
-}
-
-func (o ApplicationOidcComplianceProblemArrayOutput) ToApplicationOidcComplianceProblemArrayOutput() ApplicationOidcComplianceProblemArrayOutput {
-	return o
-}
-
-func (o ApplicationOidcComplianceProblemArrayOutput) ToApplicationOidcComplianceProblemArrayOutputWithContext(ctx context.Context) ApplicationOidcComplianceProblemArrayOutput {
-	return o
-}
-
-func (o ApplicationOidcComplianceProblemArrayOutput) Index(i pulumi.IntInput) ApplicationOidcComplianceProblemOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ApplicationOidcComplianceProblem {
-		return vs[0].([]ApplicationOidcComplianceProblem)[vs[1].(int)]
-	}).(ApplicationOidcComplianceProblemOutput)
-}
-
 type ApplicationOidcLoginVersion struct {
 	// Login V1
 	LoginV1 *bool `pulumi:"loginV1"`
@@ -19757,8 +19651,6 @@ func (o GetUserMetadatasMetadataArrayOutput) Index(i pulumi.IntInput) GetUserMet
 }
 
 func init() {
-	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationOidcComplianceProblemInput)(nil)).Elem(), ApplicationOidcComplianceProblemArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationOidcComplianceProblemArrayInput)(nil)).Elem(), ApplicationOidcComplianceProblemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationOidcLoginVersionInput)(nil)).Elem(), ApplicationOidcLoginVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationOidcLoginVersionPtrInput)(nil)).Elem(), ApplicationOidcLoginVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationOidcLoginVersionLoginV2Input)(nil)).Elem(), ApplicationOidcLoginVersionLoginV2Args{})
@@ -19943,8 +19835,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WebkeyEd25519PtrInput)(nil)).Elem(), WebkeyEd25519Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebkeyRsaInput)(nil)).Elem(), WebkeyRsaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebkeyRsaPtrInput)(nil)).Elem(), WebkeyRsaArgs{})
-	pulumi.RegisterOutputType(ApplicationOidcComplianceProblemOutput{})
-	pulumi.RegisterOutputType(ApplicationOidcComplianceProblemArrayOutput{})
 	pulumi.RegisterOutputType(ApplicationOidcLoginVersionOutput{})
 	pulumi.RegisterOutputType(ApplicationOidcLoginVersionPtrOutput{})
 	pulumi.RegisterOutputType(ApplicationOidcLoginVersionLoginV2Output{})
