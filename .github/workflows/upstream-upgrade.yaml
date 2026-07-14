@@ -12,13 +12,17 @@ jobs:
   upgrade:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
-
       - uses: actions/create-github-app-token@v3
         id: token
         with:
           app-id: ${{ secrets.RENOVATE_APP_ID }}
           private-key: ${{ secrets.RENOVATE_APP_PRIVATE_KEY }}
+
+      # Checkout with the app token so the push in "Create PR" is
+      # authorized (the default GITHUB_TOKEN here is contents: read).
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        with:
+          token: ${{ steps.token.outputs.token }}
 
       - uses: DeterminateSystems/determinate-nix-action@v3
 
@@ -47,12 +51,13 @@ jobs:
       - name: Upgrade and regenerate
         if: steps.check.outputs.up_to_date == 'false'
         run: |
-          cd provider
-          devbox run -- go get "github.com/zitadel/terraform-provider-zitadel/v2@${{ steps.check.outputs.latest_commit }}"
-          devbox run -- go mod tidy
-          cd ..
+          # NOTE: devbox run resets cwd to the repo root (where devbox.json
+          # lives), so `cd provider` is lost inside it — go -C keeps the
+          # module explicit instead.
+          devbox run -- go -C provider get "github.com/zitadel/terraform-provider-zitadel/v2@${{ steps.check.outputs.latest_commit }}"
+          devbox run -- go -C provider mod tidy
           devbox run -- just generate
-          cd sdk && devbox run -- go mod tidy
+          devbox run -- go -C sdk mod tidy
 
       - name: Create PR
         if: steps.check.outputs.up_to_date == 'false'

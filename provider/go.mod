@@ -1,6 +1,6 @@
 module github.com/truvity/pulumi-zitadel/provider
 
-go 1.25.9
+go 1.25.12
 
 require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.133.0
@@ -202,7 +202,7 @@ require (
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
-	github.com/yuin/goldmark v1.7.13 // indirect
+	github.com/yuin/goldmark v1.7.17 // indirect
 	github.com/zclconf/go-cty v1.17.0 // indirect
 	github.com/zitadel/logging v0.6.2 // indirect
 	github.com/zitadel/oidc/v3 v3.45.1 // indirect
