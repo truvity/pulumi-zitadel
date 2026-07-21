@@ -85,3 +85,4 @@ jobs:
           Schema + Go SDK regenerated." \
             --base master \
             --label dependencies
+          gh pr merge --auto --rebase "$BRANCH"
