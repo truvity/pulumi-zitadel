@@ -81,6 +81,42 @@ just build      # verify everything compiles
 git add -A && git commit -m "chore(deps): bump upstream provider to vNEW"
 ```
 
+### Upstream MAJOR adoption policy (INF-434)
+
+The weekly upstream-upgrade automation bumps pseudo-versions **within the
+current module path only** (`terraform-provider-zitadel/v2`). Upstream now
+tags v3+ on a module that still declares `/v2`; a true major (module-path
+change, breaking schema shifts) is deliberate manual work:
+
+**When to adopt** — only on a concrete trigger, never for freshness:
+1. a resource/field we need exists only in the new major;
+2. upstream stops landing fixes on our module path;
+3. a security fix ships only there.
+
+**Adoption recipe** (branch, then):
+1. `provider/go.mod`: change the module path + `go get` the major;
+   `go mod tidy`; `just generate`.
+2. **Schema diff review**: diff `schema.json` for removed/renamed
+   resources & fields against what consumers actually use (gitops
+   `internal/components/root/zitadel_internal.go` is the primary
+   consumer — grep its `zitadel.New*` calls).
+3. `just build` + `just check` green.
+4. **Consumer verification (the real gate)**: point gitops at the
+   branch pseudo-version and run `pulumi preview -s zitadel-internal`
+   against the live stack — it MUST show **no changes**. Any diff is
+   either a schema break to fix or a bridge quirk for the ledger.
+5. Tag mirrors upstream (`v4.0.0`), pre-releases for bridge-only fixes
+   (`v4.0.0-truvity.1`).
+
+**Bridge-quirk ledger** (perma-diff classes and their fixes):
+
+| Quirk | Symptom | Fix |
+|---|---|---|
+| Computed outputs surfaced as inputs (e.g. `complianceProblems`, v3.3.2/v3.3.3) | perma-diff on every preview | mark field `Omit` in `provider/resources.go`, regenerate, `pulumi refresh` once |
+
+Add new quirks here as they are found — the ledger is the institutional
+memory that makes the next major cheap.
+
 ### Upgrading the bridge
 
 ```bash
