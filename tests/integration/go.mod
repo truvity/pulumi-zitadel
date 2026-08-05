@@ -3,7 +3,7 @@ module github.com/truvity/pulumi-zitadel/tests/integration
 go 1.25.12
 
 require (
-	github.com/pulumi/pulumi/sdk/v3 v3.255.0
+	github.com/pulumi/pulumi/sdk/v3 v3.256.0
 	github.com/stretchr/testify v1.11.1
 	github.com/truvity/pulumi-zitadel/sdk v0.0.0
 	github.com/zalando/go-keyring v0.2.8
