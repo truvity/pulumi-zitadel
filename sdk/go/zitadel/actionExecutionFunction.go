@@ -40,7 +40,7 @@ import (
 //			_, err = zitadel.NewActionExecutionFunction(ctx, "default", &zitadel.ActionExecutionFunctionArgs{
 //				Name: pulumi.String("preaccesstoken"),
 //				TargetIds: pulumi.StringArray{
-//					_default.ID(),
+//					_default.ID().ToIDOutput().ToStringOutput(),
 //				},
 //			})
 //			if err != nil {

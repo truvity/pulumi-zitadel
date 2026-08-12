@@ -44,7 +44,7 @@ import (
 //			}
 //			_, err = zitadel.NewActiveWebkey(ctx, "default", &zitadel.ActiveWebkeyArgs{
 //				OrgId: pulumi.Any(defaultZitadelOrg.Id),
-//				KeyId: keyV1.ID(),
+//				KeyId: keyV1.ID().ToIDOutput().ToStringOutput(),
 //			})
 //			if err != nil {
 //				return err
