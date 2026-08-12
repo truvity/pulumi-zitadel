@@ -40,7 +40,7 @@ import (
 //			_, err = zitadel.NewActionExecutionRequest(ctx, "default", &zitadel.ActionExecutionRequestArgs{
 //				Method: pulumi.String("/zitadel.session.v2.SessionService/ListSessions"),
 //				TargetIds: pulumi.StringArray{
-//					_default.ID(),
+//					_default.ID().ToIDOutput().ToStringOutput(),
 //				},
 //			})
 //			if err != nil {

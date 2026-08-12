@@ -40,7 +40,7 @@ import (
 //			_, err = zitadel.NewActionExecutionEvent(ctx, "default", &zitadel.ActionExecutionEventArgs{
 //				Event: pulumi.String("user.human.added"),
 //				TargetIds: pulumi.StringArray{
-//					_default.ID(),
+//					_default.ID().ToIDOutput().ToStringOutput(),
 //				},
 //			})
 //			if err != nil {
