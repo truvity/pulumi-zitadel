@@ -75,7 +75,16 @@ clean:
     rm -rf bin/ dist/ .make/ .pulumi/
 
 # Run all checks (build + lint + vuln + verify-generate)
-check: build lint vuln verify-generate
+# NOT `vuln`. A required check must be something a pull request can act
+# on, and govulncheck is not: it went red here on 5 reachable
+# standard-library advisories whose only fix is go1.26.6, which nixpkgs
+# does not carry yet (INF-553), and every pull request in this repo
+# became unmergeable on a finding nobody could act on -- including the
+# one that would have fixed it.
+#
+# Coverage is unchanged: security.yaml still runs `just vuln` on every
+# PR and daily. It simply cannot block a merge.
+check: build lint verify-generate
 
 # Build a snapshot release locally (cross-platform provider binaries)
 snapshot:
