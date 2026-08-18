@@ -52,6 +52,17 @@
         "major"
       ],
       "automerge": false
+    },
+    {
+      "description": "Bump the Go toolchain — stdlib CVEs land there and govulncheck reds otherwise wait for a human. config:recommended never touches the go directive, so without this rule the version simply stops moving: this repository sat on go 1.25.12 while govulncheck reported five stdlib advisories all fixed in 1.25.13, and the red vuln check blocked the auto-merge Renovate had already armed on #35. The nine other public repositories got this rule in the 2026-08-14 sweep; this one was missed.",
+      "matchManagers": [
+        "gomod"
+      ],
+      "matchDepNames": [
+        "go"
+      ],
+      "enabled": true,
+      "rangeStrategy": "bump"
     }
   ],
   "vulnerabilityAlerts": {
