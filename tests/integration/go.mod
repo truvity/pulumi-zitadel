@@ -1,6 +1,6 @@
 module github.com/truvity/pulumi-zitadel/tests/integration
 
-go 1.25.13
+go 1.26.6
 
 require (
 	github.com/pulumi/pulumi/sdk/v3 v3.258.0

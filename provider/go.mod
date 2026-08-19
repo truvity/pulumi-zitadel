@@ -1,6 +1,6 @@
 module github.com/truvity/pulumi-zitadel/provider
 
-go 1.25.13
+go 1.26.6
 
 require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.137.0
