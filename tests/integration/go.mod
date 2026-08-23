@@ -2,6 +2,8 @@ module github.com/truvity/pulumi-zitadel/tests/integration
 
 go 1.26.6
 
+toolchain go1.26.7
+
 require (
 	github.com/pulumi/pulumi/sdk/v3 v3.258.0
 	github.com/stretchr/testify v1.12.0
