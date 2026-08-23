@@ -2,6 +2,8 @@ module github.com/truvity/pulumi-zitadel/sdk
 
 go 1.26.6
 
+toolchain go1.26.7
+
 require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/pulumi/pulumi/sdk/v3 v3.258.0
