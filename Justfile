@@ -11,6 +11,14 @@ CODEGEN := "pulumi-tfgen-" + PACK
 PROVIDER := "pulumi-resource-" + PACK
 PROVIDER_VERSION := env("PROVIDER_VERSION", "0.0.1-dev")
 
+# Example conversion inside tfgen shells out to the terraform converter
+# plugin, which pulumi downloads LATEST when it is not installed —
+# v1.4.0 reordered example properties and broke verify-generate on
+# every open PR (2026-08-25) while warm local caches still held v1.3.0.
+# Installing the exact version first makes generation deterministic;
+# bump this pin and regenerate in the same commit.
+CONVERTER_TERRAFORM_VERSION := "1.4.0"
+
 LDFLAGS := "-s -w -X " + PROJECT + "/" + VERSION_PATH + "=" + PROVIDER_VERSION
 
 # Format all Go files (gofmt + goimports via golangci-lint)
@@ -23,6 +31,7 @@ tfgen: ensure-dirs
 
 # Generate the Pulumi schema, bridge metadata (with mux dispatch table), and Go SDK
 generate: tfgen
+    pulumi plugin install converter terraform {{CONVERTER_TERRAFORM_VERSION}}
     ./bin/{{CODEGEN}} schema --out provider/cmd/{{PROVIDER}}
     ./bin/{{CODEGEN}} go --out sdk/go/
 

@@ -29,15 +29,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			keyV1, err := zitadel.NewWebkey(ctx, "key_v1", &zitadel.WebkeyArgs{
-//				OrgId: pulumi.Any(defaultZitadelOrg.Id),
 //				Rsa:   &zitadel.WebkeyRsaArgs{},
+//				OrgId: pulumi.Any(defaultZitadelOrg.Id),
 //			})
 //			if err != nil {
 //				return err
 //			}
 //			_, err = zitadel.NewWebkey(ctx, "key_v2", &zitadel.WebkeyArgs{
-//				OrgId: pulumi.Any(defaultZitadelOrg.Id),
 //				Ecdsa: &zitadel.WebkeyEcdsaArgs{},
+//				OrgId: pulumi.Any(defaultZitadelOrg.Id),
 //			})
 //			if err != nil {
 //				return err

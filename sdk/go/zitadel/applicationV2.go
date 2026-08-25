@@ -29,9 +29,6 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := zitadel.NewApplicationV2(ctx, "default", &zitadel.ApplicationV2Args{
-//				ProjectId: pulumi.Any(defaultZitadelProject.Id),
-//				OrgId:     pulumi.Any(defaultZitadelOrg.Id),
-//				Name:      pulumi.String("applicationv2"),
 //				Oidc: &zitadel.ApplicationV2OidcArgs{
 //					RedirectUris: pulumi.StringArray{
 //						pulumi.String("https://localhost.com"),
@@ -57,6 +54,9 @@ import (
 //					AdditionalOrigins:        pulumi.StringArray{},
 //					SkipNativeAppSuccessPage: pulumi.Bool(false),
 //				},
+//				ProjectId: pulumi.Any(defaultZitadelProject.Id),
+//				OrgId:     pulumi.Any(defaultZitadelOrg.Id),
+//				Name:      pulumi.String("applicationv2"),
 //			})
 //			if err != nil {
 //				return err
