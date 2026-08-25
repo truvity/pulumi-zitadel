@@ -28,6 +28,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := zitadel.NewInstanceFeatures(ctx, "default", &zitadel.InstanceFeaturesArgs{
+//				LoginV2: &zitadel.InstanceFeaturesLoginV2Args{
+//					Required: pulumi.Bool(true),
+//					BaseUri:  pulumi.String("https://login.example.com"),
+//				},
 //				LoginDefaultOrg:   pulumi.Bool(true),
 //				OidcTokenExchange: pulumi.Bool(true),
 //				UserSchema:        pulumi.Bool(false),
@@ -38,12 +42,8 @@ import (
 //				DebugOidcParentError:           pulumi.Bool(false),
 //				OidcSingleV1SessionTermination: pulumi.Bool(true),
 //				EnableBackChannelLogout:        pulumi.Bool(true),
-//				LoginV2: &zitadel.InstanceFeaturesLoginV2Args{
-//					Required: pulumi.Bool(true),
-//					BaseUri:  pulumi.String("https://login.example.com"),
-//				},
-//				PermissionCheckV2:   pulumi.Bool(true),
-//				ConsoleUseV2UserApi: pulumi.Bool(true),
+//				PermissionCheckV2:              pulumi.Bool(true),
+//				ConsoleUseV2UserApi:            pulumi.Bool(true),
 //			})
 //			if err != nil {
 //				return err

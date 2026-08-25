@@ -28,10 +28,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := zitadel.NewWebkey(ctx, "default", &zitadel.WebkeyArgs{
-//				OrgId: pulumi.Any(defaultZitadelOrg.Id),
 //				Rsa: &zitadel.WebkeyRsaArgs{
 //					Bits: pulumi.String("RSA_BITS_2048"),
 //				},
+//				OrgId: pulumi.Any(defaultZitadelOrg.Id),
 //			})
 //			if err != nil {
 //				return err
