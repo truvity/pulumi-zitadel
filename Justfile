@@ -19,6 +19,14 @@ PROVIDER_VERSION := env("PROVIDER_VERSION", "0.0.1-dev")
 # bump this pin and regenerate in the same commit.
 CONVERTER_TERRAFORM_VERSION := "1.4.0"
 
+# Same story for the std resource plugin: examples that call std
+# functions make conversion load its schema, lazily downloaded when the
+# plugin is absent. On hosted runners that anonymous download can fail
+# (rate limits), and codegen silently falls back to the un-suffixed
+# sdk/go/std import path — a different, degraded output. Preinstalling
+# removes the fetch from the conversion path entirely.
+STD_PLUGIN_VERSION := "2.3.2"
+
 LDFLAGS := "-s -w -X " + PROJECT + "/" + VERSION_PATH + "=" + PROVIDER_VERSION
 
 # Format all Go files (gofmt + goimports via golangci-lint)
@@ -32,6 +40,7 @@ tfgen: ensure-dirs
 # Generate the Pulumi schema, bridge metadata (with mux dispatch table), and Go SDK
 generate: tfgen
     pulumi plugin install converter terraform {{CONVERTER_TERRAFORM_VERSION}}
+    pulumi plugin install resource std {{STD_PLUGIN_VERSION}}
     ./bin/{{CODEGEN}} schema --out provider/cmd/{{PROVIDER}}
     ./bin/{{CODEGEN}} go --out sdk/go/
 
