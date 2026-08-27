@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
+	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel/internal"
 )
 
 // Organization resource that is backward-compatible with ZITADEL 3.x and 4.x: it tries the org/v2 API first and falls back to the management API automatically. For deployments that only target ZITADEL 4.x, prefer `Organization`.
@@ -21,7 +21,7 @@ import (
 // import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel"
+//	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel"
 //
 // )
 //

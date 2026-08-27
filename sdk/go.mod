@@ -1,4 +1,4 @@
-module github.com/truvity/pulumi-zitadel/sdk
+module github.com/truvity/pulumi-zitadel/sdk/v3
 
 go 1.26.6
 

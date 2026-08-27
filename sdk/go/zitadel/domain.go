@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
+	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel/internal"
 )
 
 // Domain of an organization. **Deprecated:** use `OrganizationDomain` which uses the org/v2 API (requires ZITADEL 4.x).
@@ -21,7 +21,7 @@ import (
 // import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel"
+//	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel"
 //
 // )
 //

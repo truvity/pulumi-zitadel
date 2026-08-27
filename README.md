@@ -1,12 +1,32 @@
 # Pulumi ZITADEL Provider
 
 [![CI](https://github.com/truvity/pulumi-zitadel/actions/workflows/ci.yaml/badge.svg)](https://github.com/truvity/pulumi-zitadel/actions/workflows/ci.yaml)
-[![Go Reference](https://pkg.go.dev/badge/github.com/truvity/pulumi-zitadel/sdk/go/zitadel.svg)](https://pkg.go.dev/github.com/truvity/pulumi-zitadel/sdk/go/zitadel)
-[![Go Report Card](https://goreportcard.com/badge/github.com/truvity/pulumi-zitadel/sdk)](https://goreportcard.com/report/github.com/truvity/pulumi-zitadel/sdk)
+[![Go Reference](https://pkg.go.dev/badge/github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel.svg)](https://pkg.go.dev/github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel)
+[![Go Report Card](https://goreportcard.com/badge/github.com/truvity/pulumi-zitadel/sdk/v3)](https://goreportcard.com/report/github.com/truvity/pulumi-zitadel/sdk/v3)
 [![License](https://img.shields.io/github/license/truvity/pulumi-zitadel)](LICENSE)
 
 A Pulumi provider for [ZITADEL](https://zitadel.com), bridged from the official
 [Terraform provider](https://github.com/zitadel/terraform-provider-zitadel) (v3.2.2).
+
+## Installation (Go)
+
+```sh
+go get github.com/truvity/pulumi-zitadel/sdk/v3@v3.3.6
+```
+
+The SDK embeds its version and plugin server (stamped at the tag by the
+Release Cut workflow), so `pulumi preview`/`up` auto-downloads the
+matching resource plugin — no local plugin management needed. To
+install the plugin by hand anyway:
+
+```sh
+pulumi plugin install resource zitadel v3.3.6 --server github://api.github.com/truvity/pulumi-zitadel
+```
+
+Releases before v3.3.6 predate the stamp: their SDK is fetchable only
+as a pseudo-version and picks whatever local plugin exists — pin the
+provider explicitly with the `pulumi.Version(...)` and
+`pulumi.PluginDownloadURL(...)` resource options, or upgrade.
 
 ## SDK Documentation
 

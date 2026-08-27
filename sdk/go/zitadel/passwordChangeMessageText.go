@@ -9,7 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
+	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel/internal"
 )
 
 // Customizes the notification email sent to users when their password is changed (org-scoped). Instance-level defaults are managed by `DefaultPasswordChangeMessageText`.
@@ -22,7 +22,7 @@ import (
 // import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel"
+//	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel"
 //
 // )
 //

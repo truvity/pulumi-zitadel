@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
+	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel/internal"
 )
 
 // Datasource representing an organization in ZITADEL, which is the highest level after the instance and contains several other resource including policies if the configuration differs to the default policies on the instance.
@@ -21,7 +21,7 @@ import (
 // import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel"
+//	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel"
 //
 // )
 //

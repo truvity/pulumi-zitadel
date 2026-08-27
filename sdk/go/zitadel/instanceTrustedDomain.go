@@ -9,7 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
+	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel/internal"
 )
 
 // Resource representing a trusted domain on a ZITADEL instance. Trusted domains can be used in API responses like OIDC discovery and email templates. Unlike custom domains, trusted domains are not used for routing and do not need to be unique across instances. This resource requires iam.write permission.
@@ -22,7 +22,7 @@ import (
 // import (
 //
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel"
+//	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel"
 //
 // )
 //
