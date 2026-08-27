@@ -1,0 +1,113 @@
+# Cuts a release the way a Go-consumed Pulumi provider needs it cut
+# (INF-582). The estate's shared auto-release just tags HEAD — that is
+# not enough here, because Go consumers fetch SOURCE at the tag, and
+# the SDK must carry its own version in that source: with an empty
+# SdkVersion the engine silently picks whatever zitadel plugin happens
+# to be installed locally (observed live: a stale 0.2.0 beat v3.3.5
+# and a valid SDK field died with "Invalid or unknown key").
+#
+# So this workflow stamps sdk/.../internal/pulumiVersion.go and
+# pulumi-plugin.json on a DETACHED commit (never pushed to master —
+# master stays codegen-clean so verify-generate keeps passing) and
+# pushes two tags at that commit:
+#   vX.Y.Z      — fires release.yaml (provider binaries via goreleaser)
+#   sdk/vX.Y.Z  — what `go get .../sdk/v3@vX.Y.Z` actually resolves
+#     (a module in the sdk/ subdirectory with a /v3 major suffix is
+#     versioned by prefixed tags; the bare v tag alone is invisible
+#     to the Go module proxy).
+#
+# Weekly cron = the estate auto-release cadence (double-gated on the
+# same AUTO_RELEASE + CI_AUTOMATION_APP_ID entitlements); dispatch with
+# an explicit version for deliberate minor/major cuts.
+name: Release Cut
+
+on:
+  schedule:
+    - cron: "8 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: >-
+          Version to cut (X.Y.Z, no leading v). Empty = next patch
+          after the newest v* tag.
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-cut
+  cancel-in-progress: false
+
+jobs:
+  cut:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (vars.AUTO_RELEASE == 'true' && vars.CI_AUTOMATION_APP_ID != '')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+        id: app-token
+        with:
+          app-id: ${{ vars.CI_AUTOMATION_APP_ID }}
+          private-key: ${{ secrets.CI_AUTOMATION_PRIVATE_KEY }}
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Stamp the SDK version and push the tag pair
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          if [ -n "${INPUT_VERSION}" ]; then
+            VERSION="${INPUT_VERSION}"
+          else
+            LATEST=$(git tag --list "v*" --sort=-version:refname | head -1)
+            if [ -z "$LATEST" ]; then
+              echo "no v* releases yet — dispatch with an explicit version" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            if [ "$(git rev-parse "$LATEST^{commit}")" = "$(git rev-parse HEAD)" ]; then
+              echo "master == $LATEST — nothing to release" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            VERSION=$(echo "${LATEST#v}" | awk -F. '{printf "%d.%d.%d", $1, $2, $3+1}')
+          fi
+
+          python3 - "$VERSION" <<'PY'
+          import json, pathlib, re, sys
+          version = sys.argv[1]
+          assert re.fullmatch(r"\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?", version), version
+
+          p = pathlib.Path("sdk/go/zitadel/internal/pulumiVersion.go")
+          t = p.read_text()
+          t2 = t.replace(
+              "var SdkVersion semver.Version = semver.Version{}",
+              f'var SdkVersion semver.Version = semver.MustParse("{version}")')
+          t2 = t2.replace(
+              'var pluginDownloadURL string = ""',
+              'var pluginDownloadURL string = "github://api.github.com/truvity/pulumi-zitadel"')
+          assert t2 != t, "pulumiVersion.go did not match the expected codegen shape"
+          p.write_text(t2)
+
+          p = pathlib.Path("sdk/go/zitadel/pulumi-plugin.json")
+          d = json.loads(p.read_text())
+          d["version"] = f"v{version}"
+          p.write_text(json.dumps(d, indent=2) + "\n")
+          PY
+
+          git config user.name "truvity-ci-automation[bot]"
+          git config user.email "truvity-ci-automation[bot]@users.noreply.github.com"
+          # Detached release commit: tags carry the stamp, master never
+          # does — the stamped file would otherwise fail verify-generate
+          # on every later PR.
+          git commit -am "release: v${VERSION} — SDK version stamp"
+          git tag -a "v${VERSION}" -m "v${VERSION}"
+          git tag -a "sdk/v${VERSION}" -m "sdk/v${VERSION} — Go module tag for sdk/v3"
+          git push origin "refs/tags/v${VERSION}" "refs/tags/sdk/v${VERSION}"
+          echo "released v${VERSION} (+ sdk/v${VERSION}) at $(git rev-parse --short HEAD)" >> "$GITHUB_STEP_SUMMARY"

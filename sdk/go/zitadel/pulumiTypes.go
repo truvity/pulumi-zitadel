@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
+	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel/internal"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -18563,6 +18563,61 @@ type GetApplicationOidcComplianceProblem struct {
 	Message string `pulumi:"message"`
 }
 
+// GetApplicationOidcComplianceProblemInput is an input type that accepts GetApplicationOidcComplianceProblemArgs and GetApplicationOidcComplianceProblemOutput values.
+// You can construct a concrete instance of `GetApplicationOidcComplianceProblemInput` via:
+//
+//	GetApplicationOidcComplianceProblemArgs{...}
+type GetApplicationOidcComplianceProblemInput interface {
+	pulumi.Input
+
+	ToGetApplicationOidcComplianceProblemOutput() GetApplicationOidcComplianceProblemOutput
+	ToGetApplicationOidcComplianceProblemOutputWithContext(context.Context) GetApplicationOidcComplianceProblemOutput
+}
+
+type GetApplicationOidcComplianceProblemArgs struct {
+	// Machine-readable identifier for the compliance problem
+	Key pulumi.StringInput `pulumi:"key"`
+	// Human-readable localized message
+	Message pulumi.StringInput `pulumi:"message"`
+}
+
+func (GetApplicationOidcComplianceProblemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationOidcComplianceProblem)(nil)).Elem()
+}
+
+func (i GetApplicationOidcComplianceProblemArgs) ToGetApplicationOidcComplianceProblemOutput() GetApplicationOidcComplianceProblemOutput {
+	return i.ToGetApplicationOidcComplianceProblemOutputWithContext(context.Background())
+}
+
+func (i GetApplicationOidcComplianceProblemArgs) ToGetApplicationOidcComplianceProblemOutputWithContext(ctx context.Context) GetApplicationOidcComplianceProblemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationOidcComplianceProblemOutput)
+}
+
+// GetApplicationOidcComplianceProblemArrayInput is an input type that accepts GetApplicationOidcComplianceProblemArray and GetApplicationOidcComplianceProblemArrayOutput values.
+// You can construct a concrete instance of `GetApplicationOidcComplianceProblemArrayInput` via:
+//
+//	GetApplicationOidcComplianceProblemArray{ GetApplicationOidcComplianceProblemArgs{...} }
+type GetApplicationOidcComplianceProblemArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationOidcComplianceProblemArrayOutput() GetApplicationOidcComplianceProblemArrayOutput
+	ToGetApplicationOidcComplianceProblemArrayOutputWithContext(context.Context) GetApplicationOidcComplianceProblemArrayOutput
+}
+
+type GetApplicationOidcComplianceProblemArray []GetApplicationOidcComplianceProblemInput
+
+func (GetApplicationOidcComplianceProblemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationOidcComplianceProblem)(nil)).Elem()
+}
+
+func (i GetApplicationOidcComplianceProblemArray) ToGetApplicationOidcComplianceProblemArrayOutput() GetApplicationOidcComplianceProblemArrayOutput {
+	return i.ToGetApplicationOidcComplianceProblemArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationOidcComplianceProblemArray) ToGetApplicationOidcComplianceProblemArrayOutputWithContext(ctx context.Context) GetApplicationOidcComplianceProblemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationOidcComplianceProblemArrayOutput)
+}
+
 type GetApplicationOidcComplianceProblemOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationOidcComplianceProblemOutput) ElementType() reflect.Type {
@@ -18614,6 +18669,61 @@ type GetApplicationOidcLoginVersion struct {
 	LoginV2s []GetApplicationOidcLoginVersionLoginV2 `pulumi:"loginV2s"`
 }
 
+// GetApplicationOidcLoginVersionInput is an input type that accepts GetApplicationOidcLoginVersionArgs and GetApplicationOidcLoginVersionOutput values.
+// You can construct a concrete instance of `GetApplicationOidcLoginVersionInput` via:
+//
+//	GetApplicationOidcLoginVersionArgs{...}
+type GetApplicationOidcLoginVersionInput interface {
+	pulumi.Input
+
+	ToGetApplicationOidcLoginVersionOutput() GetApplicationOidcLoginVersionOutput
+	ToGetApplicationOidcLoginVersionOutputWithContext(context.Context) GetApplicationOidcLoginVersionOutput
+}
+
+type GetApplicationOidcLoginVersionArgs struct {
+	// Login V1
+	LoginV1 pulumi.BoolInput `pulumi:"loginV1"`
+	// Login V2
+	LoginV2s GetApplicationOidcLoginVersionLoginV2ArrayInput `pulumi:"loginV2s"`
+}
+
+func (GetApplicationOidcLoginVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationOidcLoginVersion)(nil)).Elem()
+}
+
+func (i GetApplicationOidcLoginVersionArgs) ToGetApplicationOidcLoginVersionOutput() GetApplicationOidcLoginVersionOutput {
+	return i.ToGetApplicationOidcLoginVersionOutputWithContext(context.Background())
+}
+
+func (i GetApplicationOidcLoginVersionArgs) ToGetApplicationOidcLoginVersionOutputWithContext(ctx context.Context) GetApplicationOidcLoginVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationOidcLoginVersionOutput)
+}
+
+// GetApplicationOidcLoginVersionArrayInput is an input type that accepts GetApplicationOidcLoginVersionArray and GetApplicationOidcLoginVersionArrayOutput values.
+// You can construct a concrete instance of `GetApplicationOidcLoginVersionArrayInput` via:
+//
+//	GetApplicationOidcLoginVersionArray{ GetApplicationOidcLoginVersionArgs{...} }
+type GetApplicationOidcLoginVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationOidcLoginVersionArrayOutput() GetApplicationOidcLoginVersionArrayOutput
+	ToGetApplicationOidcLoginVersionArrayOutputWithContext(context.Context) GetApplicationOidcLoginVersionArrayOutput
+}
+
+type GetApplicationOidcLoginVersionArray []GetApplicationOidcLoginVersionInput
+
+func (GetApplicationOidcLoginVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationOidcLoginVersion)(nil)).Elem()
+}
+
+func (i GetApplicationOidcLoginVersionArray) ToGetApplicationOidcLoginVersionArrayOutput() GetApplicationOidcLoginVersionArrayOutput {
+	return i.ToGetApplicationOidcLoginVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationOidcLoginVersionArray) ToGetApplicationOidcLoginVersionArrayOutputWithContext(ctx context.Context) GetApplicationOidcLoginVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationOidcLoginVersionArrayOutput)
+}
+
 type GetApplicationOidcLoginVersionOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationOidcLoginVersionOutput) ElementType() reflect.Type {
@@ -18663,6 +18773,59 @@ type GetApplicationOidcLoginVersionLoginV2 struct {
 	BaseUri string `pulumi:"baseUri"`
 }
 
+// GetApplicationOidcLoginVersionLoginV2Input is an input type that accepts GetApplicationOidcLoginVersionLoginV2Args and GetApplicationOidcLoginVersionLoginV2Output values.
+// You can construct a concrete instance of `GetApplicationOidcLoginVersionLoginV2Input` via:
+//
+//	GetApplicationOidcLoginVersionLoginV2Args{...}
+type GetApplicationOidcLoginVersionLoginV2Input interface {
+	pulumi.Input
+
+	ToGetApplicationOidcLoginVersionLoginV2Output() GetApplicationOidcLoginVersionLoginV2Output
+	ToGetApplicationOidcLoginVersionLoginV2OutputWithContext(context.Context) GetApplicationOidcLoginVersionLoginV2Output
+}
+
+type GetApplicationOidcLoginVersionLoginV2Args struct {
+	// Optionally specify a base uri of the login UI. If unspecified the default URI will be used.
+	BaseUri pulumi.StringInput `pulumi:"baseUri"`
+}
+
+func (GetApplicationOidcLoginVersionLoginV2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationOidcLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i GetApplicationOidcLoginVersionLoginV2Args) ToGetApplicationOidcLoginVersionLoginV2Output() GetApplicationOidcLoginVersionLoginV2Output {
+	return i.ToGetApplicationOidcLoginVersionLoginV2OutputWithContext(context.Background())
+}
+
+func (i GetApplicationOidcLoginVersionLoginV2Args) ToGetApplicationOidcLoginVersionLoginV2OutputWithContext(ctx context.Context) GetApplicationOidcLoginVersionLoginV2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationOidcLoginVersionLoginV2Output)
+}
+
+// GetApplicationOidcLoginVersionLoginV2ArrayInput is an input type that accepts GetApplicationOidcLoginVersionLoginV2Array and GetApplicationOidcLoginVersionLoginV2ArrayOutput values.
+// You can construct a concrete instance of `GetApplicationOidcLoginVersionLoginV2ArrayInput` via:
+//
+//	GetApplicationOidcLoginVersionLoginV2Array{ GetApplicationOidcLoginVersionLoginV2Args{...} }
+type GetApplicationOidcLoginVersionLoginV2ArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationOidcLoginVersionLoginV2ArrayOutput() GetApplicationOidcLoginVersionLoginV2ArrayOutput
+	ToGetApplicationOidcLoginVersionLoginV2ArrayOutputWithContext(context.Context) GetApplicationOidcLoginVersionLoginV2ArrayOutput
+}
+
+type GetApplicationOidcLoginVersionLoginV2Array []GetApplicationOidcLoginVersionLoginV2Input
+
+func (GetApplicationOidcLoginVersionLoginV2Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationOidcLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i GetApplicationOidcLoginVersionLoginV2Array) ToGetApplicationOidcLoginVersionLoginV2ArrayOutput() GetApplicationOidcLoginVersionLoginV2ArrayOutput {
+	return i.ToGetApplicationOidcLoginVersionLoginV2ArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationOidcLoginVersionLoginV2Array) ToGetApplicationOidcLoginVersionLoginV2ArrayOutputWithContext(ctx context.Context) GetApplicationOidcLoginVersionLoginV2ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationOidcLoginVersionLoginV2ArrayOutput)
+}
+
 type GetApplicationOidcLoginVersionLoginV2Output struct{ *pulumi.OutputState }
 
 func (GetApplicationOidcLoginVersionLoginV2Output) ElementType() reflect.Type {
@@ -18707,6 +18870,61 @@ type GetApplicationSamlLoginVersion struct {
 	LoginV1 bool `pulumi:"loginV1"`
 	// Login V2
 	LoginV2s []GetApplicationSamlLoginVersionLoginV2 `pulumi:"loginV2s"`
+}
+
+// GetApplicationSamlLoginVersionInput is an input type that accepts GetApplicationSamlLoginVersionArgs and GetApplicationSamlLoginVersionOutput values.
+// You can construct a concrete instance of `GetApplicationSamlLoginVersionInput` via:
+//
+//	GetApplicationSamlLoginVersionArgs{...}
+type GetApplicationSamlLoginVersionInput interface {
+	pulumi.Input
+
+	ToGetApplicationSamlLoginVersionOutput() GetApplicationSamlLoginVersionOutput
+	ToGetApplicationSamlLoginVersionOutputWithContext(context.Context) GetApplicationSamlLoginVersionOutput
+}
+
+type GetApplicationSamlLoginVersionArgs struct {
+	// Login V1
+	LoginV1 pulumi.BoolInput `pulumi:"loginV1"`
+	// Login V2
+	LoginV2s GetApplicationSamlLoginVersionLoginV2ArrayInput `pulumi:"loginV2s"`
+}
+
+func (GetApplicationSamlLoginVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationSamlLoginVersion)(nil)).Elem()
+}
+
+func (i GetApplicationSamlLoginVersionArgs) ToGetApplicationSamlLoginVersionOutput() GetApplicationSamlLoginVersionOutput {
+	return i.ToGetApplicationSamlLoginVersionOutputWithContext(context.Background())
+}
+
+func (i GetApplicationSamlLoginVersionArgs) ToGetApplicationSamlLoginVersionOutputWithContext(ctx context.Context) GetApplicationSamlLoginVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationSamlLoginVersionOutput)
+}
+
+// GetApplicationSamlLoginVersionArrayInput is an input type that accepts GetApplicationSamlLoginVersionArray and GetApplicationSamlLoginVersionArrayOutput values.
+// You can construct a concrete instance of `GetApplicationSamlLoginVersionArrayInput` via:
+//
+//	GetApplicationSamlLoginVersionArray{ GetApplicationSamlLoginVersionArgs{...} }
+type GetApplicationSamlLoginVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationSamlLoginVersionArrayOutput() GetApplicationSamlLoginVersionArrayOutput
+	ToGetApplicationSamlLoginVersionArrayOutputWithContext(context.Context) GetApplicationSamlLoginVersionArrayOutput
+}
+
+type GetApplicationSamlLoginVersionArray []GetApplicationSamlLoginVersionInput
+
+func (GetApplicationSamlLoginVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationSamlLoginVersion)(nil)).Elem()
+}
+
+func (i GetApplicationSamlLoginVersionArray) ToGetApplicationSamlLoginVersionArrayOutput() GetApplicationSamlLoginVersionArrayOutput {
+	return i.ToGetApplicationSamlLoginVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationSamlLoginVersionArray) ToGetApplicationSamlLoginVersionArrayOutputWithContext(ctx context.Context) GetApplicationSamlLoginVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationSamlLoginVersionArrayOutput)
 }
 
 type GetApplicationSamlLoginVersionOutput struct{ *pulumi.OutputState }
@@ -18758,6 +18976,59 @@ type GetApplicationSamlLoginVersionLoginV2 struct {
 	BaseUri string `pulumi:"baseUri"`
 }
 
+// GetApplicationSamlLoginVersionLoginV2Input is an input type that accepts GetApplicationSamlLoginVersionLoginV2Args and GetApplicationSamlLoginVersionLoginV2Output values.
+// You can construct a concrete instance of `GetApplicationSamlLoginVersionLoginV2Input` via:
+//
+//	GetApplicationSamlLoginVersionLoginV2Args{...}
+type GetApplicationSamlLoginVersionLoginV2Input interface {
+	pulumi.Input
+
+	ToGetApplicationSamlLoginVersionLoginV2Output() GetApplicationSamlLoginVersionLoginV2Output
+	ToGetApplicationSamlLoginVersionLoginV2OutputWithContext(context.Context) GetApplicationSamlLoginVersionLoginV2Output
+}
+
+type GetApplicationSamlLoginVersionLoginV2Args struct {
+	// Optionally specify a base uri of the login UI. If unspecified the default URI will be used.
+	BaseUri pulumi.StringInput `pulumi:"baseUri"`
+}
+
+func (GetApplicationSamlLoginVersionLoginV2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationSamlLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i GetApplicationSamlLoginVersionLoginV2Args) ToGetApplicationSamlLoginVersionLoginV2Output() GetApplicationSamlLoginVersionLoginV2Output {
+	return i.ToGetApplicationSamlLoginVersionLoginV2OutputWithContext(context.Background())
+}
+
+func (i GetApplicationSamlLoginVersionLoginV2Args) ToGetApplicationSamlLoginVersionLoginV2OutputWithContext(ctx context.Context) GetApplicationSamlLoginVersionLoginV2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationSamlLoginVersionLoginV2Output)
+}
+
+// GetApplicationSamlLoginVersionLoginV2ArrayInput is an input type that accepts GetApplicationSamlLoginVersionLoginV2Array and GetApplicationSamlLoginVersionLoginV2ArrayOutput values.
+// You can construct a concrete instance of `GetApplicationSamlLoginVersionLoginV2ArrayInput` via:
+//
+//	GetApplicationSamlLoginVersionLoginV2Array{ GetApplicationSamlLoginVersionLoginV2Args{...} }
+type GetApplicationSamlLoginVersionLoginV2ArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationSamlLoginVersionLoginV2ArrayOutput() GetApplicationSamlLoginVersionLoginV2ArrayOutput
+	ToGetApplicationSamlLoginVersionLoginV2ArrayOutputWithContext(context.Context) GetApplicationSamlLoginVersionLoginV2ArrayOutput
+}
+
+type GetApplicationSamlLoginVersionLoginV2Array []GetApplicationSamlLoginVersionLoginV2Input
+
+func (GetApplicationSamlLoginVersionLoginV2Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationSamlLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i GetApplicationSamlLoginVersionLoginV2Array) ToGetApplicationSamlLoginVersionLoginV2ArrayOutput() GetApplicationSamlLoginVersionLoginV2ArrayOutput {
+	return i.ToGetApplicationSamlLoginVersionLoginV2ArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationSamlLoginVersionLoginV2Array) ToGetApplicationSamlLoginVersionLoginV2ArrayOutputWithContext(ctx context.Context) GetApplicationSamlLoginVersionLoginV2ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationSamlLoginVersionLoginV2ArrayOutput)
+}
+
 type GetApplicationSamlLoginVersionLoginV2Output struct{ *pulumi.OutputState }
 
 func (GetApplicationSamlLoginVersionLoginV2Output) ElementType() reflect.Type {
@@ -18802,6 +19073,61 @@ type GetApplicationV2Api struct {
 	AuthMethodType string `pulumi:"authMethodType"`
 	// Generated client ID.
 	ClientId string `pulumi:"clientId"`
+}
+
+// GetApplicationV2ApiInput is an input type that accepts GetApplicationV2ApiArgs and GetApplicationV2ApiOutput values.
+// You can construct a concrete instance of `GetApplicationV2ApiInput` via:
+//
+//	GetApplicationV2ApiArgs{...}
+type GetApplicationV2ApiInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2ApiOutput() GetApplicationV2ApiOutput
+	ToGetApplicationV2ApiOutputWithContext(context.Context) GetApplicationV2ApiOutput
+}
+
+type GetApplicationV2ApiArgs struct {
+	// API auth method type, supported values: API_AUTH_METHOD_TYPE_BASIC, API_AUTH_METHOD_TYPE_PRIVATE_KEY_JWT
+	AuthMethodType pulumi.StringInput `pulumi:"authMethodType"`
+	// Generated client ID.
+	ClientId pulumi.StringInput `pulumi:"clientId"`
+}
+
+func (GetApplicationV2ApiArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2Api)(nil)).Elem()
+}
+
+func (i GetApplicationV2ApiArgs) ToGetApplicationV2ApiOutput() GetApplicationV2ApiOutput {
+	return i.ToGetApplicationV2ApiOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2ApiArgs) ToGetApplicationV2ApiOutputWithContext(ctx context.Context) GetApplicationV2ApiOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2ApiOutput)
+}
+
+// GetApplicationV2ApiArrayInput is an input type that accepts GetApplicationV2ApiArray and GetApplicationV2ApiArrayOutput values.
+// You can construct a concrete instance of `GetApplicationV2ApiArrayInput` via:
+//
+//	GetApplicationV2ApiArray{ GetApplicationV2ApiArgs{...} }
+type GetApplicationV2ApiArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2ApiArrayOutput() GetApplicationV2ApiArrayOutput
+	ToGetApplicationV2ApiArrayOutputWithContext(context.Context) GetApplicationV2ApiArrayOutput
+}
+
+type GetApplicationV2ApiArray []GetApplicationV2ApiInput
+
+func (GetApplicationV2ApiArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2Api)(nil)).Elem()
+}
+
+func (i GetApplicationV2ApiArray) ToGetApplicationV2ApiArrayOutput() GetApplicationV2ApiArrayOutput {
+	return i.ToGetApplicationV2ApiArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2ApiArray) ToGetApplicationV2ApiArrayOutputWithContext(ctx context.Context) GetApplicationV2ApiArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2ApiArrayOutput)
 }
 
 type GetApplicationV2ApiOutput struct{ *pulumi.OutputState }
@@ -18885,6 +19211,93 @@ type GetApplicationV2Oidc struct {
 	SkipNativeAppSuccessPage bool     `pulumi:"skipNativeAppSuccessPage"`
 	// OIDC version, supported values: OIDC_VERSION_1_0
 	Version string `pulumi:"version"`
+}
+
+// GetApplicationV2OidcInput is an input type that accepts GetApplicationV2OidcArgs and GetApplicationV2OidcOutput values.
+// You can construct a concrete instance of `GetApplicationV2OidcInput` via:
+//
+//	GetApplicationV2OidcArgs{...}
+type GetApplicationV2OidcInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2OidcOutput() GetApplicationV2OidcOutput
+	ToGetApplicationV2OidcOutputWithContext(context.Context) GetApplicationV2OidcOutput
+}
+
+type GetApplicationV2OidcArgs struct {
+	AccessTokenRoleAssertion pulumi.BoolInput `pulumi:"accessTokenRoleAssertion"`
+	// Access token type, supported values: OIDC_TOKEN_TYPE_BEARER, OIDC_TOKEN_TYPE_JWT
+	AccessTokenType pulumi.StringInput `pulumi:"accessTokenType"`
+	// Additional allowed origins.
+	AdditionalOrigins pulumi.StringArrayInput `pulumi:"additionalOrigins"`
+	// Application type, supported values: OIDC_APP_TYPE_WEB, OIDC_APP_TYPE_USER_AGENT, OIDC_APP_TYPE_NATIVE
+	AppType pulumi.StringInput `pulumi:"appType"`
+	// Auth method type, supported values: OIDC_AUTH_METHOD_TYPE_BASIC, OIDC_AUTH_METHOD_TYPE_POST, OIDC_AUTH_METHOD_TYPE_NONE, OIDC_AUTH_METHOD_TYPE_PRIVATE_KEY_JWT
+	AuthMethodType pulumi.StringInput `pulumi:"authMethodType"`
+	// Back-channel logout URI used by ZITADEL to notify the application of terminated sessions (OIDC Back-Channel Logout). Computed if not set, so the server-side default flows back into state.
+	BackChannelLogoutUri pulumi.StringInput `pulumi:"backChannelLogoutUri"`
+	// Generated client ID.
+	ClientId pulumi.StringInput `pulumi:"clientId"`
+	// Allowed clock skew (Go duration string, e.g. `5s`).
+	ClockSkew pulumi.StringInput `pulumi:"clockSkew"`
+	// List of OIDC specification compliance problems detected by ZITADEL for this configuration. Empty when the configuration is compliant.
+	ComplianceProblems GetApplicationV2OidcComplianceProblemArrayInput `pulumi:"complianceProblems"`
+	// Development mode (relaxes redirect-URI validation).
+	DevMode pulumi.BoolInput `pulumi:"devMode"`
+	// Grant types, supported values: OIDC_GRANT_TYPE_AUTHORIZATION_CODE, OIDC_GRANT_TYPE_IMPLICIT, OIDC_GRANT_TYPE_REFRESH_TOKEN, OIDC_GRANT_TYPE_DEVICE_CODE, OIDC_GRANT_TYPE_TOKEN_EXCHANGE
+	GrantTypes               pulumi.StringArrayInput `pulumi:"grantTypes"`
+	IdTokenRoleAssertion     pulumi.BoolInput        `pulumi:"idTokenRoleAssertion"`
+	IdTokenUserinfoAssertion pulumi.BoolInput        `pulumi:"idTokenUserinfoAssertion"`
+	// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+	LoginVersions GetApplicationV2OidcLoginVersionArrayInput `pulumi:"loginVersions"`
+	// Whether the OIDC configuration violates the OIDC specification, as determined by ZITADEL. See `complianceProblems` for the individual findings.
+	NoneCompliant pulumi.BoolInput `pulumi:"noneCompliant"`
+	// Post-logout redirect URIs.
+	PostLogoutRedirectUris pulumi.StringArrayInput `pulumi:"postLogoutRedirectUris"`
+	// Allowed redirect URIs. Required: OIDC clients cannot function without at least one redirect URI, and the Zitadel API rejects creation otherwise. Matches the v1 `ApplicationOidc` requirement.
+	RedirectUris pulumi.StringArrayInput `pulumi:"redirectUris"`
+	// Response types, supported values: OIDC_RESPONSE_TYPE_UNSPECIFIED, OIDC_RESPONSE_TYPE_CODE, OIDC_RESPONSE_TYPE_ID_TOKEN, OIDC_RESPONSE_TYPE_ID_TOKEN_TOKEN
+	ResponseTypes            pulumi.StringArrayInput `pulumi:"responseTypes"`
+	SkipNativeAppSuccessPage pulumi.BoolInput        `pulumi:"skipNativeAppSuccessPage"`
+	// OIDC version, supported values: OIDC_VERSION_1_0
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetApplicationV2OidcArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2Oidc)(nil)).Elem()
+}
+
+func (i GetApplicationV2OidcArgs) ToGetApplicationV2OidcOutput() GetApplicationV2OidcOutput {
+	return i.ToGetApplicationV2OidcOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2OidcArgs) ToGetApplicationV2OidcOutputWithContext(ctx context.Context) GetApplicationV2OidcOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2OidcOutput)
+}
+
+// GetApplicationV2OidcArrayInput is an input type that accepts GetApplicationV2OidcArray and GetApplicationV2OidcArrayOutput values.
+// You can construct a concrete instance of `GetApplicationV2OidcArrayInput` via:
+//
+//	GetApplicationV2OidcArray{ GetApplicationV2OidcArgs{...} }
+type GetApplicationV2OidcArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2OidcArrayOutput() GetApplicationV2OidcArrayOutput
+	ToGetApplicationV2OidcArrayOutputWithContext(context.Context) GetApplicationV2OidcArrayOutput
+}
+
+type GetApplicationV2OidcArray []GetApplicationV2OidcInput
+
+func (GetApplicationV2OidcArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2Oidc)(nil)).Elem()
+}
+
+func (i GetApplicationV2OidcArray) ToGetApplicationV2OidcArrayOutput() GetApplicationV2OidcArrayOutput {
+	return i.ToGetApplicationV2OidcArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2OidcArray) ToGetApplicationV2OidcArrayOutputWithContext(ctx context.Context) GetApplicationV2OidcArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2OidcArrayOutput)
 }
 
 type GetApplicationV2OidcOutput struct{ *pulumi.OutputState }
@@ -19024,6 +19437,61 @@ type GetApplicationV2OidcComplianceProblem struct {
 	Message string `pulumi:"message"`
 }
 
+// GetApplicationV2OidcComplianceProblemInput is an input type that accepts GetApplicationV2OidcComplianceProblemArgs and GetApplicationV2OidcComplianceProblemOutput values.
+// You can construct a concrete instance of `GetApplicationV2OidcComplianceProblemInput` via:
+//
+//	GetApplicationV2OidcComplianceProblemArgs{...}
+type GetApplicationV2OidcComplianceProblemInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2OidcComplianceProblemOutput() GetApplicationV2OidcComplianceProblemOutput
+	ToGetApplicationV2OidcComplianceProblemOutputWithContext(context.Context) GetApplicationV2OidcComplianceProblemOutput
+}
+
+type GetApplicationV2OidcComplianceProblemArgs struct {
+	// Stable i18n key identifying the compliance problem.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Human-readable description of the compliance problem.
+	Message pulumi.StringInput `pulumi:"message"`
+}
+
+func (GetApplicationV2OidcComplianceProblemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2OidcComplianceProblem)(nil)).Elem()
+}
+
+func (i GetApplicationV2OidcComplianceProblemArgs) ToGetApplicationV2OidcComplianceProblemOutput() GetApplicationV2OidcComplianceProblemOutput {
+	return i.ToGetApplicationV2OidcComplianceProblemOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2OidcComplianceProblemArgs) ToGetApplicationV2OidcComplianceProblemOutputWithContext(ctx context.Context) GetApplicationV2OidcComplianceProblemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2OidcComplianceProblemOutput)
+}
+
+// GetApplicationV2OidcComplianceProblemArrayInput is an input type that accepts GetApplicationV2OidcComplianceProblemArray and GetApplicationV2OidcComplianceProblemArrayOutput values.
+// You can construct a concrete instance of `GetApplicationV2OidcComplianceProblemArrayInput` via:
+//
+//	GetApplicationV2OidcComplianceProblemArray{ GetApplicationV2OidcComplianceProblemArgs{...} }
+type GetApplicationV2OidcComplianceProblemArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2OidcComplianceProblemArrayOutput() GetApplicationV2OidcComplianceProblemArrayOutput
+	ToGetApplicationV2OidcComplianceProblemArrayOutputWithContext(context.Context) GetApplicationV2OidcComplianceProblemArrayOutput
+}
+
+type GetApplicationV2OidcComplianceProblemArray []GetApplicationV2OidcComplianceProblemInput
+
+func (GetApplicationV2OidcComplianceProblemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2OidcComplianceProblem)(nil)).Elem()
+}
+
+func (i GetApplicationV2OidcComplianceProblemArray) ToGetApplicationV2OidcComplianceProblemArrayOutput() GetApplicationV2OidcComplianceProblemArrayOutput {
+	return i.ToGetApplicationV2OidcComplianceProblemArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2OidcComplianceProblemArray) ToGetApplicationV2OidcComplianceProblemArrayOutputWithContext(ctx context.Context) GetApplicationV2OidcComplianceProblemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2OidcComplianceProblemArrayOutput)
+}
+
 type GetApplicationV2OidcComplianceProblemOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationV2OidcComplianceProblemOutput) ElementType() reflect.Type {
@@ -19075,6 +19543,61 @@ type GetApplicationV2OidcLoginVersion struct {
 	LoginV2s []GetApplicationV2OidcLoginVersionLoginV2 `pulumi:"loginV2s"`
 }
 
+// GetApplicationV2OidcLoginVersionInput is an input type that accepts GetApplicationV2OidcLoginVersionArgs and GetApplicationV2OidcLoginVersionOutput values.
+// You can construct a concrete instance of `GetApplicationV2OidcLoginVersionInput` via:
+//
+//	GetApplicationV2OidcLoginVersionArgs{...}
+type GetApplicationV2OidcLoginVersionInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2OidcLoginVersionOutput() GetApplicationV2OidcLoginVersionOutput
+	ToGetApplicationV2OidcLoginVersionOutputWithContext(context.Context) GetApplicationV2OidcLoginVersionOutput
+}
+
+type GetApplicationV2OidcLoginVersionArgs struct {
+	// Use the legacy Login UI (V1).
+	LoginV1 pulumi.BoolInput `pulumi:"loginV1"`
+	// Use the Login UI V2.
+	LoginV2s GetApplicationV2OidcLoginVersionLoginV2ArrayInput `pulumi:"loginV2s"`
+}
+
+func (GetApplicationV2OidcLoginVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2OidcLoginVersion)(nil)).Elem()
+}
+
+func (i GetApplicationV2OidcLoginVersionArgs) ToGetApplicationV2OidcLoginVersionOutput() GetApplicationV2OidcLoginVersionOutput {
+	return i.ToGetApplicationV2OidcLoginVersionOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2OidcLoginVersionArgs) ToGetApplicationV2OidcLoginVersionOutputWithContext(ctx context.Context) GetApplicationV2OidcLoginVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2OidcLoginVersionOutput)
+}
+
+// GetApplicationV2OidcLoginVersionArrayInput is an input type that accepts GetApplicationV2OidcLoginVersionArray and GetApplicationV2OidcLoginVersionArrayOutput values.
+// You can construct a concrete instance of `GetApplicationV2OidcLoginVersionArrayInput` via:
+//
+//	GetApplicationV2OidcLoginVersionArray{ GetApplicationV2OidcLoginVersionArgs{...} }
+type GetApplicationV2OidcLoginVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2OidcLoginVersionArrayOutput() GetApplicationV2OidcLoginVersionArrayOutput
+	ToGetApplicationV2OidcLoginVersionArrayOutputWithContext(context.Context) GetApplicationV2OidcLoginVersionArrayOutput
+}
+
+type GetApplicationV2OidcLoginVersionArray []GetApplicationV2OidcLoginVersionInput
+
+func (GetApplicationV2OidcLoginVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2OidcLoginVersion)(nil)).Elem()
+}
+
+func (i GetApplicationV2OidcLoginVersionArray) ToGetApplicationV2OidcLoginVersionArrayOutput() GetApplicationV2OidcLoginVersionArrayOutput {
+	return i.ToGetApplicationV2OidcLoginVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2OidcLoginVersionArray) ToGetApplicationV2OidcLoginVersionArrayOutputWithContext(ctx context.Context) GetApplicationV2OidcLoginVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2OidcLoginVersionArrayOutput)
+}
+
 type GetApplicationV2OidcLoginVersionOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationV2OidcLoginVersionOutput) ElementType() reflect.Type {
@@ -19124,6 +19647,59 @@ type GetApplicationV2OidcLoginVersionLoginV2 struct {
 	BaseUri string `pulumi:"baseUri"`
 }
 
+// GetApplicationV2OidcLoginVersionLoginV2Input is an input type that accepts GetApplicationV2OidcLoginVersionLoginV2Args and GetApplicationV2OidcLoginVersionLoginV2Output values.
+// You can construct a concrete instance of `GetApplicationV2OidcLoginVersionLoginV2Input` via:
+//
+//	GetApplicationV2OidcLoginVersionLoginV2Args{...}
+type GetApplicationV2OidcLoginVersionLoginV2Input interface {
+	pulumi.Input
+
+	ToGetApplicationV2OidcLoginVersionLoginV2Output() GetApplicationV2OidcLoginVersionLoginV2Output
+	ToGetApplicationV2OidcLoginVersionLoginV2OutputWithContext(context.Context) GetApplicationV2OidcLoginVersionLoginV2Output
+}
+
+type GetApplicationV2OidcLoginVersionLoginV2Args struct {
+	// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+	BaseUri pulumi.StringInput `pulumi:"baseUri"`
+}
+
+func (GetApplicationV2OidcLoginVersionLoginV2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2OidcLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i GetApplicationV2OidcLoginVersionLoginV2Args) ToGetApplicationV2OidcLoginVersionLoginV2Output() GetApplicationV2OidcLoginVersionLoginV2Output {
+	return i.ToGetApplicationV2OidcLoginVersionLoginV2OutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2OidcLoginVersionLoginV2Args) ToGetApplicationV2OidcLoginVersionLoginV2OutputWithContext(ctx context.Context) GetApplicationV2OidcLoginVersionLoginV2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2OidcLoginVersionLoginV2Output)
+}
+
+// GetApplicationV2OidcLoginVersionLoginV2ArrayInput is an input type that accepts GetApplicationV2OidcLoginVersionLoginV2Array and GetApplicationV2OidcLoginVersionLoginV2ArrayOutput values.
+// You can construct a concrete instance of `GetApplicationV2OidcLoginVersionLoginV2ArrayInput` via:
+//
+//	GetApplicationV2OidcLoginVersionLoginV2Array{ GetApplicationV2OidcLoginVersionLoginV2Args{...} }
+type GetApplicationV2OidcLoginVersionLoginV2ArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2OidcLoginVersionLoginV2ArrayOutput() GetApplicationV2OidcLoginVersionLoginV2ArrayOutput
+	ToGetApplicationV2OidcLoginVersionLoginV2ArrayOutputWithContext(context.Context) GetApplicationV2OidcLoginVersionLoginV2ArrayOutput
+}
+
+type GetApplicationV2OidcLoginVersionLoginV2Array []GetApplicationV2OidcLoginVersionLoginV2Input
+
+func (GetApplicationV2OidcLoginVersionLoginV2Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2OidcLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i GetApplicationV2OidcLoginVersionLoginV2Array) ToGetApplicationV2OidcLoginVersionLoginV2ArrayOutput() GetApplicationV2OidcLoginVersionLoginV2ArrayOutput {
+	return i.ToGetApplicationV2OidcLoginVersionLoginV2ArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2OidcLoginVersionLoginV2Array) ToGetApplicationV2OidcLoginVersionLoginV2ArrayOutputWithContext(ctx context.Context) GetApplicationV2OidcLoginVersionLoginV2ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2OidcLoginVersionLoginV2ArrayOutput)
+}
+
 type GetApplicationV2OidcLoginVersionLoginV2Output struct{ *pulumi.OutputState }
 
 func (GetApplicationV2OidcLoginVersionLoginV2Output) ElementType() reflect.Type {
@@ -19170,6 +19746,63 @@ type GetApplicationV2Saml struct {
 	MetadataUrl string `pulumi:"metadataUrl"`
 	// SAML metadata as raw XML. Mutually exclusive with `metadataUrl`. Marked sensitive because SAML metadata documents commonly embed signing/encryption certificates.
 	MetadataXml string `pulumi:"metadataXml"`
+}
+
+// GetApplicationV2SamlInput is an input type that accepts GetApplicationV2SamlArgs and GetApplicationV2SamlOutput values.
+// You can construct a concrete instance of `GetApplicationV2SamlInput` via:
+//
+//	GetApplicationV2SamlArgs{...}
+type GetApplicationV2SamlInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2SamlOutput() GetApplicationV2SamlOutput
+	ToGetApplicationV2SamlOutputWithContext(context.Context) GetApplicationV2SamlOutput
+}
+
+type GetApplicationV2SamlArgs struct {
+	// Login UI version to use for this application. Exactly one of `loginV1` and `loginV2` may be set. Computed so that the server-side default flows back into state when the user omits this block.
+	LoginVersions GetApplicationV2SamlLoginVersionArrayInput `pulumi:"loginVersions"`
+	// URL from which SAML metadata can be fetched. Mutually exclusive with `metadataXml`.
+	MetadataUrl pulumi.StringInput `pulumi:"metadataUrl"`
+	// SAML metadata as raw XML. Mutually exclusive with `metadataUrl`. Marked sensitive because SAML metadata documents commonly embed signing/encryption certificates.
+	MetadataXml pulumi.StringInput `pulumi:"metadataXml"`
+}
+
+func (GetApplicationV2SamlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2Saml)(nil)).Elem()
+}
+
+func (i GetApplicationV2SamlArgs) ToGetApplicationV2SamlOutput() GetApplicationV2SamlOutput {
+	return i.ToGetApplicationV2SamlOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2SamlArgs) ToGetApplicationV2SamlOutputWithContext(ctx context.Context) GetApplicationV2SamlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2SamlOutput)
+}
+
+// GetApplicationV2SamlArrayInput is an input type that accepts GetApplicationV2SamlArray and GetApplicationV2SamlArrayOutput values.
+// You can construct a concrete instance of `GetApplicationV2SamlArrayInput` via:
+//
+//	GetApplicationV2SamlArray{ GetApplicationV2SamlArgs{...} }
+type GetApplicationV2SamlArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2SamlArrayOutput() GetApplicationV2SamlArrayOutput
+	ToGetApplicationV2SamlArrayOutputWithContext(context.Context) GetApplicationV2SamlArrayOutput
+}
+
+type GetApplicationV2SamlArray []GetApplicationV2SamlInput
+
+func (GetApplicationV2SamlArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2Saml)(nil)).Elem()
+}
+
+func (i GetApplicationV2SamlArray) ToGetApplicationV2SamlArrayOutput() GetApplicationV2SamlArrayOutput {
+	return i.ToGetApplicationV2SamlArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2SamlArray) ToGetApplicationV2SamlArrayOutputWithContext(ctx context.Context) GetApplicationV2SamlArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2SamlArrayOutput)
 }
 
 type GetApplicationV2SamlOutput struct{ *pulumi.OutputState }
@@ -19228,6 +19861,61 @@ type GetApplicationV2SamlLoginVersion struct {
 	LoginV2s []GetApplicationV2SamlLoginVersionLoginV2 `pulumi:"loginV2s"`
 }
 
+// GetApplicationV2SamlLoginVersionInput is an input type that accepts GetApplicationV2SamlLoginVersionArgs and GetApplicationV2SamlLoginVersionOutput values.
+// You can construct a concrete instance of `GetApplicationV2SamlLoginVersionInput` via:
+//
+//	GetApplicationV2SamlLoginVersionArgs{...}
+type GetApplicationV2SamlLoginVersionInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2SamlLoginVersionOutput() GetApplicationV2SamlLoginVersionOutput
+	ToGetApplicationV2SamlLoginVersionOutputWithContext(context.Context) GetApplicationV2SamlLoginVersionOutput
+}
+
+type GetApplicationV2SamlLoginVersionArgs struct {
+	// Use the legacy Login UI (V1).
+	LoginV1 pulumi.BoolInput `pulumi:"loginV1"`
+	// Use the Login UI V2.
+	LoginV2s GetApplicationV2SamlLoginVersionLoginV2ArrayInput `pulumi:"loginV2s"`
+}
+
+func (GetApplicationV2SamlLoginVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2SamlLoginVersion)(nil)).Elem()
+}
+
+func (i GetApplicationV2SamlLoginVersionArgs) ToGetApplicationV2SamlLoginVersionOutput() GetApplicationV2SamlLoginVersionOutput {
+	return i.ToGetApplicationV2SamlLoginVersionOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2SamlLoginVersionArgs) ToGetApplicationV2SamlLoginVersionOutputWithContext(ctx context.Context) GetApplicationV2SamlLoginVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2SamlLoginVersionOutput)
+}
+
+// GetApplicationV2SamlLoginVersionArrayInput is an input type that accepts GetApplicationV2SamlLoginVersionArray and GetApplicationV2SamlLoginVersionArrayOutput values.
+// You can construct a concrete instance of `GetApplicationV2SamlLoginVersionArrayInput` via:
+//
+//	GetApplicationV2SamlLoginVersionArray{ GetApplicationV2SamlLoginVersionArgs{...} }
+type GetApplicationV2SamlLoginVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2SamlLoginVersionArrayOutput() GetApplicationV2SamlLoginVersionArrayOutput
+	ToGetApplicationV2SamlLoginVersionArrayOutputWithContext(context.Context) GetApplicationV2SamlLoginVersionArrayOutput
+}
+
+type GetApplicationV2SamlLoginVersionArray []GetApplicationV2SamlLoginVersionInput
+
+func (GetApplicationV2SamlLoginVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2SamlLoginVersion)(nil)).Elem()
+}
+
+func (i GetApplicationV2SamlLoginVersionArray) ToGetApplicationV2SamlLoginVersionArrayOutput() GetApplicationV2SamlLoginVersionArrayOutput {
+	return i.ToGetApplicationV2SamlLoginVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2SamlLoginVersionArray) ToGetApplicationV2SamlLoginVersionArrayOutputWithContext(ctx context.Context) GetApplicationV2SamlLoginVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2SamlLoginVersionArrayOutput)
+}
+
 type GetApplicationV2SamlLoginVersionOutput struct{ *pulumi.OutputState }
 
 func (GetApplicationV2SamlLoginVersionOutput) ElementType() reflect.Type {
@@ -19277,6 +19965,59 @@ type GetApplicationV2SamlLoginVersionLoginV2 struct {
 	BaseUri string `pulumi:"baseUri"`
 }
 
+// GetApplicationV2SamlLoginVersionLoginV2Input is an input type that accepts GetApplicationV2SamlLoginVersionLoginV2Args and GetApplicationV2SamlLoginVersionLoginV2Output values.
+// You can construct a concrete instance of `GetApplicationV2SamlLoginVersionLoginV2Input` via:
+//
+//	GetApplicationV2SamlLoginVersionLoginV2Args{...}
+type GetApplicationV2SamlLoginVersionLoginV2Input interface {
+	pulumi.Input
+
+	ToGetApplicationV2SamlLoginVersionLoginV2Output() GetApplicationV2SamlLoginVersionLoginV2Output
+	ToGetApplicationV2SamlLoginVersionLoginV2OutputWithContext(context.Context) GetApplicationV2SamlLoginVersionLoginV2Output
+}
+
+type GetApplicationV2SamlLoginVersionLoginV2Args struct {
+	// Optional base URI of a custom Login UI V2. If unset, the instance default is used.
+	BaseUri pulumi.StringInput `pulumi:"baseUri"`
+}
+
+func (GetApplicationV2SamlLoginVersionLoginV2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApplicationV2SamlLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i GetApplicationV2SamlLoginVersionLoginV2Args) ToGetApplicationV2SamlLoginVersionLoginV2Output() GetApplicationV2SamlLoginVersionLoginV2Output {
+	return i.ToGetApplicationV2SamlLoginVersionLoginV2OutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2SamlLoginVersionLoginV2Args) ToGetApplicationV2SamlLoginVersionLoginV2OutputWithContext(ctx context.Context) GetApplicationV2SamlLoginVersionLoginV2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2SamlLoginVersionLoginV2Output)
+}
+
+// GetApplicationV2SamlLoginVersionLoginV2ArrayInput is an input type that accepts GetApplicationV2SamlLoginVersionLoginV2Array and GetApplicationV2SamlLoginVersionLoginV2ArrayOutput values.
+// You can construct a concrete instance of `GetApplicationV2SamlLoginVersionLoginV2ArrayInput` via:
+//
+//	GetApplicationV2SamlLoginVersionLoginV2Array{ GetApplicationV2SamlLoginVersionLoginV2Args{...} }
+type GetApplicationV2SamlLoginVersionLoginV2ArrayInput interface {
+	pulumi.Input
+
+	ToGetApplicationV2SamlLoginVersionLoginV2ArrayOutput() GetApplicationV2SamlLoginVersionLoginV2ArrayOutput
+	ToGetApplicationV2SamlLoginVersionLoginV2ArrayOutputWithContext(context.Context) GetApplicationV2SamlLoginVersionLoginV2ArrayOutput
+}
+
+type GetApplicationV2SamlLoginVersionLoginV2Array []GetApplicationV2SamlLoginVersionLoginV2Input
+
+func (GetApplicationV2SamlLoginVersionLoginV2Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApplicationV2SamlLoginVersionLoginV2)(nil)).Elem()
+}
+
+func (i GetApplicationV2SamlLoginVersionLoginV2Array) ToGetApplicationV2SamlLoginVersionLoginV2ArrayOutput() GetApplicationV2SamlLoginVersionLoginV2ArrayOutput {
+	return i.ToGetApplicationV2SamlLoginVersionLoginV2ArrayOutputWithContext(context.Background())
+}
+
+func (i GetApplicationV2SamlLoginVersionLoginV2Array) ToGetApplicationV2SamlLoginVersionLoginV2ArrayOutputWithContext(ctx context.Context) GetApplicationV2SamlLoginVersionLoginV2ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApplicationV2SamlLoginVersionLoginV2ArrayOutput)
+}
+
 type GetApplicationV2SamlLoginVersionLoginV2Output struct{ *pulumi.OutputState }
 
 func (GetApplicationV2SamlLoginVersionLoginV2Output) ElementType() reflect.Type {
@@ -19323,6 +20064,63 @@ type GetInstanceCustomDomainType struct {
 	Generated bool `pulumi:"generated"`
 	// Whether this is the primary domain.
 	Primary bool `pulumi:"primary"`
+}
+
+// GetInstanceCustomDomainTypeInput is an input type that accepts GetInstanceCustomDomainTypeArgs and GetInstanceCustomDomainTypeOutput values.
+// You can construct a concrete instance of `GetInstanceCustomDomainTypeInput` via:
+//
+//	GetInstanceCustomDomainTypeArgs{...}
+type GetInstanceCustomDomainTypeInput interface {
+	pulumi.Input
+
+	ToGetInstanceCustomDomainTypeOutput() GetInstanceCustomDomainTypeOutput
+	ToGetInstanceCustomDomainTypeOutputWithContext(context.Context) GetInstanceCustomDomainTypeOutput
+}
+
+type GetInstanceCustomDomainTypeArgs struct {
+	// The domain name.
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// Whether this domain was auto-generated.
+	Generated pulumi.BoolInput `pulumi:"generated"`
+	// Whether this is the primary domain.
+	Primary pulumi.BoolInput `pulumi:"primary"`
+}
+
+func (GetInstanceCustomDomainTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceCustomDomainType)(nil)).Elem()
+}
+
+func (i GetInstanceCustomDomainTypeArgs) ToGetInstanceCustomDomainTypeOutput() GetInstanceCustomDomainTypeOutput {
+	return i.ToGetInstanceCustomDomainTypeOutputWithContext(context.Background())
+}
+
+func (i GetInstanceCustomDomainTypeArgs) ToGetInstanceCustomDomainTypeOutputWithContext(ctx context.Context) GetInstanceCustomDomainTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceCustomDomainTypeOutput)
+}
+
+// GetInstanceCustomDomainTypeArrayInput is an input type that accepts GetInstanceCustomDomainTypeArray and GetInstanceCustomDomainTypeArrayOutput values.
+// You can construct a concrete instance of `GetInstanceCustomDomainTypeArrayInput` via:
+//
+//	GetInstanceCustomDomainTypeArray{ GetInstanceCustomDomainTypeArgs{...} }
+type GetInstanceCustomDomainTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceCustomDomainTypeArrayOutput() GetInstanceCustomDomainTypeArrayOutput
+	ToGetInstanceCustomDomainTypeArrayOutputWithContext(context.Context) GetInstanceCustomDomainTypeArrayOutput
+}
+
+type GetInstanceCustomDomainTypeArray []GetInstanceCustomDomainTypeInput
+
+func (GetInstanceCustomDomainTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceCustomDomainType)(nil)).Elem()
+}
+
+func (i GetInstanceCustomDomainTypeArray) ToGetInstanceCustomDomainTypeArrayOutput() GetInstanceCustomDomainTypeArrayOutput {
+	return i.ToGetInstanceCustomDomainTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceCustomDomainTypeArray) ToGetInstanceCustomDomainTypeArrayOutputWithContext(ctx context.Context) GetInstanceCustomDomainTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceCustomDomainTypeArrayOutput)
 }
 
 type GetInstanceCustomDomainTypeOutput struct{ *pulumi.OutputState }
@@ -19381,6 +20179,61 @@ type GetInstanceFeaturesLoginV2 struct {
 	Required bool `pulumi:"required"`
 }
 
+// GetInstanceFeaturesLoginV2Input is an input type that accepts GetInstanceFeaturesLoginV2Args and GetInstanceFeaturesLoginV2Output values.
+// You can construct a concrete instance of `GetInstanceFeaturesLoginV2Input` via:
+//
+//	GetInstanceFeaturesLoginV2Args{...}
+type GetInstanceFeaturesLoginV2Input interface {
+	pulumi.Input
+
+	ToGetInstanceFeaturesLoginV2Output() GetInstanceFeaturesLoginV2Output
+	ToGetInstanceFeaturesLoginV2OutputWithContext(context.Context) GetInstanceFeaturesLoginV2Output
+}
+
+type GetInstanceFeaturesLoginV2Args struct {
+	// Optionally specify a base uri of the login UI. If unspecified the default URI will be used.
+	BaseUri pulumi.StringInput `pulumi:"baseUri"`
+	// Require that all users must use the new login UI. If enabled, all users will be redirected to the login V2 regardless of the application's preference.
+	Required pulumi.BoolInput `pulumi:"required"`
+}
+
+func (GetInstanceFeaturesLoginV2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceFeaturesLoginV2)(nil)).Elem()
+}
+
+func (i GetInstanceFeaturesLoginV2Args) ToGetInstanceFeaturesLoginV2Output() GetInstanceFeaturesLoginV2Output {
+	return i.ToGetInstanceFeaturesLoginV2OutputWithContext(context.Background())
+}
+
+func (i GetInstanceFeaturesLoginV2Args) ToGetInstanceFeaturesLoginV2OutputWithContext(ctx context.Context) GetInstanceFeaturesLoginV2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceFeaturesLoginV2Output)
+}
+
+// GetInstanceFeaturesLoginV2ArrayInput is an input type that accepts GetInstanceFeaturesLoginV2Array and GetInstanceFeaturesLoginV2ArrayOutput values.
+// You can construct a concrete instance of `GetInstanceFeaturesLoginV2ArrayInput` via:
+//
+//	GetInstanceFeaturesLoginV2Array{ GetInstanceFeaturesLoginV2Args{...} }
+type GetInstanceFeaturesLoginV2ArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceFeaturesLoginV2ArrayOutput() GetInstanceFeaturesLoginV2ArrayOutput
+	ToGetInstanceFeaturesLoginV2ArrayOutputWithContext(context.Context) GetInstanceFeaturesLoginV2ArrayOutput
+}
+
+type GetInstanceFeaturesLoginV2Array []GetInstanceFeaturesLoginV2Input
+
+func (GetInstanceFeaturesLoginV2Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceFeaturesLoginV2)(nil)).Elem()
+}
+
+func (i GetInstanceFeaturesLoginV2Array) ToGetInstanceFeaturesLoginV2ArrayOutput() GetInstanceFeaturesLoginV2ArrayOutput {
+	return i.ToGetInstanceFeaturesLoginV2ArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceFeaturesLoginV2Array) ToGetInstanceFeaturesLoginV2ArrayOutputWithContext(ctx context.Context) GetInstanceFeaturesLoginV2ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceFeaturesLoginV2ArrayOutput)
+}
+
 type GetInstanceFeaturesLoginV2Output struct{ *pulumi.OutputState }
 
 func (GetInstanceFeaturesLoginV2Output) ElementType() reflect.Type {
@@ -19436,6 +20289,67 @@ type GetOrganizationDomainsDomain struct {
 	OrganizationId string `pulumi:"organizationId"`
 	// Type of domain validation
 	ValidationType string `pulumi:"validationType"`
+}
+
+// GetOrganizationDomainsDomainInput is an input type that accepts GetOrganizationDomainsDomainArgs and GetOrganizationDomainsDomainOutput values.
+// You can construct a concrete instance of `GetOrganizationDomainsDomainInput` via:
+//
+//	GetOrganizationDomainsDomainArgs{...}
+type GetOrganizationDomainsDomainInput interface {
+	pulumi.Input
+
+	ToGetOrganizationDomainsDomainOutput() GetOrganizationDomainsDomainOutput
+	ToGetOrganizationDomainsDomainOutputWithContext(context.Context) GetOrganizationDomainsDomainOutput
+}
+
+type GetOrganizationDomainsDomainArgs struct {
+	// Domain name
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// Whether this is the primary domain of the organization
+	IsPrimary pulumi.BoolInput `pulumi:"isPrimary"`
+	// Whether the domain has been verified
+	IsVerified pulumi.BoolInput `pulumi:"isVerified"`
+	// ID of the organization
+	OrganizationId pulumi.StringInput `pulumi:"organizationId"`
+	// Type of domain validation
+	ValidationType pulumi.StringInput `pulumi:"validationType"`
+}
+
+func (GetOrganizationDomainsDomainArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOrganizationDomainsDomain)(nil)).Elem()
+}
+
+func (i GetOrganizationDomainsDomainArgs) ToGetOrganizationDomainsDomainOutput() GetOrganizationDomainsDomainOutput {
+	return i.ToGetOrganizationDomainsDomainOutputWithContext(context.Background())
+}
+
+func (i GetOrganizationDomainsDomainArgs) ToGetOrganizationDomainsDomainOutputWithContext(ctx context.Context) GetOrganizationDomainsDomainOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationDomainsDomainOutput)
+}
+
+// GetOrganizationDomainsDomainArrayInput is an input type that accepts GetOrganizationDomainsDomainArray and GetOrganizationDomainsDomainArrayOutput values.
+// You can construct a concrete instance of `GetOrganizationDomainsDomainArrayInput` via:
+//
+//	GetOrganizationDomainsDomainArray{ GetOrganizationDomainsDomainArgs{...} }
+type GetOrganizationDomainsDomainArrayInput interface {
+	pulumi.Input
+
+	ToGetOrganizationDomainsDomainArrayOutput() GetOrganizationDomainsDomainArrayOutput
+	ToGetOrganizationDomainsDomainArrayOutputWithContext(context.Context) GetOrganizationDomainsDomainArrayOutput
+}
+
+type GetOrganizationDomainsDomainArray []GetOrganizationDomainsDomainInput
+
+func (GetOrganizationDomainsDomainArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOrganizationDomainsDomain)(nil)).Elem()
+}
+
+func (i GetOrganizationDomainsDomainArray) ToGetOrganizationDomainsDomainArrayOutput() GetOrganizationDomainsDomainArrayOutput {
+	return i.ToGetOrganizationDomainsDomainArrayOutputWithContext(context.Background())
+}
+
+func (i GetOrganizationDomainsDomainArray) ToGetOrganizationDomainsDomainArrayOutputWithContext(ctx context.Context) GetOrganizationDomainsDomainArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationDomainsDomainArrayOutput)
 }
 
 type GetOrganizationDomainsDomainOutput struct{ *pulumi.OutputState }
@@ -19504,6 +20418,61 @@ type GetOrganizationMetadatasMetadata struct {
 	Value string `pulumi:"value"`
 }
 
+// GetOrganizationMetadatasMetadataInput is an input type that accepts GetOrganizationMetadatasMetadataArgs and GetOrganizationMetadatasMetadataOutput values.
+// You can construct a concrete instance of `GetOrganizationMetadatasMetadataInput` via:
+//
+//	GetOrganizationMetadatasMetadataArgs{...}
+type GetOrganizationMetadatasMetadataInput interface {
+	pulumi.Input
+
+	ToGetOrganizationMetadatasMetadataOutput() GetOrganizationMetadatasMetadataOutput
+	ToGetOrganizationMetadatasMetadataOutputWithContext(context.Context) GetOrganizationMetadatasMetadataOutput
+}
+
+type GetOrganizationMetadatasMetadataArgs struct {
+	// Key of the metadata entry
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the metadata entry
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetOrganizationMetadatasMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOrganizationMetadatasMetadata)(nil)).Elem()
+}
+
+func (i GetOrganizationMetadatasMetadataArgs) ToGetOrganizationMetadatasMetadataOutput() GetOrganizationMetadatasMetadataOutput {
+	return i.ToGetOrganizationMetadatasMetadataOutputWithContext(context.Background())
+}
+
+func (i GetOrganizationMetadatasMetadataArgs) ToGetOrganizationMetadatasMetadataOutputWithContext(ctx context.Context) GetOrganizationMetadatasMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationMetadatasMetadataOutput)
+}
+
+// GetOrganizationMetadatasMetadataArrayInput is an input type that accepts GetOrganizationMetadatasMetadataArray and GetOrganizationMetadatasMetadataArrayOutput values.
+// You can construct a concrete instance of `GetOrganizationMetadatasMetadataArrayInput` via:
+//
+//	GetOrganizationMetadatasMetadataArray{ GetOrganizationMetadatasMetadataArgs{...} }
+type GetOrganizationMetadatasMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetOrganizationMetadatasMetadataArrayOutput() GetOrganizationMetadatasMetadataArrayOutput
+	ToGetOrganizationMetadatasMetadataArrayOutputWithContext(context.Context) GetOrganizationMetadatasMetadataArrayOutput
+}
+
+type GetOrganizationMetadatasMetadataArray []GetOrganizationMetadatasMetadataInput
+
+func (GetOrganizationMetadatasMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOrganizationMetadatasMetadata)(nil)).Elem()
+}
+
+func (i GetOrganizationMetadatasMetadataArray) ToGetOrganizationMetadatasMetadataArrayOutput() GetOrganizationMetadatasMetadataArrayOutput {
+	return i.ToGetOrganizationMetadatasMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetOrganizationMetadatasMetadataArray) ToGetOrganizationMetadatasMetadataArrayOutputWithContext(ctx context.Context) GetOrganizationMetadatasMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationMetadatasMetadataArrayOutput)
+}
+
 type GetOrganizationMetadatasMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetOrganizationMetadatasMetadataOutput) ElementType() reflect.Type {
@@ -19555,6 +20524,61 @@ type GetSystemFeaturesLoginV2 struct {
 	Required bool `pulumi:"required"`
 }
 
+// GetSystemFeaturesLoginV2Input is an input type that accepts GetSystemFeaturesLoginV2Args and GetSystemFeaturesLoginV2Output values.
+// You can construct a concrete instance of `GetSystemFeaturesLoginV2Input` via:
+//
+//	GetSystemFeaturesLoginV2Args{...}
+type GetSystemFeaturesLoginV2Input interface {
+	pulumi.Input
+
+	ToGetSystemFeaturesLoginV2Output() GetSystemFeaturesLoginV2Output
+	ToGetSystemFeaturesLoginV2OutputWithContext(context.Context) GetSystemFeaturesLoginV2Output
+}
+
+type GetSystemFeaturesLoginV2Args struct {
+	// Optionally specify a base uri of the login UI. If unspecified the default URI will be used.
+	BaseUri pulumi.StringInput `pulumi:"baseUri"`
+	// Require that all users must use the new login UI. If enabled, all users will be redirected to the login V2 regardless of the application's preference.
+	Required pulumi.BoolInput `pulumi:"required"`
+}
+
+func (GetSystemFeaturesLoginV2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSystemFeaturesLoginV2)(nil)).Elem()
+}
+
+func (i GetSystemFeaturesLoginV2Args) ToGetSystemFeaturesLoginV2Output() GetSystemFeaturesLoginV2Output {
+	return i.ToGetSystemFeaturesLoginV2OutputWithContext(context.Background())
+}
+
+func (i GetSystemFeaturesLoginV2Args) ToGetSystemFeaturesLoginV2OutputWithContext(ctx context.Context) GetSystemFeaturesLoginV2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemFeaturesLoginV2Output)
+}
+
+// GetSystemFeaturesLoginV2ArrayInput is an input type that accepts GetSystemFeaturesLoginV2Array and GetSystemFeaturesLoginV2ArrayOutput values.
+// You can construct a concrete instance of `GetSystemFeaturesLoginV2ArrayInput` via:
+//
+//	GetSystemFeaturesLoginV2Array{ GetSystemFeaturesLoginV2Args{...} }
+type GetSystemFeaturesLoginV2ArrayInput interface {
+	pulumi.Input
+
+	ToGetSystemFeaturesLoginV2ArrayOutput() GetSystemFeaturesLoginV2ArrayOutput
+	ToGetSystemFeaturesLoginV2ArrayOutputWithContext(context.Context) GetSystemFeaturesLoginV2ArrayOutput
+}
+
+type GetSystemFeaturesLoginV2Array []GetSystemFeaturesLoginV2Input
+
+func (GetSystemFeaturesLoginV2Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSystemFeaturesLoginV2)(nil)).Elem()
+}
+
+func (i GetSystemFeaturesLoginV2Array) ToGetSystemFeaturesLoginV2ArrayOutput() GetSystemFeaturesLoginV2ArrayOutput {
+	return i.ToGetSystemFeaturesLoginV2ArrayOutputWithContext(context.Background())
+}
+
+func (i GetSystemFeaturesLoginV2Array) ToGetSystemFeaturesLoginV2ArrayOutputWithContext(ctx context.Context) GetSystemFeaturesLoginV2ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSystemFeaturesLoginV2ArrayOutput)
+}
+
 type GetSystemFeaturesLoginV2Output struct{ *pulumi.OutputState }
 
 func (GetSystemFeaturesLoginV2Output) ElementType() reflect.Type {
@@ -19604,6 +20628,61 @@ type GetUserMetadatasMetadata struct {
 	Key string `pulumi:"key"`
 	// Value of the metadata entry
 	Value string `pulumi:"value"`
+}
+
+// GetUserMetadatasMetadataInput is an input type that accepts GetUserMetadatasMetadataArgs and GetUserMetadatasMetadataOutput values.
+// You can construct a concrete instance of `GetUserMetadatasMetadataInput` via:
+//
+//	GetUserMetadatasMetadataArgs{...}
+type GetUserMetadatasMetadataInput interface {
+	pulumi.Input
+
+	ToGetUserMetadatasMetadataOutput() GetUserMetadatasMetadataOutput
+	ToGetUserMetadatasMetadataOutputWithContext(context.Context) GetUserMetadatasMetadataOutput
+}
+
+type GetUserMetadatasMetadataArgs struct {
+	// Key of the metadata entry
+	Key pulumi.StringInput `pulumi:"key"`
+	// Value of the metadata entry
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetUserMetadatasMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUserMetadatasMetadata)(nil)).Elem()
+}
+
+func (i GetUserMetadatasMetadataArgs) ToGetUserMetadatasMetadataOutput() GetUserMetadatasMetadataOutput {
+	return i.ToGetUserMetadatasMetadataOutputWithContext(context.Background())
+}
+
+func (i GetUserMetadatasMetadataArgs) ToGetUserMetadatasMetadataOutputWithContext(ctx context.Context) GetUserMetadatasMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserMetadatasMetadataOutput)
+}
+
+// GetUserMetadatasMetadataArrayInput is an input type that accepts GetUserMetadatasMetadataArray and GetUserMetadatasMetadataArrayOutput values.
+// You can construct a concrete instance of `GetUserMetadatasMetadataArrayInput` via:
+//
+//	GetUserMetadatasMetadataArray{ GetUserMetadatasMetadataArgs{...} }
+type GetUserMetadatasMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetUserMetadatasMetadataArrayOutput() GetUserMetadatasMetadataArrayOutput
+	ToGetUserMetadatasMetadataArrayOutputWithContext(context.Context) GetUserMetadatasMetadataArrayOutput
+}
+
+type GetUserMetadatasMetadataArray []GetUserMetadatasMetadataInput
+
+func (GetUserMetadatasMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUserMetadatasMetadata)(nil)).Elem()
+}
+
+func (i GetUserMetadatasMetadataArray) ToGetUserMetadatasMetadataArrayOutput() GetUserMetadatasMetadataArrayOutput {
+	return i.ToGetUserMetadatasMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetUserMetadatasMetadataArray) ToGetUserMetadatasMetadataArrayOutputWithContext(ctx context.Context) GetUserMetadatasMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUserMetadatasMetadataArrayOutput)
 }
 
 type GetUserMetadatasMetadataOutput struct{ *pulumi.OutputState }
@@ -19835,6 +20914,44 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WebkeyEd25519PtrInput)(nil)).Elem(), WebkeyEd25519Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebkeyRsaInput)(nil)).Elem(), WebkeyRsaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebkeyRsaPtrInput)(nil)).Elem(), WebkeyRsaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationOidcComplianceProblemInput)(nil)).Elem(), GetApplicationOidcComplianceProblemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationOidcComplianceProblemArrayInput)(nil)).Elem(), GetApplicationOidcComplianceProblemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationOidcLoginVersionInput)(nil)).Elem(), GetApplicationOidcLoginVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationOidcLoginVersionArrayInput)(nil)).Elem(), GetApplicationOidcLoginVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationOidcLoginVersionLoginV2Input)(nil)).Elem(), GetApplicationOidcLoginVersionLoginV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationOidcLoginVersionLoginV2ArrayInput)(nil)).Elem(), GetApplicationOidcLoginVersionLoginV2Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationSamlLoginVersionInput)(nil)).Elem(), GetApplicationSamlLoginVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationSamlLoginVersionArrayInput)(nil)).Elem(), GetApplicationSamlLoginVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationSamlLoginVersionLoginV2Input)(nil)).Elem(), GetApplicationSamlLoginVersionLoginV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationSamlLoginVersionLoginV2ArrayInput)(nil)).Elem(), GetApplicationSamlLoginVersionLoginV2Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2ApiInput)(nil)).Elem(), GetApplicationV2ApiArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2ApiArrayInput)(nil)).Elem(), GetApplicationV2ApiArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2OidcInput)(nil)).Elem(), GetApplicationV2OidcArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2OidcArrayInput)(nil)).Elem(), GetApplicationV2OidcArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2OidcComplianceProblemInput)(nil)).Elem(), GetApplicationV2OidcComplianceProblemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2OidcComplianceProblemArrayInput)(nil)).Elem(), GetApplicationV2OidcComplianceProblemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2OidcLoginVersionInput)(nil)).Elem(), GetApplicationV2OidcLoginVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2OidcLoginVersionArrayInput)(nil)).Elem(), GetApplicationV2OidcLoginVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2OidcLoginVersionLoginV2Input)(nil)).Elem(), GetApplicationV2OidcLoginVersionLoginV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2OidcLoginVersionLoginV2ArrayInput)(nil)).Elem(), GetApplicationV2OidcLoginVersionLoginV2Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2SamlInput)(nil)).Elem(), GetApplicationV2SamlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2SamlArrayInput)(nil)).Elem(), GetApplicationV2SamlArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2SamlLoginVersionInput)(nil)).Elem(), GetApplicationV2SamlLoginVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2SamlLoginVersionArrayInput)(nil)).Elem(), GetApplicationV2SamlLoginVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2SamlLoginVersionLoginV2Input)(nil)).Elem(), GetApplicationV2SamlLoginVersionLoginV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationV2SamlLoginVersionLoginV2ArrayInput)(nil)).Elem(), GetApplicationV2SamlLoginVersionLoginV2Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCustomDomainTypeInput)(nil)).Elem(), GetInstanceCustomDomainTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCustomDomainTypeArrayInput)(nil)).Elem(), GetInstanceCustomDomainTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceFeaturesLoginV2Input)(nil)).Elem(), GetInstanceFeaturesLoginV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceFeaturesLoginV2ArrayInput)(nil)).Elem(), GetInstanceFeaturesLoginV2Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOrganizationDomainsDomainInput)(nil)).Elem(), GetOrganizationDomainsDomainArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOrganizationDomainsDomainArrayInput)(nil)).Elem(), GetOrganizationDomainsDomainArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOrganizationMetadatasMetadataInput)(nil)).Elem(), GetOrganizationMetadatasMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOrganizationMetadatasMetadataArrayInput)(nil)).Elem(), GetOrganizationMetadatasMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemFeaturesLoginV2Input)(nil)).Elem(), GetSystemFeaturesLoginV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSystemFeaturesLoginV2ArrayInput)(nil)).Elem(), GetSystemFeaturesLoginV2Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserMetadatasMetadataInput)(nil)).Elem(), GetUserMetadatasMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUserMetadatasMetadataArrayInput)(nil)).Elem(), GetUserMetadatasMetadataArray{})
 	pulumi.RegisterOutputType(ApplicationOidcLoginVersionOutput{})
 	pulumi.RegisterOutputType(ApplicationOidcLoginVersionPtrOutput{})
 	pulumi.RegisterOutputType(ApplicationOidcLoginVersionLoginV2Output{})

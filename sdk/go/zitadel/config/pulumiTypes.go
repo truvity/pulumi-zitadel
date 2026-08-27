@@ -4,7 +4,11 @@
 package config
 
 import (
-	"github.com/truvity/pulumi-zitadel/sdk/go/zitadel/internal"
+	"context"
+	"reflect"
+
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel/internal"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -24,5 +28,89 @@ type SystemApi struct {
 	User string `pulumi:"user"`
 }
 
+// SystemApiInput is an input type that accepts SystemApiArgs and SystemApiOutput values.
+// You can construct a concrete instance of `SystemApiInput` via:
+//
+//	SystemApiArgs{...}
+type SystemApiInput interface {
+	pulumi.Input
+
+	ToSystemApiOutput() SystemApiOutput
+	ToSystemApiOutputWithContext(context.Context) SystemApiOutput
+}
+
+type SystemApiArgs struct {
+	// Audience to set on the System API JWT. Defaults to the issuer derived from domain/port if omitted.
+	Audience pulumi.StringPtrInput `pulumi:"audience"`
+	// PEM encoded private key for a ZITADEL System API user. Either 'key_file'/'key' or the 'private_key'+'public_key' pair is required when using System API authentication.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Path to the PEM encoded private key for a ZITADEL System API user. Either 'key_file'/'key' or the 'private_key'+'public_key' pair is required when using System API authentication.
+	KeyFile pulumi.StringPtrInput `pulumi:"keyFile"`
+	// PEM encoded private key for a ZITADEL System API user when provided separately from the public key. Use together with 'public_key'.
+	PrivateKey pulumi.StringPtrInput `pulumi:"privateKey"`
+	// PEM encoded public key for a ZITADEL System API user when provided separately from the private key. Use together with 'private_key'.
+	PublicKey pulumi.StringPtrInput `pulumi:"publicKey"`
+	// User ID configured for the System API key. Used as both issuer and subject in the self-signed JWT.
+	User pulumi.StringInput `pulumi:"user"`
+}
+
+func (SystemApiArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SystemApi)(nil)).Elem()
+}
+
+func (i SystemApiArgs) ToSystemApiOutput() SystemApiOutput {
+	return i.ToSystemApiOutputWithContext(context.Background())
+}
+
+func (i SystemApiArgs) ToSystemApiOutputWithContext(ctx context.Context) SystemApiOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SystemApiOutput)
+}
+
+type SystemApiOutput struct{ *pulumi.OutputState }
+
+func (SystemApiOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SystemApi)(nil)).Elem()
+}
+
+func (o SystemApiOutput) ToSystemApiOutput() SystemApiOutput {
+	return o
+}
+
+func (o SystemApiOutput) ToSystemApiOutputWithContext(ctx context.Context) SystemApiOutput {
+	return o
+}
+
+// Audience to set on the System API JWT. Defaults to the issuer derived from domain/port if omitted.
+func (o SystemApiOutput) Audience() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SystemApi) *string { return v.Audience }).(pulumi.StringPtrOutput)
+}
+
+// PEM encoded private key for a ZITADEL System API user. Either 'key_file'/'key' or the 'private_key'+'public_key' pair is required when using System API authentication.
+func (o SystemApiOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SystemApi) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Path to the PEM encoded private key for a ZITADEL System API user. Either 'key_file'/'key' or the 'private_key'+'public_key' pair is required when using System API authentication.
+func (o SystemApiOutput) KeyFile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SystemApi) *string { return v.KeyFile }).(pulumi.StringPtrOutput)
+}
+
+// PEM encoded private key for a ZITADEL System API user when provided separately from the public key. Use together with 'public_key'.
+func (o SystemApiOutput) PrivateKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SystemApi) *string { return v.PrivateKey }).(pulumi.StringPtrOutput)
+}
+
+// PEM encoded public key for a ZITADEL System API user when provided separately from the private key. Use together with 'private_key'.
+func (o SystemApiOutput) PublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SystemApi) *string { return v.PublicKey }).(pulumi.StringPtrOutput)
+}
+
+// User ID configured for the System API key. Used as both issuer and subject in the self-signed JWT.
+func (o SystemApiOutput) User() pulumi.StringOutput {
+	return o.ApplyT(func(v SystemApi) string { return v.User }).(pulumi.StringOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*SystemApiInput)(nil)).Elem(), SystemApiArgs{})
+	pulumi.RegisterOutputType(SystemApiOutput{})
 }

@@ -37,6 +37,14 @@ func Provider() tfbridge.ProviderInfo {
 		PluginDownloadURL: "github://api.github.com/truvity/pulumi-zitadel",
 		MetadataInfo:      tfbridge.NewProviderMetadata(bridgeMetadata),
 
+		// The Go SDK module is .../sdk/v3 (INF-582): tags are v3.x.y, and
+		// Go refuses to fetch a major-suffixless module at v3 — the path
+		// bump is what makes `go get ...@v3.x.y` resolve at all. Codegen
+		// derives every generated import from this.
+		Golang: &tfbridge.GolangInfo{
+			ImportBasePath: "github.com/truvity/pulumi-zitadel/sdk/v3/go/zitadel",
+		},
+
 		Config: map[string]*tfbridge.SchemaInfo{
 			"jwt_profile_json": {Secret: tfbridge.True()},
 		},
