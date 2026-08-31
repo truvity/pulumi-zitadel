@@ -7,5 +7,5 @@ import (
 	"github.com/blang/semver"
 )
 
-var SdkVersion semver.Version = semver.Version{}
-var pluginDownloadURL string = ""
+var SdkVersion semver.Version = semver.MustParse("3.3.7")
+var pluginDownloadURL string = "github://api.github.com/truvity/pulumi-zitadel"

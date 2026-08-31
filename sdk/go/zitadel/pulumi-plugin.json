@@ -1,5 +1,6 @@
 {
   "resource": true,
   "name": "zitadel",
-  "server": "github://api.github.com/truvity/pulumi-zitadel"
+  "server": "github://api.github.com/truvity/pulumi-zitadel",
+  "version": "v3.3.7"
 }
