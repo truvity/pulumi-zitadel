@@ -7,7 +7,7 @@ toolchain go1.26.7
 require (
 	github.com/pulumi/pulumi/sdk/v3 v3.260.0
 	github.com/stretchr/testify v1.12.0
-	github.com/truvity/pulumi-zitadel/sdk/v3 v3.3.6
+	github.com/truvity/pulumi-zitadel/sdk/v3 v3.3.7
 	github.com/zalando/go-keyring v0.2.8
 	gopkg.in/yaml.v3 v3.0.1
 )
